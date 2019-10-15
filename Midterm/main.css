@@ -1,0 +1,144 @@
+@import "layout.css";
+
+/*
+
+font-family: 'EB Garamond', serif;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Averia Serif Libre', cursive;
+font-family: 'Quattrocento Sans', sans-serif;
+
+*/
+
+body {
+    margin: 0px;
+    background-color: rgb(0, 0, 0);
+}
+
+.center {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.HL {
+    color: rgb(202, 55, 55);
+}
+
+a:hover {
+    color: rgb(202, 55, 55);
+}
+
+.cozy {
+    margin: 0px 0px 0px 0px;
+    display: inline-block;
+}
+
+
+.nav {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+ul {
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+li:last-child {
+    border-left: rgb(47, 50, 184) 5px solid ;
+}
+
+li {
+    width: 43%;
+    display: inline-block;
+    color: white;
+    font-family: 'Quattrocento Sans', sans-serif;
+    margin: 0px 0px 0px 0px;
+    padding: 10px;
+    font-size: px;
+}
+
+h1 {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 48px;
+    color: rgb(202, 55, 55);
+    margin: 0px 0px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    display: block;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 24px;
+    letter-spacing: 7px;
+    color: rgb(202, 55, 55);
+    margin: -12px 0px 0px 2px;
+}
+
+h3 {
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 32px;
+    color: rgb(47, 50, 184);
+
+    padding: 20px 0px 0px 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+p {
+    color: white;
+    font-family: 'Quattrocento Sans', sans-serif;
+    letter-spacing: 2px;
+    line-height: 20px;
+    font-size: 20px;
+
+    padding: 15px;
+    margin: 0px;
+}
+
+.mainimg {
+    min-height: 200px;
+    background-image: url(0.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.etimg {
+    min-height: 200px;
+    background-image: url(4.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.divebar {
+    padding: 20px 0px 0px 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+.pmain {
+    padding: 15px;
+    margin: 0px;
+}
+
+.et {
+    padding: 50px 0px 0px 15px;
+    margin: 0px;
+}
+
+.pet {
+    padding: 15px 15px 50px 15px;
+    margin: 0px;
+}
+
+
+
+
