@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <button id="colorButton">Color</button>
+        </nav>
+        <nav id="navbar">
+            <button id="sizeButton">Size</button>
+        </nav>
+        <nav id="navbar">
+            <button id="leftButton">Align Left</button>
+        </nav>
+        <nav id="navbar">
+            <button id="centerButton">Align Center</button>
+        </nav>
+        <nav id="navbar">
+            <button id="rightButton">Align Right</button>
+        </nav>
+
+    </header>
+
+    <main>
+        <div id="content">
+            <h1 id="text">Press the buttons to make a change!</h1>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+        document.getElementById("colorButton").addEventListener("click", function(){
+
+            console.log("working");
+
+            var content = document.getElementById("content");
+            var redComponent = Math.random()*255;
+            var greenComponent = Math.random()*255;
+            var blueComponent = Math.random()*255;
+
+            var RGB = "rgb(" + redComponent + "," + greenComponent + "," + blueComponent + ")";
+
+
+            content.style.backgroundColor = RGB;
+        })
+
+        document.getElementById("sizeButton").addEventListener("click", function(){
+
+            var content = document.getElementById("text");
+            content.style.fontSize = Math.random()*100 + "px";
+
+        })
+
+        document.getElementById("leftButton").addEventListener("click", function(){
+
+            var content = document.getElementById("content");
+            content.style.textAlign = "left";
+
+        })
+
+        document.getElementById("centerButton").addEventListener("click", function(){
+
+            var content = document.getElementById("content");
+            content.style.textAlign = "center";
+
+        })
+
+        document.getElementById("rightButton").addEventListener("click", function(){
+
+            var content = document.getElementById("content");
+            content.style.textAlign = "right";
+
+        })
+
+        document.getElementById("content").style.backgroundColor = "rgb(220,0,220)";
+    </script>
+</body>
+</html>
