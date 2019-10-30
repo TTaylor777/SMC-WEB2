@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Week 10</title>
+
+</head>
+
+<body>
+    <main>
+        <section>
+            <img src="https://www.thoughtco.com/thmb/uZ9ZOTG1ewSqLg6fLfQ3Zwzrjvs=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-rocks-at-beach-560515091-59de7c3baad52b001091ff7b.jpg" id="image" alt="rocks">
+            <button id="imgToggle">Switch</button>
+        </section>
+        <section>
+            <form method="POST" action="">
+                <select id="make">
+                    <option value="audi">Audi</option>
+                    <option value="bmw">BMW</option>
+                    <option value="fiat">FIAT</option>
+                </select>
+
+                <select id="model">
+                    
+                </select>
+            </form>
+        </section>
+    </main>
+
+    <script>
+
+        var image2URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwKZk2_0xBoNHD4Lne20NCHcuxIs5-zJ3jkJBXgCHWBzjYGXl4&s";
+        var image2Alt = "more rocks";
+        var switchingImage = document.getElementById("image");
+
+        var image1URL = switchingImage.src;
+        var image1Alt = switchingImage.alt;
+
+        document.getElementById("imgToggle").addEventListener("click", function(){
+
+            console.log(image1URL);
+
+            if ( switchingImage.src === image2URL ){
+                switchingImage.src = image1URL;
+                switchingImage.alt = image1Alt;
+            }
+            else {
+                switchingImage.src = image2URL;
+                switchingImage.alt = image2Alt;
+            }
+
+        })
+
+        var makeSelect = document.getElementById("make");
+        var modelSelect = document.getElementById("model");
+
+        makeSelect.addEventListener("change", function(){
+            console.log(makeSelect.value);
+            
+            if ( makeSelect.value === "bmw" ){
+                modelSelect.innerHTML = '<option value="m3">M3</option>\
+                                        <option value="m5">M5</option>\
+                                        <option value="x5">X5</option>';
+            }
+            if ( makeSelect.value === "audi" ){
+                modelSelect.innerHTML = '<option value="m1">M2</option>\
+                                        <option value="m2">M2</option>';
+            }
+            if ( makeSelect.value === "fiat" ){
+                modelSelect.innerHTML = '<option value="x2">X2</option>\
+                                        <option value="x5">X5</option>\
+                                        <option value="x10">X10</option>';
+            }
+        })
+    </script>
+    
+</body>
+</html>
