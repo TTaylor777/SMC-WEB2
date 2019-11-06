@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>week 11</title>
+
+    <style>
+        .man {
+            width: 700px;
+            height: 400px;
+            background-color: lavender;
+        }
+
+        button[class='button'] {
+            border: double 2px black;
+            border-radius: 7px;
+            background-color: rgb(44, 7, 80);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="buttons">
+        <button role="button" class="buttonAppend">Append</button>
+        <button role="button" class="buttonPrepend">Prepend</button>
+        <button role="button" class="buttonBefore">Before</button>
+        <button role="button" class="buttonAfter">After</button>
+
+    </div>
+    <div class="man">
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.buttonAppend').click(function(){
+                $('.man').append('<p>dude duderson</p>');
+            })
+
+            $('.buttonPrepend').click(function(){
+                $('.man').prepend('<h2>YO</h2>');
+            })
+
+            $('.buttonBefore').click(function(){
+                $('.man').before('<h1>Broombis</h1>');
+            })
+
+            $('.buttonAfter').click(function(){
+                $('.man').after('<h1>Combis</h1>');
+            })
+
+        });
+    </script>
+</body>
+</html>
