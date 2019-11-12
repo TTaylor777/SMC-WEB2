@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    background-color: black;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0px;
+    text-align: center;
+    margin: 0px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav li {
+    border-left: solid 3px black;
+    border-right: solid 3px black;
+    border-bottom: double 3px black;
+    margin: 0px 0px;
+    padding: 10px 0px;
+}
+
+nav {
+    background-color: rgb(182, 152, 207);
+    padding: 20px;
+}
+
+nav li:first-child {
+    margin-top: 0px;
+} 
+
+nav li:last-child {
+    border-bottom: none;
+}
+
+.HL {
+    color: white;
+}
+
+@media(min-width: 540px) {
+    nav ul li {
+        display: inline-block;
+        border-bottom: none;
+        border-right: 2px solid black;
+        border-left: none;
+        padding: 5px 20px;
+    }
+
+    nav ul li:last-child {
+        border-right: none;
+    }
+
+    nav {
+        padding: 15px;
+    }
+}
