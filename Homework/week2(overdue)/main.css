@@ -58,3 +58,26 @@ nav li:last-child {
         padding: 15px;
     }
 }
+
+@media(min-width: 800px) {
+    nav ul li {
+        display: inline-block;
+        border-bottom: none;
+        border-right: 2px solid black;
+        border-left: none;
+        padding: 5px 20px;
+    }
+
+    nav ul li:last-child {
+        border-right: none;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    .break {
+        border-right: none;
+        margin-right: 47%;
+    }
+}
