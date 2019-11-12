@@ -29,9 +29,11 @@
         <button role="button" class="buttonPrepend">Prepend</button>
         <button role="button" class="buttonBefore">Before</button>
         <button role="button" class="buttonAfter">After</button>
+        <button role="button" class="buttonRemove">Remove</button>
+        <button role="button" class="buttonClone">Clone</button>
 
     </div>
-    <div class="man">
+    <div class="query">
 
     </div>
     
@@ -40,20 +42,29 @@
         $(document).ready(function(){
 
             $('.buttonAppend').click(function(){
-                $('.man').append('<p>dude duderson</p>');
+                $('.query').append('<p class="R">append</p>');
             })
 
             $('.buttonPrepend').click(function(){
-                $('.man').prepend('<h2>YO</h2>');
+                $('.query').prepend('<h2 class="R">prepend</h2>');
             })
 
             $('.buttonBefore').click(function(){
-                $('.man').before('<h1>Broombis</h1>');
+                $('.query').before('<h1 class="R">before</h1>');
             })
 
             $('.buttonAfter').click(function(){
-                $('.man').after('<h1>Combis</h1>');
+                $('.query').after('<h1 class="R">after</h1>');
             })
+
+            $('.buttonRemove').click(function(){
+                $( '.R' ).remove();
+            })
+
+            $('.buttonClone').click(function(){
+                $( '.R' ).clone().appendTo('body');
+            })
+
 
         });
     </script>
