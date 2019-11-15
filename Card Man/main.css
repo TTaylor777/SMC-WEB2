@@ -1,0 +1,39 @@
+body {
+    margin: 0px;
+    background-color: black;
+}
+
+div {
+    height: 111px;
+    text-align: center;
+}
+
+img {
+    width: 70px;
+    position: relative;
+    top: 18%;
+}
+
+.fire {
+    background-image: url('fireB.png');
+}
+
+.earth {
+    background-image: url('earthB.png');
+}
+
+.air {
+    background-image: url('airB.png');
+}
+
+.water {
+    background-image: url('waterB.png');
+}
+
+.space {
+    background-image: url('spaceB.png');
+}
+
+.time {
+    background-image: url('timeB.png');
+}
