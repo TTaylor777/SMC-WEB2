@@ -1,0 +1,53 @@
+@import "layout.css";
+
+.head {
+    text-align: center;
+    background-image: url('https://image.businessinsider.com/57bdd8cece38f222008b8965?width=1100&format=jpeg&auto=webp');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    background-color: rgba(255, 255, 255, 0.527);
+    margin: 0px;
+    border: 7px double black;
+    padding: 5px;
+}
+
+
+.imgcontent {
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.527);
+    margin: 0px;
+    border: 7px double black;
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+}
+
+p {
+    display: none;
+    background-color: rgb(158, 158, 158);
+    margin: 0px;
+    border: 7px double black;
+    width: auto;
+    z-index: 1;
+    padding: 5px;
+}
