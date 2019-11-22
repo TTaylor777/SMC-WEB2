@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" type="text/css">
+
+    <title>Card Man</title>
+</head>
+<body>
+
+    <main id="home">
+        <h5 id="miss">MISS</h5>
+        <div id="aftermath">
+            <div id="player1"></div>
+            <div id="player2">
+                <h5 class="nmenu" id="n"></h5>
+                <h5 class="lmenu" id="l"></h5>
+                <h5 class="smenu" id="s"></h5>
+            </div>
+            
+        </div>
+        <div id="keypad">
+            <div id="kpvalue" class="keypadbutton"><h3 id="keypadvalue"></h3></div>
+            <div id="keypad1" class="keypadbutton"><h3>1</h3></div>
+            <div id="keypad2" class="keypadbutton"><h3>2</h3></div>
+            <div id="keypad3" class="keypadbutton"><h3>3</h3></div>
+            <div id="keypad4" class="keypadbutton"><h3>4</h3></div>
+            <div id="keypad5" class="keypadbutton"><h3>5</h3></div>
+            <div id="keypad6" class="keypadbutton"><h3>6</h3></div>
+            <div id="keypad7" class="keypadbutton"><h3>7</h3></div>
+            <div id="keypad8" class="keypadbutton"><h3>8</h3></div>
+            <div id="keypad9" class="keypadbutton"><h3>9</h3></div>
+            <div id="keypad0" class="keypadbutton"><h3>0</h3></div>
+            <div id="keypade" class="keypadbutton"><h3>E</h3></div>
+            <div id="keypadc" class="keypadbutton"><h3>C</h3></div>
+        </div>
+        <input type="text" id="playername">
+        <div class="homecontent">
+            <div class="buttons">
+                <h2 id="life+">+</h2>
+                <h2 id="life-">-</h2>
+            </div>  
+            <h1 id="life"></h1>
+            <h1 id="shield"></h1>
+            <div class="buttons">
+                <h2 id="shield+">+</h2>
+                <h2 id="shield-">-</h2>
+            </div>
+        </div>  
+        <div id="playernav">
+            <img id="left" src="left.png">
+            <h4 id="mid">1</h4>
+            <img id="right" src="right.png">
+        </div>
+    </main>
+
+    <main id="element">
+        <div id="fire" class="BG">
+            <img src="fire.png" class="icon">
+            <img src="voidB.png" alt="off" id="fireB">
+        </div>
+        <div id="earth" class="BG">
+            <img src="earth.png" class="icon">
+            <img src="voidB.png" alt="off" id="earthB">
+        </div>
+        <div id="air" class="BG">
+            <img src="air.png" class="icon">
+            <img src="voidB.png" alt="off" id="airB">
+        </div>
+        <div id="water" class="BG">
+            <img src="water.png" class="icon">
+            <img src="voidB.png" alt="off" id="waterB">
+        </div>
+        <div id="space" class="BG">
+            <img src="space.png" class="icon">
+            <img src="voidB.png" alt="off" id="spaceB">
+        </div>
+        <div id="time" class="BG">
+            <img src="time.png" class="icon">
+            <img src="voidB.png" alt="off" id="timeB">
+        </div>
+    </main>
+
+    <main id="card">
+        <div id="elements" class="menuswitch">
+                <img src="fire.png" id="dice1">
+                <img src="earth.png" id="dice2">
+                <img src="air.png" id="dice3">
+                <img src="water.png" id="dice4">
+                <img src="space.png" id="dice5">
+                <img src="time.png" id="dice6">
+        </div>
+        <h5 id="min"></h5>
+        <h5 id="average"></h5>
+        <h5 id="max"></h5>
+        <div id="type" class="menuswitch">
+            <img src="damage.png" alt="on" id="damage">
+            <img src="defense.png" alt="on" id="defense">
+            <img src="heal.png" alt="on" id="heal">
+            <img src="reflect.png" alt="on" id="reflect">
+            <img src="lifesteal.png" alt="on" id="lifesteal">
+            <img src="absorb.png" alt="on" id="absorb">
+            <img src="repurpose.png" alt="on" id="repurpose">
+        </div>
+        <h5 id="ACC"></h5>
+        <h5 id="MULT"></h5>
+        <div id="rollbutton" class="menuswitch">
+            <h5 id="ROLL">ROLL</h5>
+        </div>
+        <div id="damagemenu">
+
+            <h5 id="target">Target:</h5>
+
+            <div class="menuitem" id="p1menu">
+                <h5 class="nmenu" id="nmenu1"></h5>
+                <h5 class="lmenu" id="lmenu1"></h5>
+                <h5 class="smenu" id="smenu1"></h5>
+            </div>
+            <div class="menuitem" id="p2menu">
+                <h5 class="nmenu" id="nmenu2"></h5>
+                <h5 class="lmenu" id="lmenu2"></h5>
+                <h5 class="smenu" id="smenu2"></h5>
+            </div>
+            <div class="menuitem" id="p3menu">
+                <h5 class="nmenu" id="nmenu3"></h5>
+                <h5 class="lmenu" id="lmenu3"></h5>
+                <h5 class="smenu" id="smenu3"></h5>
+            </div>
+            <div class="menuitem" id="p4menu">
+                <h5 class="nmenu" id="nmenu4"></h5>
+                <h5 class="lmenu" id="lmenu4"></h5>
+                <h5 class="smenu" id="smenu4"></h5>
+            </div>
+            <div class="menuitem" id="p5menu">
+                <h5 class="nmenu" id="nmenu5"></h5>
+                <h5 class="lmenu" id="lmenu5"></h5>
+                <h5 class="smenu" id="smenu5"></h5>
+            </div>
+            <div class="menuitem" id="p6menu">
+                <h5 class="nmenu" id="nmenu6"></h5>
+                <h5 class="lmenu" id="lmenu6"></h5>
+                <h5 class="smenu" id="smenu6"></h5>
+            </div>
+            <div class="menuitem" id="p7menu">
+                <h5 class="nmenu" id="nmenu7"></h5>
+                <h5 class="lmenu" id="lmenu7"></h5>
+                <h5 class="smenu" id="smenu7"></h5>
+            </div>
+            <div class="menuitem" id="p8menu">
+                <h5 class="nmenu" id="nmenu8"></h5>
+                <h5 class="lmenu" id="lmenu8"></h5>
+                <h5 class="smenu" id="smenu8"></h5>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
