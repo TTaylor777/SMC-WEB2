@@ -33,11 +33,11 @@ var shield = document.getElementById('shield')
 var splus = document.getElementById('shield+')
 var sminus = document.getElementById('shield-')
 
-var reflectcolor = 'rgb(0, 255, 133)'
-var absorbcolor = 'rgb(176, 255, 81)'
-var lifestealcolor = 'rgb(158, 77, 255)'
+var reflectcolor = 'rgb(255, 0, 0)'
+var absorbcolor = 'rgb(37, 255, 0)'
+var lifestealcolor = 'rgb(255, 0, 255)'
 var repurposecolor = 'rgb(255, 224, 144)'
-var defensecolor = 'rgb(0, 83, 255)'
+var defensecolor = 'rgb(0, 0, 255)'
 
 var keypad = document.getElementById('keypad')
 var input = document.getElementById('keypadvalue')
@@ -57,24 +57,24 @@ var minus = false
 
 
 
-var pnames = ['', '', '', '', '', '', '', '']
-var p1 = [100, 0, '']
-var p2 = [100, 0, '']
-var p3 = [100, 0, '']
-var p4 = [100, 0, '']
-var p5 = [100, 0, '']
-var p6 = [100, 0, '']
-var p7 = [100, 0, '']
-var p8 = [100, 0, '']
-// var pnames = ['man', 'dude', 'dombis', 'crombis', 'froombis', 'troombis', 'jimbus', 'trimbus']
+// var pnames = ['', '', '', '', '', '', '', '']
 // var p1 = [100, 0, '']
 // var p2 = [100, 0, '']
 // var p3 = [100, 0, '']
 // var p4 = [100, 0, '']
-// var p5 = [0, 0, '']
-// var p6 = [0, 0, '']
-// var p7 = [0, 0, '']
-// var p8 = [0, 0, '']
+// var p5 = [100, 0, '']
+// var p6 = [100, 0, '']
+// var p7 = [100, 0, '']
+// var p8 = [100, 0, '']
+var pnames = ['man', 'dude', 'dombis', 'crombis', 'froombis', 'troombis', 'jimbus', 'trimbus']
+var p1 = [100, 0, '']
+var p2 = [100, 0, '']
+var p3 = [100, 0, '']
+var p4 = [100, 0, '']
+var p5 = [0, 0, '']
+var p6 = [100, 0, '']
+var p7 = [100, 0, '']
+var p8 = [0, 0, '']
 life.innerHTML = p1[0]
 shield.innerHTML = p1[1]
 pname = pnames[0]
@@ -165,15 +165,14 @@ var aftermath = document.getElementById('aftermath')
 var player1 = document.getElementById('player1')
 var player2 = document.getElementById('player2')
 
+var rng = Math.random() + .5
 var multiplyer = 1
 var accuracy = 1
 
 var acc = document.getElementById('ACC')
 var mult = document.getElementById('MULT')
 
-var roll = 0 // = (d4 + d6 + d8 + d20 + d10 + d12) * multiplyer + 
-console.log(roll)
-
+var roll = 0
 
 fire.addEventListener('click',function(){
 
@@ -411,7 +410,7 @@ right.addEventListener('click',function(){
     aftermath.style.display = 'none'
     document.getElementById('miss').style.display = 'none'
 
-    if (mid.innerHTML == 1) {
+    if ( mid.innerHTML == 1) {
         p1[0] = life.innerHTML
         p1[1] = shield.innerHTML
         p1[2] = shield.style.color
@@ -459,11 +458,7 @@ right.addEventListener('click',function(){
         p8[2] = shield.style.color
     }
 
-
-
-    if (Number(mid.innerHTML) != 8){
-        mid.innerHTML++
-    }
+    mid.innerHTML++
 
     if (mid.innerHTML == 2) {
         life.innerHTML = p2[0]
@@ -513,65 +508,81 @@ right.addEventListener('click',function(){
         shield.innerHTML = p8[1]
         pname.value = pnames[7]
         shield.style.color = p8[2]
-        right.style.display = 'none'
     }
 
-    if (Number(life.innerHTML) <= 0) {
+    if (mid.innerHTML == 9) {
+        life.innerHTML = p1[0]
+        shield.innerHTML = p1[1]
+        pname.value = pnames[0]
+        shield.style.color = p1[2]
+        left.style.display = 'none'
+        mid.innerHTML = 1
+    }
+
+    if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
         life.innerHTML = p1[0]
         shield.innerHTML = p1[1]
         pname.value = pnames[0]
         shield.style.color = p1[2]
         mid.innerHTML = 1
-        
-        if (Number(life.innerHTML) <= 0) {
+    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
             life.innerHTML = p2[0]
             shield.innerHTML = p2[1]
-            pname.value = pnames[0]
+            pname.value = pnames[1]
             shield.style.color = p2[2]
             mid.innerHTML = 2
-            
-            if (Number(life.innerHTML) <= 0) {
+            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
                 life.innerHTML = p3[0]
                 shield.innerHTML = p3[1]
-                pname.value = pnames[0]
+                pname.value = pnames[2]
                 shield.style.color = p3[2]
                 mid.innerHTML = 3
-                
-                if (Number(life.innerHTML) <= 0) {
+                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
                     life.innerHTML = p4[0]
                     shield.innerHTML = p4[1]
-                    pname.value = pnames[0]
+                    pname.value = pnames[3]
                     shield.style.color = p4[2]
                     mid.innerHTML = 4
-                    
-                    if (Number(life.innerHTML) <= 0) {
-                        life.innerHTML = p5[0]
-                        shield.innerHTML = p5[1]
-                        pname.value = pnames[0]
-                        shield.style.color = p5[2]
-                        mid.innerHTML = 5
-                        
-                        if (Number(life.innerHTML) <= 0) {
-                            life.innerHTML = p6[0]
-                            shield.innerHTML = p6[1]
-                            pname.value = pnames[0]
-                            shield.style.color = p6[2]
-                            mid.innerHTML = 6
-                            
-                            if (Number(life.innerHTML) <= 0) {
-                                life.innerHTML = p7[0]
-                                shield.innerHTML = p7[1]
-                                pname.value = pnames[0]
-                                shield.style.color = p7[2]
-                                mid.innerHTML = 7
-                                
+                    } else {  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
+                            life.innerHTML = p5[0]
+                            shield.innerHTML = p5[1]
+                            pname.value = pnames[4]
+                            shield.style.color = p5[2]
+                            mid.innerHTML = 5
+                            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
+                                life.innerHTML = p6[0]
+                                shield.innerHTML = p6[1]
+                                pname.value = pnames[5]
+                                shield.style.color = p6[2]
+                                mid.innerHTML = 6
+                                console.log('dude')
+                                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
+                                    life.innerHTML = p7[0]
+                                    shield.innerHTML = p7[1]
+                                    pname.value = pnames[6]
+                                    shield.style.color = p7[2]
+                                    mid.innerHTML = 7
+                                    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
+                                        life.innerHTML = p8[0]
+                                        shield.innerHTML = p8[1]
+                                        pname.value = pnames[7]
+                                        shield.style.color = p8[2]
+                                        mid.innerHTML = 8
+                                        } else {if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
+                                            life.innerHTML = p1[0]
+                                            shield.innerHTML = p1[1]
+                                            pname.value = pnames[0]
+                                            shield.style.color = p1[2]
+                                            mid.innerHTML = 1
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
+    } 
 
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
@@ -657,8 +668,14 @@ left.addEventListener('click',function(){
         p8[2] = shield.style.color
     }
 
-    if (Number(mid.innerHTML) != 1){
         mid.innerHTML--
+    
+    if (mid.innerHTML == 0) {
+        life.innerHTML = p8[0]
+        shield.innerHTML = p8[1]
+        pname.value = pnames[0]
+        shield.style.color = p8[2]
+        left.style.display = 'inline-block'
     }
 
     if (mid.innerHTML == 1) {
@@ -755,6 +772,7 @@ element.addEventListener('click',function(){
     mult.style.display = 'none'
     acc.style.display = 'none'
     min.style.display = 'none'
+    average.style.display = 'none'
     max.style.display = 'none'
     multiplyer = 1
     accuracy = 1
@@ -762,9 +780,10 @@ element.addEventListener('click',function(){
     roll = 0
     dmin = 0
     dmax = 0
-    ROLL.style.display = 'block'
     ROLLh5.innerHTML = 'ROLL'
+    ROLL.style.display = 'none'
     elements.style.border = 'none'
+
 
     if (fireB.alt == 'off' && earthB.alt == 'off' && airB.alt == 'off' && waterB.alt == 'off' && spaceB.alt == 'off' && timeB.alt == 'off'){
         rollbutton.style.display = 'none'
@@ -881,6 +900,8 @@ elements.addEventListener('click',function(){
     dmax = 0
     avg = 0
 
+    ROLL.style.display = 'block'
+
     if (fireB.alt == 'on'){
         avg += d1avg
         dmax += d1max
@@ -912,18 +933,19 @@ elements.addEventListener('click',function(){
         dmin++
     }
 
-
     //Balance Equasion
 
-    i = avg * .01
-    x = avg * .3
+    x = avg * rng
     a = Number(avg)
 
     while ( a < 25 ) {
-        multiplyer = multiplyer + 0.3
-        a = a += x
+        multiplyer = multiplyer + rng
+        a += x
     }
 
+    i = a * .01
+
+    console.log(i, x, a)
     while ( a > 25) {
         accuracy = accuracy - .01
         a -= i
@@ -995,16 +1017,26 @@ elements.addEventListener('click',function(){
         elements.style.border = 'none'
     }
 
-    if ( lifesteal.style.display == 'inline-block' || absorb.style.display == 'inline-block' || reflect.style.display == 'inline-block' ){
+    if (absorb.style.display == 'inline-block' || reflect.style.display == 'inline-block' ){
+        multiplyer = multiplyer / 1.7
+    }
+
+    if (lifesteal.style.display == 'inline-block') {
         multiplyer = multiplyer / 2
+    }
+
+    if (defense.style.display == 'inline-block') {
+        multiplyer = multiplyer / 1
     }
 
     if ( repurpose.style.display == 'inline-block' ){
-        multiplyer = multiplyer / 2
+        multiplyer = multiplyer / 1.5
         accuracy = accuracy - .2
     }
 
-    avg = avg * multiplyer
+    
+
+    avg = Number(avg) * multiplyer
 
     dmin = Number(dmin) * multiplyer
     dmax = Number(dmax) * multiplyer
@@ -1021,7 +1053,6 @@ elements.addEventListener('click',function(){
 
 ROLL.addEventListener('click',function(){
     
-    document.getElementById('miss').style.display = 'none'
     console.log(d1, d2, d3, d4, d5, d6)
     roll = 0
     d1 = Math.round(Math.random() * 4 + .5)
@@ -1030,7 +1061,6 @@ ROLL.addEventListener('click',function(){
     d4 = Math.round(Math.random() * 20 + .5)
     d5 = Math.round(Math.random() * 10 + .5)
     d6 = Math.round(Math.random() * 12 + .5)
-
 
     if (fireB.alt == 'on'){
         roll += d1
@@ -1059,14 +1089,10 @@ ROLL.addEventListener('click',function(){
     
     roll = Math.round(roll)
 
-    if (roll == 0) {
-        window.scrollTo(0,0)
-        document.getElementById('miss').style.display = 'block'
-    }
-
     if (damage.style.display != 'none' || lifesteal.style.display != 'none') {
 
         damagemenu.style.display = 'block'
+        document.getElementById('miss').innerHTML = 'Damage: ' + roll
 
         if (Number(p1[0]) > 0 && mid.innerHTML != 1){
 
@@ -1134,13 +1160,19 @@ ROLL.addEventListener('click',function(){
         }
     }
 
+    if (lifesteal.style.display != 'none') {
+        document.getElementById('miss').innerHTML = 'Lifesteal: ' + roll
+    }
+
     if (defense.style.display == 'inline-block' || absorb.style.display == 'inline-block' || reflect.style.display == 'inline-block' || repurpose.style.display == 'inline-block'){
         shield.innerHTML = roll
+        document.getElementById('miss').innerHTML = 'Shield: ' + roll
         window.scrollTo(0,0)
     }
 
     if (heal.style.display == 'inline-block'){
         life.innerHTML = Number(life.innerHTML) + roll
+        document.getElementById('miss').innerHTML = 'Heal: ' + roll
         window.scrollTo(0,0)
     }
 
@@ -1367,7 +1399,29 @@ ROLL.addEventListener('click',function(){
         shield.style.color = 'black'
     }
 
+    document.getElementById('miss').style.display = 'inline-block'
     ROLLh5.innerHTML = Math.round(roll)
+    aftermath.style.display = 'block'
+
+    document.getElementById('n').innerHTML = pname.value
+    document.getElementById('l').innerHTML = life.innerHTML
+    document.getElementById('s').innerHTML = shield.innerHTML
+    document.getElementById('s').style.color = shield.style.color
+
+    player2.style.display = 'flex'
+
+    if (heal.style.display == 'inline-block' || shield.style.display == 'inline-block' || absorb.style.display == 'inline-block'|| reflect.style.display == 'inline-block' || repurpose.style.display == 'inline-block') {
+        player1.innerHTML = ''
+    }
+
+    if (roll == 0) {
+        window.scrollTo(0,0)
+        player1.innerHTML = ''
+        document.getElementById('n').innerHTML = ''
+        document.getElementById('l').innerHTML = ''
+        document.getElementById('s').innerHTML = ''
+        document.getElementById('miss').innerHTML = 'VOID'
+    }
 })
 
 
@@ -1385,10 +1439,9 @@ p1menu.addEventListener('click',function(){
 
     if (roll < Number(p1[1]) && smenu1.style.color == repurposecolor) {
         p1[0] = Number(p1[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p1[1]) && smenu1.style.color == reflectcolor) {
+    if (roll < Number(p1[1]) && smenu1.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1427,10 +1480,9 @@ p2menu.addEventListener('click',function(){
 
     if (roll < Number(p2[1]) && smenu2.style.color == repurposecolor) {
         p2[0] = Number(p2[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p2[1]) && smenu2.style.color == reflectcolor) {
+    if (roll < Number(p2[1]) && smenu2.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1468,10 +1520,9 @@ p3menu.addEventListener('click',function(){
 
     if (roll < Number(p3[1]) && smenu3.style.color == repurposecolor) {
         p3[0] = Number(p3[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p3[1]) && smenu3.style.color == reflectcolor) {
+    if (roll < Number(p3[1]) && smenu3.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1508,10 +1559,9 @@ p4menu.addEventListener('click',function(){
 
     if (roll < Number(p4[1]) && smenu4.style.color == repurposecolor) {
         p4[0] = Number(p4[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p4[1]) && smenu4.style.color == reflectcolor) {
+    if (roll < Number(p4[1]) && smenu4.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1549,10 +1599,9 @@ p5menu.addEventListener('click',function(){
 
     if (roll < Number(p5[1]) && smenu5.style.color == repurposecolor) {
         p5[0] = Number(p5[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p5[1]) && smenu5.style.color == reflectcolor) {
+    if (roll < Number(p5[1]) && smenu5.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor ) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1590,10 +1639,9 @@ p6menu.addEventListener('click',function(){
 
     if (roll < Number(p6[1]) && smenu6.style.color == repurposecolor) {
         p6[0] = Number(p6[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p6[1]) && smenu6.style.color == reflectcolor) {
+    if (roll < Number(p6[1]) && smenu6.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1631,10 +1679,9 @@ p7menu.addEventListener('click',function(){
 
     if (roll < Number(p7[1]) && smenu7.style.color == repurposecolor) {
         p7[0] = Number(p7[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p7[1]) && smenu7.style.color == reflectcolor) {
+    if (roll < Number(p7[1]) && smenu7.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1671,10 +1718,9 @@ p8menu.addEventListener('click',function(){
 
     if (roll < Number(p8[1]) && smenu8.style.color == repurposecolor) {
         p8[0] = Number(p8[0]) + roll
-        life.innerHTML = Number(life.innerHTML) - roll
     }
 
-    if (roll < Number(p8[1]) && smenu8.style.color == reflectcolor) {
+    if (roll < Number(p8[1]) && smenu8.style.color == reflectcolor || smenu1.style.color == repurposecolor) {
         if (Number(shield.innerHTML) > roll && shield.style.color == absorbcolor || Number(shield.innerHTML) > roll && shield.style.color == repurposecolor) {
             life.innerHTML = Number(life.innerHTML) + roll
         } else {
@@ -1705,8 +1751,12 @@ p8menu.addEventListener('click',function(){
 damagemenu.addEventListener('click',function(){
     
     damagemenu.style.display = 'none'
+    player1.style.display = 'flex'
     ROLLh5.innerHTML = 'ROLL'
     window.scrollTo(0,0)
+
+    document.getElementById('l').innerHTML = life.innerHTML
+    
     
     menuitem[0].style.display = 'none'
     menuitem[1].style.display = 'none'
@@ -1716,7 +1766,6 @@ damagemenu.addEventListener('click',function(){
     menuitem[5].style.display = 'none'
     menuitem[6].style.display = 'none'
     menuitem[7].style.display = 'none'
-
     
     if (mid.innerHTML == 1){
         p1[0] = life.innerHTML
@@ -1744,10 +1793,7 @@ damagemenu.addEventListener('click',function(){
         p8[1] = shield.innerHTML
     }
 
-    document.getElementById('n').innerHTML = pname.value
-    document.getElementById('l').innerHTML = life.innerHTML
-    document.getElementById('s').innerHTML = shield.innerHTML
-    document.getElementById('s').style.color = shield.style.color
+    
 })
 
 aftermath.addEventListener('click',function(){
@@ -1755,6 +1801,7 @@ aftermath.addEventListener('click',function(){
     aftermath.style.display = 'none'
     document.getElementById('miss').style.display = 'none'
     document.getElementById('l').style.color = 'black'
+    player1.innerHTML = ''
 
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
@@ -1789,7 +1836,7 @@ aftermath.addEventListener('click',function(){
     dice5.style.display = 'none'
     dice6.style.display = 'none'
 
-    if (mid.innerHTML == 1) {
+    if ( mid.innerHTML == 1) {
         p1[0] = life.innerHTML
         p1[1] = shield.innerHTML
         p1[2] = shield.style.color
@@ -1837,11 +1884,7 @@ aftermath.addEventListener('click',function(){
         p8[2] = shield.style.color
     }
 
-
-
-    if (Number(mid.innerHTML) != 8){
-        mid.innerHTML++
-    }
+    mid.innerHTML++
 
     if (mid.innerHTML == 2) {
         life.innerHTML = p2[0]
@@ -1891,235 +1934,82 @@ aftermath.addEventListener('click',function(){
         shield.innerHTML = p8[1]
         pname.value = pnames[7]
         shield.style.color = p8[2]
-        right.style.display = 'none'
     }
 
-    if (Number(life.innerHTML) <= 0) {
+    if (mid.innerHTML == 9) {
+        life.innerHTML = p1[0]
+        shield.innerHTML = p1[1]
+        pname.value = pnames[0]
+        shield.style.color = p1[2]
+        left.style.display = 'none'
+        mid.innerHTML = 1
+    }
+
+    if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
         life.innerHTML = p1[0]
         shield.innerHTML = p1[1]
         pname.value = pnames[0]
         shield.style.color = p1[2]
         mid.innerHTML = 1
-        
-        if (Number(life.innerHTML) <= 0) {
+    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
             life.innerHTML = p2[0]
             shield.innerHTML = p2[1]
-            pname.value = pnames[0]
+            pname.value = pnames[1]
             shield.style.color = p2[2]
             mid.innerHTML = 2
-            
-            if (Number(life.innerHTML) <= 0) {
+            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
                 life.innerHTML = p3[0]
                 shield.innerHTML = p3[1]
-                pname.value = pnames[0]
+                pname.value = pnames[2]
                 shield.style.color = p3[2]
                 mid.innerHTML = 3
-                
-                if (Number(life.innerHTML) <= 0) {
+                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
                     life.innerHTML = p4[0]
                     shield.innerHTML = p4[1]
-                    pname.value = pnames[0]
+                    pname.value = pnames[3]
                     shield.style.color = p4[2]
                     mid.innerHTML = 4
-                    
-                    if (Number(life.innerHTML) <= 0) {
-                        life.innerHTML = p5[0]
-                        shield.innerHTML = p5[1]
-                        pname.value = pnames[0]
-                        shield.style.color = p5[2]
-                        mid.innerHTML = 5
-                        
-                        if (Number(life.innerHTML) <= 0) {
-                            life.innerHTML = p6[0]
-                            shield.innerHTML = p6[1]
-                            pname.value = pnames[0]
-                            shield.style.color = p6[2]
-                            mid.innerHTML = 6
-                            
-                            if (Number(life.innerHTML) <= 0) {
-                                life.innerHTML = p7[0]
-                                shield.innerHTML = p7[1]
-                                pname.value = pnames[0]
-                                shield.style.color = p7[2]
-                                mid.innerHTML = 7
-                                
+                    } else {  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
+                            life.innerHTML = p5[0]
+                            shield.innerHTML = p5[1]
+                            pname.value = pnames[4]
+                            shield.style.color = p5[2]
+                            mid.innerHTML = 5
+                            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
+                                life.innerHTML = p6[0]
+                                shield.innerHTML = p6[1]
+                                pname.value = pnames[5]
+                                shield.style.color = p6[2]
+                                mid.innerHTML = 6
+                                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
+                                    life.innerHTML = p7[0]
+                                    shield.innerHTML = p7[1]
+                                    pname.value = pnames[6]
+                                    shield.style.color = p7[2]
+                                    mid.innerHTML = 7
+                                    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
+                                        life.innerHTML = p8[0]
+                                        shield.innerHTML = p8[1]
+                                        pname.value = pnames[7]
+                                        shield.style.color = p8[2]
+                                        mid.innerHTML = 8
+                                        } else {if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
+                                            life.innerHTML = p1[0]
+                                            shield.innerHTML = p1[1]
+                                            pname.value = pnames[0]
+                                            shield.style.color = p1[2]
+                                            mid.innerHTML = 1
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
+    } 
 })
-document.getElementById('miss').addEventListener('click',function(){
-   
-    aftermath.style.display = 'none'
-    document.getElementById('miss').style.display = 'none'
 
-    if (mid.innerHTML == 1) {
-        p1[0] = life.innerHTML
-        p1[1] = shield.innerHTML
-        p1[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 2) {
-        p2[0] = life.innerHTML
-        p2[1] = shield.innerHTML
-        p2[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 3) {
-        p3[0] = life.innerHTML
-        p3[1] = shield.innerHTML
-        p3[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 4) {
-        p4[0] = life.innerHTML
-        p4[1] = shield.innerHTML
-        p4[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 5) {
-        p5[0] = life.innerHTML
-        p5[1] = shield.innerHTML
-        p5[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 6) {
-        p6[0] = life.innerHTML
-        p6[1] = shield.innerHTML
-        p6[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 7) {
-        p7[0] = life.innerHTML
-        p7[1] = shield.innerHTML
-        p7[2] = shield.style.color
-    }
-
-    if (mid.innerHTML == 8) {
-        p8[0] = life.innerHTML
-        p8[1] = shield.innerHTML
-        p8[2] = shield.style.color
-    }
-
-
-
-    if (Number(mid.innerHTML) != 8){
-        mid.innerHTML++
-    }
-
-    if (mid.innerHTML == 2) {
-        life.innerHTML = p2[0]
-        shield.innerHTML = p2[1]
-        pname.value = pnames[1]
-        shield.style.color = p2[2]
-        left.style.display = 'inline-block'
-    }
-
-    if (mid.innerHTML == 3) {
-        life.innerHTML = p3[0]
-        shield.innerHTML = p3[1]
-        pname.value = pnames[2]
-        shield.style.color = p3[2]
-    }
-
-    if (mid.innerHTML == 4) {
-        life.innerHTML = p4[0]
-        shield.innerHTML = p4[1]
-        pname.value = pnames[3]
-        shield.style.color = p4[2]
-    }
-
-    if (mid.innerHTML == 5) {
-        life.innerHTML = p5[0]
-        shield.innerHTML = p5[1]
-        pname.value = pnames[4]
-        shield.style.color = p5[2]
-    }
-
-    if (mid.innerHTML == 6) {
-        life.innerHTML = p6[0]
-        shield.innerHTML = p6[1]
-        pname.value = pnames[5]
-        shield.style.color = p6[2]
-    }
-
-    if (mid.innerHTML == 7) {
-        life.innerHTML = p7[0]
-        shield.innerHTML = p7[1]
-        pname.value = pnames[6]
-        shield.style.color = p7[2]
-    }
-
-    if (mid.innerHTML == 8) {
-        life.innerHTML = p8[0]
-        shield.innerHTML = p8[1]
-        pname.value = pnames[7]
-        shield.style.color = p8[2]
-        right.style.display = 'none'
-    }
-
-    if (Number(life.innerHTML) <= 0) {
-        life.innerHTML = p1[0]
-        shield.innerHTML = p1[1]
-        pname.value = pnames[0]
-        shield.style.color = p1[2]
-        mid.innerHTML = 1
-        
-        if (Number(life.innerHTML) <= 0) {
-            life.innerHTML = p2[0]
-            shield.innerHTML = p2[1]
-            pname.value = pnames[0]
-            shield.style.color = p2[2]
-            mid.innerHTML = 2
-            
-            if (Number(life.innerHTML) <= 0) {
-                life.innerHTML = p3[0]
-                shield.innerHTML = p3[1]
-                pname.value = pnames[0]
-                shield.style.color = p3[2]
-                mid.innerHTML = 3
-                
-                if (Number(life.innerHTML) <= 0) {
-                    life.innerHTML = p4[0]
-                    shield.innerHTML = p4[1]
-                    pname.value = pnames[0]
-                    shield.style.color = p4[2]
-                    mid.innerHTML = 4
-                    
-                    if (Number(life.innerHTML) <= 0) {
-                        life.innerHTML = p5[0]
-                        shield.innerHTML = p5[1]
-                        pname.value = pnames[0]
-                        shield.style.color = p5[2]
-                        mid.innerHTML = 5
-                        
-                        if (Number(life.innerHTML) <= 0) {
-                            life.innerHTML = p6[0]
-                            shield.innerHTML = p6[1]
-                            pname.value = pnames[0]
-                            shield.style.color = p6[2]
-                            mid.innerHTML = 6
-                            
-                            if (Number(life.innerHTML) <= 0) {
-                                life.innerHTML = p7[0]
-                                shield.innerHTML = p7[1]
-                                pname.value = pnames[0]
-                                shield.style.color = p7[2]
-                                mid.innerHTML = 7
-                                
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    document.getElementById('miss').style.display = 'none'
-})
 
 // copy
 
