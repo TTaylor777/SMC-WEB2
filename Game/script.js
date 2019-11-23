@@ -70,9 +70,9 @@ var p8 = [100, 0, '']
 // var p1 = [100, 0, '']
 // var p2 = [100, 0, '']
 // var p3 = [100, 0, '']
-// var p4 = [100, 0, '']
+// var p4 = [0, 0, '']
 // var p5 = [0, 0, '']
-// var p6 = [100, 0, '']
+// var p6 = [0, 0, '']
 // var p7 = [100, 0, '']
 // var p8 = [0, 0, '']
 life.innerHTML = p1[0]
@@ -519,71 +519,58 @@ right.addEventListener('click',function(){
         mid.innerHTML = 1
     }
 
+    while ( Number(life.innerHTML) <= 0){
     if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
         life.innerHTML = p1[0]
         shield.innerHTML = p1[1]
         pname.value = pnames[0]
         shield.style.color = p1[2]
         mid.innerHTML = 1
-    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
+    } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
             life.innerHTML = p2[0]
             shield.innerHTML = p2[1]
             pname.value = pnames[1]
             shield.style.color = p2[2]
             mid.innerHTML = 2
-            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
+            } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
                 life.innerHTML = p3[0]
                 shield.innerHTML = p3[1]
                 pname.value = pnames[2]
                 shield.style.color = p3[2]
                 mid.innerHTML = 3
-                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
+                } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
                     life.innerHTML = p4[0]
                     shield.innerHTML = p4[1]
                     pname.value = pnames[3]
                     shield.style.color = p4[2]
                     mid.innerHTML = 4
-                    } else {  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
+                    } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
                             life.innerHTML = p5[0]
                             shield.innerHTML = p5[1]
                             pname.value = pnames[4]
                             shield.style.color = p5[2]
                             mid.innerHTML = 5
-                            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
+                            }  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
                                 life.innerHTML = p6[0]
                                 shield.innerHTML = p6[1]
                                 pname.value = pnames[5]
                                 shield.style.color = p6[2]
                                 mid.innerHTML = 6
-                                console.log('dude')
-                                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
+                                } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
                                     life.innerHTML = p7[0]
                                     shield.innerHTML = p7[1]
                                     pname.value = pnames[6]
                                     shield.style.color = p7[2]
                                     mid.innerHTML = 7
-                                    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
+                                    } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
                                         life.innerHTML = p8[0]
                                         shield.innerHTML = p8[1]
                                         pname.value = pnames[7]
                                         shield.style.color = p8[2]
                                         mid.innerHTML = 8
-                                        } else {if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
-                                            life.innerHTML = p1[0]
-                                            shield.innerHTML = p1[1]
-                                            pname.value = pnames[0]
-                                            shield.style.color = p1[2]
-                                            mid.innerHTML = 1
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    } 
-
+                                        }
+    }
+                                
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
             
@@ -1945,69 +1932,57 @@ aftermath.addEventListener('click',function(){
         mid.innerHTML = 1
     }
 
-    if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
-        life.innerHTML = p1[0]
-        shield.innerHTML = p1[1]
-        pname.value = pnames[0]
-        shield.style.color = p1[2]
-        mid.innerHTML = 1
-    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
-            life.innerHTML = p2[0]
-            shield.innerHTML = p2[1]
-            pname.value = pnames[1]
-            shield.style.color = p2[2]
-            mid.innerHTML = 2
-            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
-                life.innerHTML = p3[0]
-                shield.innerHTML = p3[1]
-                pname.value = pnames[2]
-                shield.style.color = p3[2]
-                mid.innerHTML = 3
-                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
-                    life.innerHTML = p4[0]
-                    shield.innerHTML = p4[1]
-                    pname.value = pnames[3]
-                    shield.style.color = p4[2]
-                    mid.innerHTML = 4
-                    } else {  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
-                            life.innerHTML = p5[0]
-                            shield.innerHTML = p5[1]
-                            pname.value = pnames[4]
-                            shield.style.color = p5[2]
-                            mid.innerHTML = 5
-                            } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
-                                life.innerHTML = p6[0]
-                                shield.innerHTML = p6[1]
-                                pname.value = pnames[5]
-                                shield.style.color = p6[2]
-                                mid.innerHTML = 6
-                                } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
-                                    life.innerHTML = p7[0]
-                                    shield.innerHTML = p7[1]
-                                    pname.value = pnames[6]
-                                    shield.style.color = p7[2]
-                                    mid.innerHTML = 7
-                                    } else { if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
-                                        life.innerHTML = p8[0]
-                                        shield.innerHTML = p8[1]
-                                        pname.value = pnames[7]
-                                        shield.style.color = p8[2]
-                                        mid.innerHTML = 8
-                                        } else {if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
-                                            life.innerHTML = p1[0]
-                                            shield.innerHTML = p1[1]
-                                            pname.value = pnames[0]
-                                            shield.style.color = p1[2]
-                                            mid.innerHTML = 1
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    } 
+    while ( Number(life.innerHTML) <= 0){
+        if (Number(life.innerHTML) <= 0 && mid.innerHTML == 8) {
+            life.innerHTML = p1[0]
+            shield.innerHTML = p1[1]
+            pname.value = pnames[0]
+            shield.style.color = p1[2]
+            mid.innerHTML = 1
+        } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 1) {
+                life.innerHTML = p2[0]
+                shield.innerHTML = p2[1]
+                pname.value = pnames[1]
+                shield.style.color = p2[2]
+                mid.innerHTML = 2
+                } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 2) {
+                    life.innerHTML = p3[0]
+                    shield.innerHTML = p3[1]
+                    pname.value = pnames[2]
+                    shield.style.color = p3[2]
+                    mid.innerHTML = 3
+                    } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 3) {
+                        life.innerHTML = p4[0]
+                        shield.innerHTML = p4[1]
+                        pname.value = pnames[3]
+                        shield.style.color = p4[2]
+                        mid.innerHTML = 4
+                        } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 4) {
+                                life.innerHTML = p5[0]
+                                shield.innerHTML = p5[1]
+                                pname.value = pnames[4]
+                                shield.style.color = p5[2]
+                                mid.innerHTML = 5
+                                }  if (Number(life.innerHTML) <= 0 && mid.innerHTML == 5) {
+                                    life.innerHTML = p6[0]
+                                    shield.innerHTML = p6[1]
+                                    pname.value = pnames[5]
+                                    shield.style.color = p6[2]
+                                    mid.innerHTML = 6
+                                    } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 6) {
+                                        life.innerHTML = p7[0]
+                                        shield.innerHTML = p7[1]
+                                        pname.value = pnames[6]
+                                        shield.style.color = p7[2]
+                                        mid.innerHTML = 7
+                                        } if (Number(life.innerHTML) <= 0 && mid.innerHTML == 7) {
+                                            life.innerHTML = p8[0]
+                                            shield.innerHTML = p8[1]
+                                            pname.value = pnames[7]
+                                            shield.style.color = p8[2]
+                                            mid.innerHTML = 8
+                                            }
+    }
 })
 
 
