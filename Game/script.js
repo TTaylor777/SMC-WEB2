@@ -165,7 +165,7 @@ var aftermath = document.getElementById('aftermath')
 var player1 = document.getElementById('player1')
 var player2 = document.getElementById('player2')
 
-var rng = Math.random() + .5
+var rng = Math.random()
 var multiplyer = 1
 var accuracy = 1
 
@@ -1731,7 +1731,6 @@ p8menu.addEventListener('click',function(){
     player1.innerHTML = p8menu.innerHTML
 
 })
-
 
 
 
