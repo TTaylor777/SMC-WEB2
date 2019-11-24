@@ -174,6 +174,8 @@ var mult = document.getElementById('MULT')
 
 var roll = 0
 
+var info = document.getElementById('info')
+
 fire.addEventListener('click',function(){
 
     if (document.getElementById('fireB').alt != 'on') {
@@ -754,6 +756,7 @@ left.addEventListener('click',function(){
 
 element.addEventListener('click',function(){
     
+    info.style.display = 'none'
     acc.innerHTML = ''
     multiplyer.innerHTML = ''
     mult.style.display = 'none'
@@ -1037,6 +1040,45 @@ elements.addEventListener('click',function(){
 
 })
 
+damage.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Deals damage to any player'
+})
+
+defense.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Creates a shield that blocks damage'
+})
+
+heal.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Restores health'
+})
+
+lifesteal.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Deals damage and heals you for the amount of damage dealt'
+})
+
+absorb.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Ceates a shield that can heal you'
+})
+
+reflect.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Creates a shield that can reflect damage'
+})
+
+repurpose.addEventListener('click',function(){
+    info.style.display = 'block'
+    info.innerHTML = 'Creates a shield that can heal you and reflect damage'
+})
+
+
+info.addEventListener('click',function(){
+    info.style.display = 'none'
+})
 
 ROLL.addEventListener('click',function(){
     
