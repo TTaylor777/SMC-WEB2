@@ -18,13 +18,37 @@ var elements = document.getElementById('elements')
 var card = document.getElementById('card')
 var home = document.getElementById('home')
 
+// single
 var damage = document.getElementById('damage')
 var defense = document.getElementById('defense')
+var combo = document.getElementById('combo')
 var heal = document.getElementById('heal')
-var lifesteal = document.getElementById('lifesteal')
-var reflect = document.getElementById('reflect')
-var absorb = document.getElementById('absorb')
+var xmultipler = document.getElementById('xmultiplyer')
+var reserve = document.getElementById('reserve')
+
+
+// double
+var reflect = document.getElementById('reflect') // 1,2
+var decay = document.getElementById('decay') // 1,3
+var lifesteal = document.getElementById('lifesteal') // 1,4
+var xdamage = document.getElementById('xdamage') // 1,5
+var damagereserve = document.getElementById('damagereserve') // 1,6
+var shieldregen = document.getElementById('shieldregen') // 2,3
+var absorb = document.getElementById('absorb') // 2,4
+var xshield = document.getElementById('xshield') // 2,5
+var shieldreserve = document.getElementById('shieldreserve') // 2,6
+var regen = document.getElementById('regen') // 3,4
+var growth = document.getElementById('growth') // 3,5
+var charge = document.getElementById('charge') // 3,6
+var xlife = document.getElementById('xlife') // 4,5
+var lifereserve = document.getElementById('lifereserve') // 4,6
+var xreserve = document.getElementById('xreserve') // 5,6
+
+
+
+
 var repurpose = document.getElementById('repurpose')
+
 
 var life = document.getElementById('life')
 var lplus = document.getElementById('life+')
@@ -820,6 +844,7 @@ element.addEventListener('click',function(){
 
 })
 
+//Border
 dice1.addEventListener('click',function(){
 
     dice1.style.border = '7px double black'
@@ -935,7 +960,6 @@ elements.addEventListener('click',function(){
 
     i = a * .01
 
-    console.log(i, x, a)
     while ( a > 25) {
         accuracy = accuracy - .01
         a -= i
@@ -1040,45 +1064,40 @@ elements.addEventListener('click',function(){
 
 })
 
+
+// INFO
 damage.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Deals damage to any player'
 })
-
 defense.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Creates a shield that blocks damage'
 })
-
 heal.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Restores health'
 })
-
 lifesteal.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Deals damage and heals you for the amount of damage dealt'
 })
-
 absorb.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Ceates a shield that can heal you'
 })
-
 reflect.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Creates a shield that can reflect damage'
 })
-
 repurpose.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Creates a shield that can heal you and reflect damage'
 })
-
-
 info.addEventListener('click',function(){
     info.style.display = 'none'
 })
+
 
 ROLL.addEventListener('click',function(){
     
@@ -1122,6 +1141,14 @@ ROLL.addEventListener('click',function(){
 
         damagemenu.style.display = 'block'
         document.getElementById('miss').innerHTML = 'Damage: ' + roll
+        p1menu.style.display = 'none'
+        p2menu.style.display = 'none'
+        p3menu.style.display = 'none'
+        p4menu.style.display = 'none'
+        p5menu.style.display = 'none'
+        p6menu.style.display = 'none'
+        p7menu.style.display = 'none'
+        p8menu.style.display = 'none'
 
         if (Number(p1[0]) > 0 && mid.innerHTML != 1){
 
@@ -1830,6 +1857,10 @@ aftermath.addEventListener('click',function(){
     document.getElementById('miss').style.display = 'none'
     document.getElementById('l').style.color = 'black'
     player1.innerHTML = ''
+    average.style.display = 'none'
+    min.style.display = 'none'
+    max.style.display = 'none'
+    acc.style.display = 'none'
 
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
