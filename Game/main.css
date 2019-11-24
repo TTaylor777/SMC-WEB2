@@ -51,6 +51,7 @@ main {
     border-top: 20px double black;
     height: auto;
     min-height: 667px;
+    position: relative;
 }
 
 #effect {
@@ -363,6 +364,21 @@ h5 {
     width: 90px;
 }
 
+#info {
+    font-family: 'Crimson Text', serif;
+    font-size: 35px;
+    padding: 10px;
+    border: 5px solid black;
+    background-image: url('homebg.png');
+    background-position: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0px;
+    width: 325px;
+    display: none;
+}
 
 /* #button1 {
     width: 70px;
