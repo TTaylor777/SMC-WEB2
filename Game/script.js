@@ -1323,15 +1323,6 @@ ROLL.addEventListener('click',function(){
         }
     }
 
-    if (reserve.style.display == 'inline-block'){
-        stat6.innerHTML = Number(stat6.innerHTML) + roll
-        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
-        stat6.style.backgroundColor = color6
-        document.getElementById('miss').innerHTML = roll
-        if (damage.style.display == 'none'){
-            window.scrollTo(0,0)
-        }
-    }
 
 
     if (mid.innerHTML == 1){
@@ -1485,6 +1476,16 @@ ROLL.addEventListener('click',function(){
     } else { 
         if (stat6.style.border == '3px double black'){
             stat6.innerHTML = 0
+        }
+    }
+
+    if (reserve.style.display == 'inline-block'){
+        stat6.innerHTML = Number(stat6.innerHTML) + roll
+        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
+        stat6.style.backgroundColor = color6
+        document.getElementById('miss').innerHTML = roll
+        if (damage.style.display == 'none'){
+            window.scrollTo(0,0)
         }
     }
 
