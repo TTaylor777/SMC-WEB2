@@ -1482,11 +1482,12 @@ ROLL.addEventListener('click',function(){
         document.getElementById('l').innerHTML = ''
         document.getElementById('s').innerHTML = ''
         document.getElementById('miss').innerHTML = '- X -'
+    } else { 
+        if (stat6.style.border == '3px double black'){
+            stat6.innerHTML = 0
+        }
     }
 
-    if (stat6.style.border == '3px double black'){
-        stat6.innerHTML = 0
-    }
 
 })
 
