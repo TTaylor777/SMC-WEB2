@@ -1484,6 +1484,10 @@ ROLL.addEventListener('click',function(){
         document.getElementById('miss').innerHTML = '- X -'
     }
 
+    if (stat6.style.border == '3px double black'){
+        stat6.innerHTML = 0
+    }
+
 })
 
 
