@@ -1304,7 +1304,7 @@ ROLL.addEventListener('click',function(){
     }
 
     if (combo.style.display == 'inline-block'){
-        stat3.innerHTML = Number(stat3.innerHTML) + (roll / 10)
+        stat3.innerHTML = Number(stat3.innerHTML) + (roll / 7)
         stat3.innerHTML = Number(stat3.innerHTML).toFixed(0)
         document.getElementById('miss').innerHTML = roll
         stat3.style.backgroundColor = color3
