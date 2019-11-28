@@ -111,6 +111,10 @@ var left = document.getElementById('left')
 var mid = document.getElementById('mid')
 var right = document.getElementById('right')
 
+var stat3mini = document.getElementById('stat3mini')
+var stat5mini = document.getElementById('stat5mini')
+var stat6mini = document.getElementById('stat6mini')
+
 var ROLL = document.getElementById('rollbutton')
 var ROLLh5 = document.getElementById('ROLL')
 var damagemenu = document.getElementById('damagemenu')
@@ -148,6 +152,7 @@ var smenu7 = document.getElementById('smenu7')
 var nmenu8 = document.getElementById('nmenu8')
 var lmenu8 = document.getElementById('lmenu8')
 var smenu8 = document.getElementById('smenu8')
+
 
 var menuitem = document.querySelectorAll('.menuitem')
 
@@ -194,6 +199,17 @@ var mult = document.getElementById('MULT')
 var roll = 0
 
 var info = document.getElementById('info')
+
+// mid.addEventListener('click',function(){
+
+//     if (document.getElementById('fireB').alt != 'on') {
+//         document.getElementById('fireB').src = 'fireB.png'
+//         document.getElementById('fireB').alt = 'on'
+//     } else {
+//         document.getElementById('fireB').src = 'voidB.png'
+//         document.getElementById('fireB').alt = 'off'
+//     }
+// })
 
 fire.addEventListener('click',function(){
 
@@ -999,12 +1015,12 @@ element.addEventListener('click',function(){
 
     //Balance Equasion
     console.log(dmin)
-    x = avg * 1
+    x = avg * (rng * 1.5)
     a = Number(avg)
 
     if (avg != 0){
     while ( a < 25 ) {
-        multiplyer += 1
+        multiplyer += (rng * 1.5)
         a += x
     }
 
@@ -1153,6 +1169,12 @@ info.addEventListener('click',function(){
 
 ROLL.addEventListener('click',function(){
     
+    stat3mini.style.backgroundColor = 'rgb(255,255,255)'
+    stat5mini.style.backgroundColor = 'rgb(255,255,255)'
+    stat6mini.style.backgroundColor = 'rgb(255,255,255)'
+    document.getElementById('l').style.color = 'rgb(0,0,0)'
+    document.getElementById('s').style.color = 'rgb(0,0,0)'
+    
     player2.style.display = 'none'
     player1.style.display = 'none'
 
@@ -1288,6 +1310,7 @@ ROLL.addEventListener('click',function(){
     if (defense.style.display == 'inline-block'){
         shield.innerHTML = Number(shield.innerHTML) + roll
         document.getElementById('miss').innerHTML = roll
+        document.getElementById('s').style.color = color2
         shield.style.color = color2
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
@@ -1298,16 +1321,18 @@ ROLL.addEventListener('click',function(){
         life.innerHTML = Number(life.innerHTML) + roll
         document.getElementById('miss').innerHTML = roll
         life.style.color = color4
+        document.getElementById('l').style.color = color4
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
         }
     }
 
     if (combo.style.display == 'inline-block'){
-        stat3.innerHTML = Number(stat3.innerHTML) + (roll / 7)
+        stat3.innerHTML = Number(stat3.innerHTML) + (roll / 4)
         stat3.innerHTML = Number(stat3.innerHTML).toFixed(0)
         document.getElementById('miss').innerHTML = roll
         stat3.style.backgroundColor = color3
+        stat3mini.style.backgroundColor = color3
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
         }
@@ -1317,6 +1342,7 @@ ROLL.addEventListener('click',function(){
         stat5.innerHTML = Number(stat5.innerHTML) + (roll / 100)
         stat5.innerHTML = Number(stat5.innerHTML).toFixed(2)
         stat5.style.backgroundColor = color5
+        stat5mini.style.backgroundColor = color5
         document.getElementById('miss').innerHTML = roll
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
@@ -1468,11 +1494,20 @@ ROLL.addEventListener('click',function(){
 
     if (roll == 0) {
         window.scrollTo(0,0)
-        player1.innerHTML = ''
+        player1.style.display = 'none'
+        player2.style.display = 'none'
         document.getElementById('n').innerHTML = ''
         document.getElementById('l').innerHTML = ''
         document.getElementById('s').innerHTML = ''
-        document.getElementById('miss').innerHTML = '- X -'
+        life.style.color = 'rgb(0,0,0)'
+        shield.style.color = 'rgb(0,0,0)'
+        stat3.style.backgroundColor = 'rgb(255,255,255)'
+        stat5.style.backgroundColor = 'rgb(255,255,255)'
+        stat6.style.backgroundColor = 'rgb(255,255,255)'
+        stat3mini.style.backgroundColor = 'rgb(255,255,255)'
+        stat5mini.style.backgroundColor = 'rgb(255,255,255)'
+        stat6mini.style.backgroundColor = 'rgb(255,255,255)'
+        document.getElementById('miss').innerHTML = 'X'
     } else { 
         if (stat6.style.border == '3px double black'){
             stat6.innerHTML = 0
@@ -1483,6 +1518,7 @@ ROLL.addEventListener('click',function(){
         stat6.innerHTML = Number(stat6.innerHTML) + roll
         stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
         stat6.style.backgroundColor = color6
+        stat6mini.style.backgroundColor = color6
         document.getElementById('miss').innerHTML = roll
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
@@ -1630,6 +1666,10 @@ damagemenu.addEventListener('click',function(){
     window.scrollTo(0,0)
 
     document.getElementById('l').innerHTML = life.innerHTML
+    document.getElementById('s').innerHTML = shield.innerHTML
+    stat3mini.innerHTML = stat3.innerHTML
+    stat5mini.innerHTML = stat5.innerHTML
+    stat6mini.innerHTML = stat6.innerHTML
     
     
     menuitem[0].style.display = 'none'
