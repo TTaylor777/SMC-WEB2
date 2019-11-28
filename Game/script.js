@@ -58,7 +58,7 @@ var reflectcolor = 'rgb(255, 0, 0)'
 var absorbcolor = 'rgb(37, 255, 0)'
 var lifestealcolor = 'rgb(255, 0, 255)'
 var repurposecolor = 'rgb(255, 224, 144)'
-var defensecolor = 'rgb(146, 35, 255)'
+var defensecolor = 'rgb(0,0,0)'
 var color1 = 'rgb(255, 51, 51)'
 var color2 = 'rgb(255, 228, 105)'
 var color3 = 'rgb(44, 255, 136)'
@@ -912,6 +912,26 @@ stat6.addEventListener('click',function(){
         stat6.style.border = '3px solid black'
     }
 
+    fireB.src = 'voidB.png'
+    fireB.alt = 'off'
+            
+    earthB.src = 'voidB.png'
+    earthB.alt = 'off'
+        
+    airB.src = 'voidB.png'
+    airB.alt = 'off'
+        
+    waterB.src = 'voidB.png'
+    waterB.alt = 'off'
+        
+    spaceB.src = 'voidB.png'
+    spaceB.alt = 'off'
+        
+    timeB.src = 'voidB.png'
+    timeB.alt = 'off'
+
+    ROLL.style.display = 'none'
+
 })
 
 element.addEventListener('click',function(){
@@ -1314,6 +1334,7 @@ ROLL.addEventListener('click',function(){
         shield.style.color = color2
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
+            ROLL.style.display = 'none'
         }
     }
 
@@ -1324,6 +1345,7 @@ ROLL.addEventListener('click',function(){
         document.getElementById('l').style.color = color4
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
+            ROLL.style.display = 'none'
         }
     }
 
@@ -1335,6 +1357,7 @@ ROLL.addEventListener('click',function(){
         stat3mini.style.backgroundColor = color3
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
+            ROLL.style.display = 'none'
         }
     }
 
@@ -1346,10 +1369,21 @@ ROLL.addEventListener('click',function(){
         document.getElementById('miss').innerHTML = roll
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
+            ROLL.style.display = 'none'
         }
     }
 
-
+    if (reserve.style.display == 'inline-block'){
+        stat6.innerHTML = Number(stat6.innerHTML) + roll
+        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
+        stat6.style.backgroundColor = color6
+        stat6mini.style.backgroundColor = color6
+        document.getElementById('miss').innerHTML = roll
+        if (damage.style.display == 'none'){
+            window.scrollTo(0,0)
+            ROLL.style.display = 'none'
+        }
+    }
 
     if (mid.innerHTML == 1){
         p1[0] = life.innerHTML
@@ -1357,120 +1391,53 @@ ROLL.addEventListener('click',function(){
         if (defense.style.display == 'inline-block'){
             smenu1.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu1.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu1.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu1.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 2){
         p2[0] = life.innerHTML
         p2[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu2.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu2.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu2.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu2.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 3){
         p3[0] = life.innerHTML
         p3[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu3.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu3.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu3.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu3.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 4){
         p4[0] = life.innerHTML
         p4[1] = shield.innerHTML
-        if (defense.style.display == 'inline-block'){
-            smenu4.style.color = defensecolor
-        }
-        if (reflect.style.display == 'inline-block'){
-            smenu4.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu4.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu4.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 5){
         p5[0] = life.innerHTML
         p5[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu5.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu5.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu5.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu5.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 6){
         p6[0] = life.innerHTML
         p6[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu6.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu6.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu6.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu6.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 7){
         p7[0] = life.innerHTML
         p7[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu7.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu7.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu7.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu7.style.color = repurposecolor
-        }
+        
     } if (mid.innerHTML == 8){
         p8[0] = life.innerHTML
         p8[1] = shield.innerHTML
         if (defense.style.display == 'inline-block'){
             smenu8.style.color = defensecolor
         }
-        if (reflect.style.display == 'inline-block'){
-            smenu8.style.color = reflectcolor
-        }
-        if (absorb.style.display == 'inline-block'){
-            smenu8.style.color = absorbcolor
-        }
-        if (repurpose.style.display == 'inline-block'){
-            smenu8.style.color = repurposecolor
-        }
+        
     }
     
     if (Number(shield.innerHTML) == 0){
@@ -1487,10 +1454,6 @@ ROLL.addEventListener('click',function(){
     document.getElementById('s').style.color = shield.style.color
 
     
-
-    if (heal.style.display == 'inline-block' || shield.style.display == 'inline-block' || absorb.style.display == 'inline-block'|| reflect.style.display == 'inline-block' || repurpose.style.display == 'inline-block') {
-        player1.innerHTML = ''
-    }
 
     if (roll == 0) {
         window.scrollTo(0,0)
@@ -1514,16 +1477,7 @@ ROLL.addEventListener('click',function(){
         }
     }
 
-    if (reserve.style.display == 'inline-block'){
-        stat6.innerHTML = Number(stat6.innerHTML) + roll
-        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
-        stat6.style.backgroundColor = color6
-        stat6mini.style.backgroundColor = color6
-        document.getElementById('miss').innerHTML = roll
-        if (damage.style.display == 'none'){
-            window.scrollTo(0,0)
-        }
-    }
+    
 
 
 })
@@ -1663,6 +1617,7 @@ damagemenu.addEventListener('click',function(){
     damagemenu.style.display = 'none'
     player1.style.display = 'flex'
     ROLLh5.innerHTML = 'ROLL'
+    ROLL.style.display = 'none'
     window.scrollTo(0,0)
 
     document.getElementById('l').innerHTML = life.innerHTML
