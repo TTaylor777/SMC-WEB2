@@ -948,10 +948,10 @@ element.addEventListener('click',function(){
     info.style.display = 'none'
     acc.innerHTML = ''
     multiplyer.innerHTML = ''
-    acc.style.display = 'none'
-    min.style.display = 'none'
-    average.style.display = 'none'
-    max.style.display = 'none'
+    average.style.display = 'inline-block'
+    min.style.display = 'inline-block'
+    max.style.display = 'inline-block'
+    acc.style.display = 'block'
     ROLLh5.innerHTML = 'ROLL'
     ROLLh5.style.color = 'rgb(0,0,0)'
     stat3.style.backgroundColor = 'rgb(255,255,255)'
@@ -1051,10 +1051,6 @@ element.addEventListener('click',function(){
         a -= i
     }}
 
-    average.style.display = 'inline-block'
-    min.style.display = 'inline-block'
-    max.style.display = 'inline-block'
-    acc.style.display = 'block'
 
     if (fireB.alt == 'on'){
         damage.style.display = 'inline-block'
@@ -1112,26 +1108,26 @@ element.addEventListener('click',function(){
     
 
     avg *= Number(multiplyer)
+    avg *= Number(stat5.innerHTML) 
     if (stat6.style.border == '3px double black') {
         avg += Number(stat6.innerHTML)
-    }
-    avg /= Number(dmin2)
-    avg *= Number(stat5.innerHTML) 
+    } 
     avg += Number(stat3.innerHTML)
+    avg /= Number(dmin2)
     dmin *= Number(multiplyer)
+    dmin *= Number(stat5.innerHTML) 
     if (stat6.style.border == '3px double black') {
         dmin += Number(stat6.innerHTML)
-    }
-    dmin /= Number(dmin2)
-    dmin *= Number(stat5.innerHTML) 
+    } 
     dmin += Number(stat3.innerHTML)
+    dmin /= Number(dmin2)
     dmax *= Number(multiplyer)
+    dmax *= Number(stat5.innerHTML) 
     if (stat6.style.border == '3px double black') {
         dmax += Number(stat6.innerHTML)
-    }
-    dmax /= Number(dmin2)
-    dmax *= Number(stat5.innerHTML) 
+    } 
     dmax += Number(stat3.innerHTML)
+    dmax /= Number(dmin2)
 
     min.innerHTML = dmin.toFixed(0)
     average.innerHTML = Math.round(Number(avg))
@@ -1230,12 +1226,12 @@ ROLL.addEventListener('click',function(){
     // Roll Calculation
     
     roll *= Number(multiplyer)
+    roll *= Number(stat5.innerHTML)
     if (stat6.style.border == '3px double black') {
         roll += Number(stat6.innerHTML)
-    }
-    roll /= dmin2
-    roll *= Number(stat5.innerHTML) 
+    } 
     roll += Number(stat3.innerHTML)
+    roll /= dmin2
 
     if (Math.random() > accuracy ) {
         roll = roll * 0
