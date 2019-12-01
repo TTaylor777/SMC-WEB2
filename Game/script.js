@@ -966,24 +966,6 @@ element.addEventListener('click',function(){
         max.style.display = 'none'
         acc.style.display = 'none'
 
-    } else {
-    
-
-        // //Balance Equasion
-
-        // i = avg * .01
-        // x = avg * .5
-
-        // while ( avg < 25 ) {
-        //     multiplyer = multiplyer + 0.5
-        //     avg = avg += x
-        // }
-    
-        // while ( avg > 25) {
-        //     accuracy = accuracy - .01
-        //     avg -= i
-        // }
-
     }
     
     damage.style.display = 'none'
@@ -1035,12 +1017,12 @@ element.addEventListener('click',function(){
 
     //Balance Equasion
     console.log(dmin)
-    x = avg * (rng * 1.5)
+    x = avg * rng
     a = Number(avg)
 
     if (avg != 0){
     while ( a < 25 ) {
-        multiplyer += (rng * 1.5)
+        multiplyer += rng
         a += x
     }
 
@@ -1369,17 +1351,7 @@ ROLL.addEventListener('click',function(){
         }
     }
 
-    if (reserve.style.display == 'inline-block'){
-        stat6.innerHTML = Number(stat6.innerHTML) + roll
-        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
-        stat6.style.backgroundColor = color6
-        stat6mini.style.backgroundColor = color6
-        document.getElementById('miss').innerHTML = roll
-        if (damage.style.display == 'none'){
-            window.scrollTo(0,0)
-            ROLL.style.display = 'none'
-        }
-    }
+    
 
     if (mid.innerHTML == 1){
         p1[0] = life.innerHTML
@@ -1450,7 +1422,6 @@ ROLL.addEventListener('click',function(){
     document.getElementById('s').style.color = shield.style.color
 
     
-
     if (roll == 0) {
         window.scrollTo(0,0)
         player1.style.display = 'none'
@@ -1473,8 +1444,20 @@ ROLL.addEventListener('click',function(){
         }
     }
 
-    
-
+    if (reserve.style.display == 'inline-block'){
+        stat6.innerHTML = Number(stat6.innerHTML) + roll
+        stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
+        stat6.style.backgroundColor = color6
+        stat6mini.style.backgroundColor = color6
+        document.getElementById('miss').innerHTML = roll
+        if (damage.style.display == 'none'){
+            window.scrollTo(0,0)
+            ROLL.style.display = 'none'
+        }
+        if (roll == 0) {
+            document.getElementById('miss').innerHTML = 'X'
+        }
+    }
 
 })
 
