@@ -1,0 +1,170 @@
+@import url('layout.css');
+
+/* 
+font-family: 'Merriweather', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+nav ul li {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    margin: 0px;
+    list-style: none;
+    border-bottom: 2px solid rgb(150,150,150);
+    padding: 15px 0px;
+    text-align: right;
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul {
+    position: absolute;
+    padding: 5px 20px;
+    margin: 0px;
+    top: 76px;
+    right: 0px;
+    display: none;
+    background-color: white;
+    border: 5px double rgb(150,150,150);
+    z-index: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(46, 46, 46);
+    padding: 5px;
+}
+
+.HL {
+    color: white;
+    background-color: rgb(100,100,100);
+}
+
+#HBM {
+    position: absolute;
+    width: 50px;
+    border: 3px solid black;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.mainimg {
+    margin-top: 30px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    display: inline-block;
+    border-bottom: 2px solid rgb(150,150,150);
+}
+
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: left;
+    color: rgb(100,100,100);
+}
+
+.flex-about {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.img2 {
+    width: 39%;
+}
+
+.missionStatement {
+    padding: 10px;
+}
+
+.background {
+    border-top: 2px solid rgb(150,150,150);
+    margin: 15px;
+}
+
+.contactForm {
+    width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+label {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    display: block;
+    margin: 10px 0px;
+}
+
+input, textarea {
+    border: 3px solid rgb(100,100,100);
+    width: 285px;
+    padding: 5px;
+}
+
+.submit {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100px;
+}
+
+.info {
+    position: relative;
+    border-top: 2px solid rgb(150,150,150);
+    margin: 30px;
+    width: 315px;
+    left: 50%;
+    transform: translateX(-60%);
+}
+
+.contactimg {
+    position: absolute;
+    width: 145px;
+    top: 10px;
+    right: 0px;
+}
+
+h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    margin: 0px;
+    list-style: none;
+    padding: 10px;
+}
+
+#donate {
+    width: 150px;
+    border: 5px double rgb(100,100,100);
+    background-color: rgb(199, 199, 199);
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.donateMessage {
+    padding: 15px;
+}
+
+#donateForm {
+    display: none;
+}
+
+.legal {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    color: rgb(150,150,150);
+}
