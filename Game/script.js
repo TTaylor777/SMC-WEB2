@@ -60,7 +60,7 @@ var lifestealcolor = 'rgb(255, 0, 255)'
 var repurposecolor = 'rgb(255, 224, 144)'
 var defensecolor = 'rgb(0,0,0)'
 var color1 = 'rgb(255, 51, 51)'
-var color2 = 'rgb(255, 228, 105)'
+var color2 = 'rgb(255, 238, 93)'
 var color3 = 'rgb(44, 255, 136)'
 var color4 = 'rgb(50, 78, 255)'
 var color5 = 'rgb(153, 79, 255)'
@@ -430,12 +430,21 @@ right.addEventListener('click',function(){
     acc.style.display = 'none'
     ROLL.style.display = 'none'
     info.style.display = 'none'
-    stat3.style.backgroundColor = 'rgb(255,255,255)'
-    stat5.style.backgroundColor = 'rgb(255,255,255)'
-    stat6.style.backgroundColor = 'rgb(255,255,255)'
+    stat3.style.backgroundColor = 'rgb(0,0,0)'
+    stat5.style.backgroundColor = 'rgb(0,0,0)'
+    stat6.style.backgroundColor = 'rgb(0,0,0)'
+
+    stat3.style.Color = 'rgb(255,255,255)'
+    stat5.style.Color = 'rgb(255,255,255)'
+    stat6.style.Color = 'rgb(255,255,255)'
+    stat3mini.style.Color = 'rgb(255,255,255)'
+    stat5mini.style.Color = 'rgb(255,255,255)'
+    stat6mini.style.Color = 'rgb(255,255,255)'
+
     life.style.color = 'rgb(0,0,0)'
     shield.style.color = 'rgb(0,0,0)'
-    stat6.style.border = '3px solid black'
+    stat6.style.color = 'rgb(255,255,255)'
+    stat6.style.backgroundColor = 'rgb(0,0,0)'
 
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
@@ -704,12 +713,19 @@ left.addEventListener('click',function(){
     acc.style.display = 'none'
     ROLL.style.display = 'none'
     info.style.display = 'none'
-    stat3.style.backgroundColor = 'rgb(255,255,255)'
-    stat5.style.backgroundColor = 'rgb(255,255,255)'
-    stat6.style.backgroundColor = 'rgb(255,255,255)'
+    stat3.style.backgroundColor = 'rgb(0,0,0)'
+    stat5.style.backgroundColor = 'rgb(0,0,0)'
+    stat6.style.backgroundColor = 'rgb(0,0,0)'
+    stat3.style.Color = 'rgb(255,255,255)'
+    stat5.style.Color = 'rgb(255,255,255)'
+    stat6.style.Color = 'rgb(255,255,255)'
+    stat3mini.style.Color = 'rgb(255,255,255)'
+    stat5mini.style.Color = 'rgb(255,255,255)'
+    stat6mini.style.Color = 'rgb(255,255,255)'
     life.style.color = 'rgb(0,0,0)'
     shield.style.color = 'rgb(0,0,0)'
-    stat6.style.border = '3px solid black'
+    stat6.style.color = 'rgb(255,255,255)'
+    stat6.backgroundColor = 'rgb(0,0,0)'
 
     fireB.src = 'voidB.png'
     fireB.alt = 'off'
@@ -906,10 +922,12 @@ left.addEventListener('click',function(){
 
 stat6.addEventListener('click',function(){
     
-    if (stat6.style.border != '3px double black') {
-        stat6.style.border = '3px double black'
+    if (stat6.style.color == 'rgb(0, 0, 0)') {
+        stat6.style.color = 'rgb(255,255,255)'
+        stat6.style.backgroundColor = 'rgb(0,0,0)'
     } else {
-        stat6.style.border = '3px solid black'
+        stat6.style.color = 'rgb(0,0,0)'
+        stat6.style.backgroundColor = color6
     }
 
     fireB.src = 'voidB.png'
@@ -954,9 +972,9 @@ element.addEventListener('click',function(){
     acc.style.display = 'block'
     ROLLh5.innerHTML = 'ROLL'
     ROLLh5.style.color = 'rgb(0,0,0)'
-    stat3.style.backgroundColor = 'rgb(255,255,255)'
-    stat5.style.backgroundColor = 'rgb(255,255,255)'
-    stat6.style.backgroundColor = 'rgb(255,255,255)'
+    stat3mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat5mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat6mini.style.backgroundColor = 'rgb(0,0,0)'
 
 
     if (fireB.alt == 'off' && earthB.alt == 'off' && airB.alt == 'off' && waterB.alt == 'off' && spaceB.alt == 'off' && timeB.alt == 'off'){
@@ -1091,21 +1109,21 @@ element.addEventListener('click',function(){
 
     avg *= Number(multiplyer)
     avg *= Number(stat5.innerHTML) 
-    if (stat6.style.border == '3px double black') {
+    if (stat6.style.color == 'rgb(0, 0, 0)') {
         avg += Number(stat6.innerHTML)
     } 
     avg += Number(stat3.innerHTML)
     avg /= Number(dmin2)
     dmin *= Number(multiplyer)
     dmin *= Number(stat5.innerHTML) 
-    if (stat6.style.border == '3px double black') {
+    if (stat6.style.color == 'rgb(0, 0, 0)') {
         dmin += Number(stat6.innerHTML)
     } 
     dmin += Number(stat3.innerHTML)
     dmin /= Number(dmin2)
     dmax *= Number(multiplyer)
     dmax *= Number(stat5.innerHTML) 
-    if (stat6.style.border == '3px double black') {
+    if (stat6.style.color == 'rgb(0, 0, 0)') {
         dmax += Number(stat6.innerHTML)
     } 
     dmax += Number(stat3.innerHTML)
@@ -1144,22 +1162,6 @@ reserve.addEventListener('click',function(){
     info.style.display = 'block'
     info.innerHTML = 'Adds to your reserve, click to use'
 })
-lifesteal.addEventListener('click',function(){
-    info.style.display = 'block'
-    info.innerHTML = 'Deals damage and heals you for the amount of damage dealt'
-})
-absorb.addEventListener('click',function(){
-    info.style.display = 'block'
-    info.innerHTML = 'Ceates a shield that can heal you'
-})
-reflect.addEventListener('click',function(){
-    info.style.display = 'block'
-    info.innerHTML = 'Creates a shield that can reflect damage'
-})
-repurpose.addEventListener('click',function(){
-    info.style.display = 'block'
-    info.innerHTML = 'Creates a shield that can heal you and reflect damage'
-})
 info.addEventListener('click',function(){
     info.style.display = 'none'
 })
@@ -1167,9 +1169,16 @@ info.addEventListener('click',function(){
 
 ROLL.addEventListener('click',function(){
     
-    stat3mini.style.backgroundColor = 'rgb(255,255,255)'
-    stat5mini.style.backgroundColor = 'rgb(255,255,255)'
-    stat6mini.style.backgroundColor = 'rgb(255,255,255)'
+    stat3.style.backgroundColor = 'rgb(0,0,0)'
+    stat5.style.backgroundColor = 'rgb(0,0,0)'
+    stat3mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat5mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat6mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat3.style.color = 'rgb(255,255,255)'
+    stat5.style.color = 'rgb(255,255,255)'
+    stat3mini.style.color = 'rgb(255,255,255)'
+    stat5mini.style.color = 'rgb(255,255,255)'
+    stat6mini.style.color = 'rgb(255,255,255)'
     document.getElementById('l').style.color = 'rgb(0,0,0)'
     document.getElementById('s').style.color = 'rgb(0,0,0)'
     
@@ -1209,7 +1218,7 @@ ROLL.addEventListener('click',function(){
     
     roll *= Number(multiplyer)
     roll *= Number(stat5.innerHTML)
-    if (stat6.style.border == '3px double black') {
+    if (stat6.style.color == 'rgb(0, 0, 0)') {
         roll += Number(stat6.innerHTML)
     } 
     roll += Number(stat3.innerHTML)
@@ -1333,6 +1342,8 @@ ROLL.addEventListener('click',function(){
         document.getElementById('miss').innerHTML = roll
         stat3.style.backgroundColor = color3
         stat3mini.style.backgroundColor = color3
+        stat3.style.color = 'rgb(0,0,0)'
+        stat3mini.style.color = 'rgb(0,0,0)'
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
             ROLL.style.display = 'none'
@@ -1340,10 +1351,12 @@ ROLL.addEventListener('click',function(){
     }
 
     if (scale.style.display == 'inline-block'){
-        stat5.innerHTML = Number(stat5.innerHTML) + (roll / 100)
+        stat5.innerHTML = Number(stat5.innerHTML) + (roll / 130)
         stat5.innerHTML = Number(stat5.innerHTML).toFixed(2)
         stat5.style.backgroundColor = color5
         stat5mini.style.backgroundColor = color5
+        stat5.style.color = 'rgb(0,0,0)'
+        stat5mini.style.color = 'rgb(0,0,0)'
         document.getElementById('miss').innerHTML = roll
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
@@ -1431,15 +1444,15 @@ ROLL.addEventListener('click',function(){
         document.getElementById('s').innerHTML = ''
         life.style.color = 'rgb(0,0,0)'
         shield.style.color = 'rgb(0,0,0)'
-        stat3.style.backgroundColor = 'rgb(255,255,255)'
-        stat5.style.backgroundColor = 'rgb(255,255,255)'
-        stat6.style.backgroundColor = 'rgb(255,255,255)'
-        stat3mini.style.backgroundColor = 'rgb(255,255,255)'
-        stat5mini.style.backgroundColor = 'rgb(255,255,255)'
-        stat6mini.style.backgroundColor = 'rgb(255,255,255)'
+        stat3.style.backgroundColor = 'rgb(0,0,0)'
+        stat5.style.backgroundColor = 'rgb(0,0,0)'
+        stat6.style.backgroundColor = 'rgb(0,0,0)'
+        stat3mini.style.backgroundColor = 'rgb(0,0,0)'
+        stat5mini.style.backgroundColor = 'rgb(0,0,0)'
+        stat6mini.style.backgroundColor = 'rgb(0,0,0)'
         document.getElementById('miss').innerHTML = 'X'
     } else { 
-        if (stat6.style.border == '3px double black'){
+        if (stat6.style.color == 'rgb(0, 0, 0)'){
             stat6.innerHTML = 0
         }
     }
@@ -1449,6 +1462,7 @@ ROLL.addEventListener('click',function(){
         stat6.innerHTML = Number(stat6.innerHTML).toFixed(0)
         stat6.style.backgroundColor = color6
         stat6mini.style.backgroundColor = color6
+        stat6.style.color = 'rgb(0,0,0)'
         document.getElementById('miss').innerHTML = roll
         if (damage.style.display == 'none'){
             window.scrollTo(0,0)
@@ -1655,12 +1669,22 @@ aftermath.addEventListener('click',function(){
     acc.style.display = 'none'
     ROLL.style.display = 'none'
     info.style.display = 'none'
-    stat3.style.backgroundColor = 'rgb(255,255,255)'
-    stat5.style.backgroundColor = 'rgb(255,255,255)'
-    stat6.style.backgroundColor = 'rgb(255,255,255)'
+    stat3.style.backgroundColor = 'rgb(0,0,0)'
+    stat5.style.backgroundColor = 'rgb(0,0,0)'
+    stat6.style.backgroundColor = 'rgb(0,0,0)'
+    stat3mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat5mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat6mini.style.backgroundColor = 'rgb(0,0,0)'
+    stat3.style.color = 'rgb(255,255,255)'
+    stat5.style.color = 'rgb(255,255,255)'
+    stat6.style.color = 'rgb(255,255,255)'
+    stat3mini.style.color = 'rgb(255,255,255)'
+    stat5mini.style.color = 'rgb(255,255,255)'
+    stat6mini.style.color = 'rgb(255,255,255)'
     life.style.color = 'rgb(0,0,0)'
     shield.style.color = 'rgb(0,0,0)'
-    stat6.style.border = '3px solid black'
+    stat6.style.color = 'rgb(255,255,255)'
+    stat6.style.backgroundColor = 'rgb(0, 0, 0)'
 
     lmenu1.style.color = 'rgb(0,0,0)'
     lmenu2.style.color = 'rgb(0,0,0)'
@@ -1924,6 +1948,58 @@ aftermath.addEventListener('click',function(){
     combo.style.display = 'none'
     scale.style.display = 'none'
     reserve.style.display = 'none'
+
+    p = 0
+
+    if ( Number(p1[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p2[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p3[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p4[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p5[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p6[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p7[0]) > 0 ) {
+        p += 1
+    }
+    if ( Number(p8[0]) > 0 ) {
+        p += 1
+    }
+    if ( p == 1 ) {
+        player1.style.display = 'none'
+        player2.style.display = 'none'
+        aftermath.style.display = 'block'
+        document.getElementById('miss').style.display = 'block'
+        document.getElementById('miss').innerHTML = 'Winner!'
+        document.getElementById('miss').style.width = '200px'
+        home.style.backgroundImage = "url('elementbg.png')"
+        shield.style.color = color2
+        stat3.style.backgroundColor = color3
+        life.style.color = color4
+        stat5.style.backgroundColor = color5
+        stat6.style.backgroundColor = color6
+        card.style.display = 'none'
+        element.style.display = 'none'
+        pname.style.color = 'rgb(255,255,255)'
+        pname.style.height = '125px'
+        pname.style.fontSize = '70px'
+        pname.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+        lplus.style.visibility = 'hidden'
+        lminus.style.visibility = 'hidden'
+        left.style.display = 'none'
+        right.style.display = 'none'
+    }
+    
 })
 
 
