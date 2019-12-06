@@ -195,6 +195,8 @@ h5 {
     bottom: 3.5%;
     width: 375px;
     height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #combo, #scale, #reserve, #damage, #heal, #defense, #absorb, #lifesteal, #reflect, #replayernaurpose {
