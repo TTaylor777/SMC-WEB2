@@ -1447,10 +1447,15 @@ ROLL.addEventListener('click',function(){
         stat3.style.backgroundColor = 'rgb(0,0,0)'
         stat5.style.backgroundColor = 'rgb(0,0,0)'
         stat6.style.backgroundColor = 'rgb(0,0,0)'
+        stat3.style.color = 'rgb(255,255,255)'
+        stat5.style.color = 'rgb(255,255,255)'
+        stat6.style.color = 'rgb(255,255,255)'
         stat3mini.style.backgroundColor = 'rgb(0,0,0)'
         stat5mini.style.backgroundColor = 'rgb(0,0,0)'
         stat6mini.style.backgroundColor = 'rgb(0,0,0)'
         document.getElementById('miss').innerHTML = 'X'
+        damagemenu.style.display = 'none'
+        ROLL.style.display = 'none'
     } else { 
         if (stat6.style.color == 'rgb(0, 0, 0)'){
             stat6.innerHTML = 0
