@@ -1,0 +1,183 @@
+body {
+   margin: 0px; 
+}
+
+.CLEAR {
+    clear: both;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media(min-width: 650px) {
+    main #bank {
+        text-align: center;
+        margin: 0px 2vw;
+        position: unset;
+        left: unset;
+        top: unset;
+        transform: unset;
+        bottom: unset;
+        border-bottom: 7px double black;
+        align-self: center;
+    }
+    
+    main #rewardtotal {
+        text-align: center;
+        margin: 0px 2vw;
+        position: unset;
+        right: unset;
+        left: unset;
+        bottom: unset;
+        transform: unset;
+        border-bottom: 4px solid black;
+        top: 50%;
+        align-self: center;
+    }
+
+    .playarea .mid {
+        justify-content: space-between;
+    }
+
+    .mid #tier {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    main .mid, main .top, main .bot {
+        height: 33.33vh;
+    }
+
+    main .minigame {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+        border-left: 20px double black;
+        border-right: 20px double black;
+        border-bottom: none;
+        width:  50vw;
+    }
+
+    main #left {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-right: 200px;
+    }
+
+    main #right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: none;
+        margin-left: 100px;
+    }
+
+    
+}
+
+
+@media(max-height: 600px) {
+    
+    main #bank {
+        text-align: center;
+        margin: 0px 2vw;
+        position: unset;
+        left: unset;
+        top: unset;
+        transform: unset;
+        bottom: unset;
+        border-bottom: 7px double black;
+        align-self: center;
+    }
+    
+    main #rewardtotal {
+        text-align: center;
+        margin: 0px 2vw;
+        position: unset;
+        right: unset;
+        left: unset;
+        bottom: unset;
+        transform: unset;
+        border-bottom: 4px solid black;
+        top: 50%;
+        align-self: center;
+    }
+
+    main .playarea .mid {
+        justify-content: space-between;
+    }
+
+    .mid #tier {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    main .mid, main .top, main .bot {
+        height: 33.33vh;
+    }
+
+    .playarea .mid {
+        justify-content: space-evenly;
+    }
+
+    main .minigame {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+        border-left: 20px double black;
+        border-right: 20px double black;
+        border-bottom: none;
+        width:  50vw;
+    }
+
+    main #left {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-right: 200px;
+    }
+
+    main #right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: none;
+        margin-left: 100px;
+    }
+    
+}
+
+@media(min-width: 1000px) {
+    
+    main .playarea #bank {
+        font-size: 7vw;
+        height: 6vw;
+    }
+
+    main .playarea #rewardtotal {
+        font-size: 7vw;
+        height: 6vw;
+    }
+
+    main .reward {
+        font-size: 6vw;
+        height: 5.5vw;
+    }
+
+    main .topcontent {
+        font-size: 8vw;
+        height: 7vw;
+    }
+}

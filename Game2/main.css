@@ -1,0 +1,170 @@
+ /* font-family: 'Josefin Sans', sans-serif; */
+
+ @import url('layout.css');
+
+.game {
+    display: none;
+}
+
+main {
+    margin: auto;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0px;
+}
+
+ h1 {
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    margin: 0px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient( rgb(249, 153, 255) , rgb(100, 141, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 7px double black ;
+}
+
+#bank {
+    text-align: center;
+    font-size: 70px;
+    margin: 0px;
+    position: absolute;
+    left: 50%;
+    height: 60px;
+    bottom: 30px;
+    transform: translateX(-50%);
+    border-bottom: 7px double black;
+    background: radial-gradient( rgb(249, 153, 255) , rgb(100, 141, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#rewardtotal {
+    text-align: center;
+    font-size: 70px;
+    margin: 0px;
+    height: 60px;
+    position: absolute;
+    bottom: 120px;
+    border-bottom: 4px solid black;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient( rgb(255, 248, 160), rgb(78, 233, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    margin: 0px;
+}
+
+.playarea {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: baseline;
+    align-content: center;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 80px;
+    height: 23vh;
+}
+
+.mid {
+    height: 23vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    border-top: 20px double black;
+    border-bottom: 20px double black;
+}
+
+.bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 50px;
+    height: 23vh;
+}
+
+.topcontent {
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    height: 67px;
+}
+
+#tier {
+    height: 85px;
+    width: 70px;
+    font-size: 100px;
+    padding: 15px 25px;
+    align-self: center;
+    border: 6px solid black ;
+}
+
+.reward {
+    height: 50px;
+    text-align: center;
+    align-self: center;
+    padding: 10px 10px 5vh 10px;
+}
+
+.minigame {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0%;
+    height: 60vh;
+    width:  100vw;
+    border-bottom: 20px double black;
+    background-color: white;
+    z-index: 1;
+}
+
+#right {
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    align-self: center;
+}
+
+#left {
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    align-self: center;
+}
+
+.gamearea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.game1reward {
+    font-size: 8vh;
+    align-self: center;
+}
+
+
+
