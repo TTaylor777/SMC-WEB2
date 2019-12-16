@@ -166,5 +166,9 @@ p {
     align-self: center;
 }
 
+#dumb {
+    display: none;
+}
+
 
 

@@ -16,6 +16,7 @@ $(document).ready(function (){
     var reward16 = document.getElementById('reward16')
     var reward17 = document.getElementById('reward17')
 
+    var game2 = document.getElementById('game2')
     var reward21 = document.getElementById('reward21')
     var reward22 = document.getElementById('reward22')
     var reward23 = document.getElementById('reward23')
@@ -79,28 +80,28 @@ $(document).ready(function (){
 
         t = 1
 
-        if ( rng > 0 && rng < .14 ) {
+        if ( rng > 0 && rng < .13 ) {
             t = 1
         }
-        if ( rng > .14 && rng < .28 ) {
+        if ( rng > .13 && rng < .26 ) {
             t = 2
         }
-        if ( rng > .28 && rng < .42 ) {
+        if ( rng > .26 && rng < .39 ) {
             t = 3
         }
-        if ( rng > .42 && rng < .56 ) {
+        if ( rng > .39 && rng < .52 ) {
             t = 4
         }
-        if ( rng > .56 && rng < .70 ) {
+        if ( rng > .52 && rng < .65 ) {
             t = 5
         }
-        if ( rng > .70 && rng < .84 ) {
+        if ( rng > .65 && rng < .78 ) {
             t = 6
         }
-        if ( rng > .84 && rng < .98 ) {
+        if ( rng > .78 && rng < .91 ) {
             t = 7
         }
-        if ( rng > .98 && rng < 1 ) {
+        if ( rng > .91 && rng < 1 ) {
             t = 8
         }
         return t
@@ -122,13 +123,16 @@ $(document).ready(function (){
             rewardtotal.style.webkitTextFillColor = 'transparent'
             bank.innerHTML = Number(bank.innerHTML) - Number(rewardtotal.innerHTML)
         } else {
+            rewardtotal.style.background = 'radial-gradient( rgb(255, 248, 160), rgb(78, 233, 0))'
+            rewardtotal.style.webkitBackgroundClip = 'text'
+            rewardtotal.style.webkitTextFillColor = 'transparent'
             bank.innerHTML = Number(bank.innerHTML) + Number(rewardtotal.innerHTML)
         }
 
     }
 
     function gamea(){
-        
+    
         $('#game1').fadeToggle(300)
         game1.style.display = 'flex'
 
@@ -145,39 +149,6 @@ $(document).ready(function (){
         reward15.innerHTML = 1 * 5 * Number(tier.innerHTML)
         reward16.innerHTML = 1 * 6 * Number(tier.innerHTML)
         reward17.innerHTML = 1 * 7 * Number(tier.innerHTML)
-
-
-        $('#reward11').click(function(){
-            rewardtotal.innerHTML = reward11.innerHTML
-        })
-        $('#reward12').click(function(){
-            rewardtotal.innerHTML = reward12.innerHTML
-        })
-        $('#reward13').click(function(){
-            rewardtotal.innerHTML = reward13.innerHTML
-        })
-        $('#reward14').click(function(){
-            rewardtotal.innerHTML = reward14.innerHTML
-        })
-        $('#reward15').click(function(){
-            rewardtotal.innerHTML = reward15.innerHTML
-        })
-        $('#reward16').click(function(){
-            rewardtotal.innerHTML = reward16.innerHTML
-        })
-        $('#reward17').click(function(){
-            rewardtotal.innerHTML = reward17.innerHTML
-        })
-
-        $('#game1').click(function(){
-            $('#game1').fadeToggle(300)
-            tier.style.display = 'block'
-            multiplyer.style.display = 'block'
-            reward1.style.display = 'block'
-            reward2.style.display = 'block'
-            reward3.style.display = 'block'
-            endmath()
-        })
 
     }
 
@@ -225,7 +196,7 @@ $(document).ready(function (){
         reward3.innerHTML = 0
 
         multiplyer.innerHTML = 1
-        rewardtotal.innerHTML = 0
+        rewardtotal.innerHTML = 1
 
         rng = Math.random()
 
@@ -275,7 +246,7 @@ $(document).ready(function (){
             gamea()
         }
 
-        if (t != 8 ) {
+        if (rewardtotal.innerHTML != 0 ) {
             
             reward1.innerHTML = Math.round(Number(reward1.innerHTML))
             reward2.innerHTML = Math.round(Number(reward2.innerHTML))
@@ -285,15 +256,48 @@ $(document).ready(function (){
         
             endmath()
 
-            if (Number(bank.innerHTML) < 0){
+            if (Number(bank.innerHTML) <= 0){
                 bank.innerHTML = 0
                 $('#tier').fadeToggle(1)
                 $('.game').fadeToggle(1000)
+                $('#dumb').fadeToggle(2000)
             }
         }
         
         
         
+    })
+
+    $('#reward11').click(function(){
+        rewardtotal.innerHTML = reward11.innerHTML
+    })
+    $('#reward12').click(function(){
+        rewardtotal.innerHTML = reward12.innerHTML
+    })
+    $('#reward13').click(function(){
+        rewardtotal.innerHTML = reward13.innerHTML
+    })
+    $('#reward14').click(function(){
+        rewardtotal.innerHTML = reward14.innerHTML
+    })
+    $('#reward15').click(function(){
+        rewardtotal.innerHTML = reward15.innerHTML
+    })
+    $('#reward16').click(function(){
+        rewardtotal.innerHTML = reward16.innerHTML
+    })
+    $('#reward17').click(function(){
+        rewardtotal.innerHTML = reward17.innerHTML
+    })
+
+    $('#game1').click(function(){
+        game1.style.display = 'none'
+        tier.style.display = 'block'
+        multiplyer.style.display = 'block'
+        reward1.style.display = 'block'
+        reward2.style.display = 'block'
+        reward3.style.display = 'block'
+        endmath()
     })
 
 })
