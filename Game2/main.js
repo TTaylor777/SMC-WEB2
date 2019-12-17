@@ -68,6 +68,8 @@ $(document).ready(function (){
     
 
     var tier = document.getElementById('tier')
+    var left = document.getElementById('left')
+    var right = document.getElementById('right')
 
     var multiplyer = document.getElementById('multiplyer')
 
@@ -131,16 +133,27 @@ $(document).ready(function (){
 
     }
 
-    function gamea(){
-    
-        $('#game1').fadeToggle(300)
-        game1.style.display = 'flex'
+    function gametoggle(){
 
+        rewardtotal.innerHTML = 0
+        reward1.innerHTML = 0
+        reward2.innerHTML = 0
+        reward3.innerHTML = 0
+        left.style.display = 'none'
+        right.style.display = 'none'
+        multiplyer.innerHTML = 0
         tier.style.display = 'none'
         multiplyer.style.display = 'none'
         reward1.style.display = 'none'
         reward2.style.display = 'none'
         reward3.style.display = 'none'
+
+    }
+
+    function gamea(){
+        
+        $('#game1').fadeToggle(1000)
+        game1.style.display = 'flex'
 
         reward11.innerHTML = 1 * 1 * Number(tier.innerHTML)
         reward12.innerHTML = 1 * 2 * Number(tier.innerHTML)
@@ -216,34 +229,30 @@ $(document).ready(function (){
         rng = Math.random()
         if (rng > 0) {
             reward1.style.display = 'block'
-            reward1.innerHTML = tier.innerHTML
+            reward1.innerHTML = 1
             reward1.innerHTML = Number(reward1.innerHTML) * Number(tier.innerHTML)
             reward1.innerHTML = Number(reward1.innerHTML) * Number(multiplyer.innerHTML)
         }
 
         rng = Math.random()
-        if (rng > .8) {
-            reward2.innerHTML = tier.innerHTML
+        if (rng > .7) {
+            reward2.innerHTML = 1
             reward2.style.display = 'block'
             reward2.innerHTML = Number(reward2.innerHTML) * Number(tier.innerHTML)
             reward2.innerHTML = Number(reward2.innerHTML) * Number(multiplyer.innerHTML)
         }
 
         rng = Math.random()
-        if (rng > .8) {
+        if (rng > .7) {
             reward3.style.display = 'block'
-            reward3.innerHTML = tier.innerHTML
+            reward3.innerHTML = 1
             reward3.innerHTML = Number(reward3.innerHTML) * Number(tier.innerHTML)
             reward3.innerHTML = Number(reward3.innerHTML) * Number(multiplyer.innerHTML)
         }
 
         if (t == 8) {
-            rewardtotal.innerHTML = 0
-            reward1.innerHTML = 0
-            reward2.innerHTML = 0
-            reward3.innerHTML = 0
-            multiplyer.innerHTML = 0
-            gamea()
+            gametoggle()
+            setTimeout(function(){gamea()}, 1000);
         }
 
         if (rewardtotal.innerHTML != 0 ) {
@@ -260,7 +269,7 @@ $(document).ready(function (){
                 bank.innerHTML = 0
                 $('#tier').fadeToggle(1)
                 $('.game').fadeToggle(1000)
-                $('#dumb').fadeToggle(2000)
+                $('#dumb').fadeToggle(20000)
             }
         }
         
@@ -293,10 +302,13 @@ $(document).ready(function (){
     $('#game1').click(function(){
         game1.style.display = 'none'
         tier.style.display = 'block'
+        left.style.display = 'block'
+        right.style.display = 'block'
         multiplyer.style.display = 'block'
         reward1.style.display = 'block'
         reward2.style.display = 'block'
         reward3.style.display = 'block'
+        t = 0
         endmath()
     })
 

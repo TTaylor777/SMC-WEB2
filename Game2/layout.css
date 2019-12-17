@@ -13,25 +13,29 @@ img {
 @media(min-width: 650px) {
     main #bank {
         text-align: center;
+        height: 8.5vw;
+        font-size: 10vw;
         margin: 0px 2vw;
         position: unset;
         left: unset;
         top: unset;
         transform: unset;
         bottom: unset;
-        border-bottom: 7px double black;
+        border-bottom: none;
         align-self: center;
     }
     
     main #rewardtotal {
         text-align: center;
+        height: 8.5vw;
+        font-size: 10vw;
         margin: 0px 2vw;
         position: unset;
         right: unset;
         left: unset;
         bottom: unset;
         transform: unset;
-        border-bottom: 4px solid black;
+        border-bottom: none;
         top: 50%;
         align-self: center;
     }
@@ -79,33 +83,50 @@ img {
         margin-left: 100px;
     }
 
+    main .reward {
+        font-size: 8vw;
+        height: 5.5vw;
+    }
+
+    main .topcontent {
+        font-size: 10vw;
+        height: 7vw;
+    }
+
+    main .game1reward {
+        line-height: 24vh;
+    }
     
 }
 
 
-@media(max-height: 600px) {
+@media(max-height: 500px) {
     
     main #bank {
         text-align: center;
+        height: 8.5vw;
+        font-size: 10vw;
         margin: 0px 2vw;
         position: unset;
         left: unset;
         top: unset;
         transform: unset;
         bottom: unset;
-        border-bottom: 7px double black;
+        border-bottom: none;
         align-self: center;
     }
     
     main #rewardtotal {
         text-align: center;
+        height: 8.5vw;
+        font-size: 10vw;
         margin: 0px 2vw;
         position: unset;
         right: unset;
         left: unset;
         bottom: unset;
         transform: unset;
-        border-bottom: 4px solid black;
+        border-bottom: none;
         top: 50%;
         align-self: center;
     }
@@ -156,28 +177,19 @@ img {
         padding: none;
         margin-left: 100px;
     }
-    
-}
-
-@media(min-width: 1000px) {
-    
-    main .playarea #bank {
-        font-size: 7vw;
-        height: 6vw;
-    }
-
-    main .playarea #rewardtotal {
-        font-size: 7vw;
-        height: 6vw;
-    }
 
     main .reward {
-        font-size: 6vw;
+        font-size: 8vw;
         height: 5.5vw;
     }
 
     main .topcontent {
-        font-size: 8vw;
+        font-size: 10vw;
         height: 7vw;
     }
+
+    main .game1reward {
+        line-height: 24vh;
+    }
+    
 }
