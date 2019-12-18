@@ -124,6 +124,7 @@ $(document).ready(function (){
             rewardtotal.style.webkitBackgroundClip = 'text'
             rewardtotal.style.webkitTextFillColor = 'transparent'
             bank.innerHTML = Number(bank.innerHTML) - Number(rewardtotal.innerHTML)
+            subtract = false
         } else {
             rewardtotal.style.background = 'radial-gradient( rgb(255, 248, 160), rgb(78, 233, 0))'
             rewardtotal.style.webkitBackgroundClip = 'text'
@@ -133,7 +134,7 @@ $(document).ready(function (){
 
     }
 
-    function gametoggle(){
+    function gametogglebefore(){
 
         rewardtotal.innerHTML = 0
         reward1.innerHTML = 0
@@ -150,10 +151,39 @@ $(document).ready(function (){
 
     }
 
+    function gametoggleafter(){
+
+        tier.style.display = 'block'
+        left.style.display = 'block'
+        right.style.display = 'block'
+        multiplyer.style.display = 'block'
+        reward1.style.display = 'block'
+        reward2.style.display = 'block'
+        reward3.style.display = 'block'
+        t = 0
+        endmath()
+
+    }
+
     function gamea(){
         
         $('#game1').fadeToggle(1000)
         game1.style.display = 'flex'
+
+        reward11.innerHTML = 1 * 1 * Number(tier.innerHTML)
+        reward12.innerHTML = 1 * 2 * Number(tier.innerHTML)
+        reward13.innerHTML = 1 * 3 * Number(tier.innerHTML)
+        reward14.innerHTML = 1 * 4 * Number(tier.innerHTML)
+        reward15.innerHTML = 1 * 5 * Number(tier.innerHTML)
+        reward16.innerHTML = 1 * 6 * Number(tier.innerHTML)
+        reward17.innerHTML = 1 * 7 * Number(tier.innerHTML)
+
+    }
+
+    function gameb(){
+        
+        $('#game2').fadeToggle(1000)
+        game2.style.display = 'flex'
 
         reward11.innerHTML = 1 * 1 * Number(tier.innerHTML)
         reward12.innerHTML = 1 * 2 * Number(tier.innerHTML)
@@ -251,7 +281,7 @@ $(document).ready(function (){
         }
 
         if (t == 8) {
-            gametoggle()
+            gametogglebefore()
             setTimeout(function(){gamea()}, 1000);
         }
 
@@ -300,16 +330,8 @@ $(document).ready(function (){
     })
 
     $('#game1').click(function(){
-        game1.style.display = 'none'
-        tier.style.display = 'block'
-        left.style.display = 'block'
-        right.style.display = 'block'
-        multiplyer.style.display = 'block'
-        reward1.style.display = 'block'
-        reward2.style.display = 'block'
-        reward3.style.display = 'block'
-        t = 0
-        endmath()
+        $('#game1').fadeToggle(500)
+        gametoggleafter()
     })
 
 })
