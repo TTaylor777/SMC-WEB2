@@ -1,0 +1,582 @@
+body {
+    margin: 0px;
+    /* background-color: black; */
+}
+
+main {
+    display: none;
+    height: 100vh;
+}
+
+#mainscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playerselect {
+    justify-content: space-evenly;
+    flex-flow: wrap;
+}
+
+.player {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.playername {
+    width: 100%;
+    height: 100%;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 10vw;
+    text-align: center;
+    border: black 3px solid;
+}
+
+/* .teambox {
+    width: 20%;
+    height: 100%;
+    border: black 5px solid;
+    background-color: rgb(173, 173, 173);
+} */
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h2 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+#title {
+    font-size: 10vw;
+}
+
+#startbuttontext {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 10vw;
+}
+
+#mainplayername {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 10vw;
+}
+
+.viewplayername {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 7vw;
+    max-width: 70%;
+    overflow: hidden;
+}
+
+.playerlife {
+    font-size: 10vw;
+}
+
+.rangenumber {
+    font-size: 10vw;
+}
+
+.effectpercent {
+    font-size: 10vw;
+}
+
+.statusnumber {
+    font-size: 10vw;
+}
+
+.playerstatusnumber {
+    font-size: 6vw;
+}
+
+#startbutton {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: double black 10px;
+
+}
+
+#gameview {
+    flex-direction: column;
+    position: relative;
+}
+
+#elementview {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    flex-direction: column;
+}
+
+#elements {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    overflow: hidden;
+}
+
+.element {
+    height: 60%;
+    margin: auto;
+}
+
+.elementbox {
+    width: 33.33%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#combobox {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(145, 145, 145);
+}
+
+#combo {
+    height: 80%;
+}
+
+#mainplayer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(110, 110, 110);
+}
+
+#mainplayerlife {
+    font-size: 10vw;
+}
+
+#mainbuttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#playerviewbutton {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+}
+
+#statusbutton {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+}
+
+#combobutton {
+    display: none;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(133, 133, 133);
+}
+
+#playerview {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    z-index: 8;
+    display: none;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    background-color: white;
+}
+
+#statusview {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    z-index: 9;
+    display: none;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+}
+
+#comboview {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    z-index: 10;
+    background-color: rgb(240, 240, 240);
+}
+
+#range {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 33.33333%;
+}
+
+#effects {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    height: 66.66666%;
+}
+
+#effectbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33%;
+}
+
+.status {
+    width: 50%;
+    height: 33.33333%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    background-color: rgb(216, 216, 216);
+}
+
+.statusicon {
+    width: auto;
+    height: 30%;
+}
+
+.viewplayer {
+    width: 50%;
+    height: 33.3333%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(216, 216, 216);
+}
+
+.nameandlife {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.viewplayerstatus {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.viewplayerstatusbox {
+    width: 33.33%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rollbox {
+    width: 100%;
+    height: 16.666%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    background-color: rgb(216, 216, 216);
+}
+
+.rollbox > img {
+    width: 20%;
+    height: auto;
+    opacity: 20%;
+}
+
+#rollview {
+    flex-direction: column;
+    flex-flow: wrap;
+}
+
+.rollnumber {
+    font-size: 15vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#postroll {
+    width: 100%;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+#total {
+    font-size: 20vw;
+}
+
+#totalstatus {
+    width: 30%;
+    height: auto;
+}
+
+.rollfade {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    background-color: white;
+}
+
+#primarybox {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.primaryicon {
+    height: 45%;
+    width: auto;
+}
+
+.primary {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-height: 500px) {
+    
+    .rollbox {
+        height: 100%;
+    }
+
+    #rollview {
+        flex-flow: nowrap;
+    }
+
+    .rollbox > img {
+        width: 70%;
+    }
+
+    .rollnumber {
+        font-size: 10vw;
+    }
+
+    #mainplayer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .viewplayer {
+        width: 33.33%;
+        height: 50%;
+    }
+
+    #elementview {
+        flex-direction: row;
+    }
+
+    #elements {
+        width: 66.66%;
+        height: 100%;
+    }
+
+    #combobox {
+        width: 33.33%;
+        height: 100%;
+    }
+
+    #combo {
+        height: auto;
+        width: 80%;
+    }
+
+    #mainbuttons {
+        width: 40%;
+        height: 100%;
+        justify-content: flex-end;
+    }
+
+    #mainbuttons > .mainbutton {
+        height: 100%;
+        width: 33.333%;
+    }
+
+    #comboview {
+        width: 66.66%;
+        height: 70%;
+    }
+
+    .status {
+        width: 33.33333%;
+        height: 50%;
+        flex-direction: row;
+    }
+
+    .viewplayerstatus {
+        height: 50%;
+    }
+
+    .viewplayerstatusbox {
+        width: 16.66%;
+        height: 100%;
+    }
+
+    .viewplayername {
+        font-size: 5vw;
+    }
+    .playerstatusnumber {
+        font-size: 4vw;
+    }
+
+    #postroll {
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 1000px) {
+
+
+    #mainplayerlife {
+        font-size: 72px;
+    }
+
+    .rollbox {
+        height: 100%;
+        width: 100%;
+    }
+
+    #rollview {
+        flex-flow: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .rollbox > img {
+        width: 80%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .rollnumber {
+        font-size: 12vw;
+    }
+
+    .viewplayerstatusbox {
+        width: 16.66%;
+        height: 100%;
+    }
+
+    .viewplayerstatus {
+        height: 50%;
+    }
+
+    .playerlife {
+        font-size: 72px;
+    }
+    
+    .rangenumber {
+        font-size: 72px;
+    }
+    
+    .effectpercent {
+        font-size: 72px;
+    }
+    
+    .statusnumber {
+        font-size: 72px;
+    }
+    
+    .playerstatusnumber {
+        font-size: 50px;
+    }
+
+    .viewplayername {
+        font-size: 72px;
+    }
+
+    #startbuttontext {
+        font-size: 72px;
+    }
+    
+    #mainplayername {
+        font-size: 72px;
+    }
+
+    .playername {
+        font-size: 72px;
+    }
+
+    main {
+        width: 1000px;
+        margin: auto;
+    }
+
+    #title {
+        font-size: 100px;
+    }
+
+    #combobox {
+        width: 33.33%;
+        height: 33.33%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    #mainplayer {
+        width: 66.66%;
+        height: 33.33%;
+    }
+
+    #elements {
+        height: 100%;
+    }
+
+    #elementview {
+        height: 66.66%;
+    }
+
+    #playerview, #statusview, #comboview {
+        height: 66.66%;
+    }
+
+}
+
+
