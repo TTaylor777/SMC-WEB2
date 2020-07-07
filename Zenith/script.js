@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+    audio = document.getElementById('audio')
+    gamemusic = document.getElementById('gamemusic')
+
+    audio.autoplay = true
+    audio.volume = 0.5
+    audio.loop = true
+    gamemusic.autoplay = true
+    gamemusic.volume = 0.1
+    gamemusic.loop = true
+    
 
     // Variables
 
@@ -28,12 +38,12 @@ $(document).ready(function(){
     var avg = 0
     var max = 0
 
-    var p1 = [100, 0, 0, 10, 0, 0, 6]
-    var p2 = [100, 0, 0, 10, 0, 0, 6]
-    var p3 = [100, 0, 0, 10, 0, 0, 6]
-    var p4 = [100, 0, 0, 10, 0, 0, 6]
-    var p5 = [100, 0, 0, 10, 0, 0, 6]
-    var p6 = [100, 0, 0, 10, 0, 0, 6]
+    var p1 = [100, 0, 0, 5, 0, 10, 3]
+    var p2 = [100, 0, 0, 5, 0, 10, 3]
+    var p3 = [100, 0, 0, 5, 0, 10, 3]
+    var p4 = [100, 0, 0, 5, 0, 10, 3]
+    var p5 = [100, 0, 0, 5, 0, 10, 3]
+    var p6 = [100, 0, 0, 5, 0, 10, 3]
 
     var a = 0
     var b = 0
@@ -63,6 +73,8 @@ $(document).ready(function(){
 
     var energy = 0
     var rolldisable = 0
+
+    var statmax = 10
 
 
 
@@ -103,29 +115,98 @@ $(document).ready(function(){
             }
         }
 
-        if (p1[0] <= 0){
+        if (p1[0] <= 0 && $('#p1name').val() != ''){
+            $('#p1name').val('')
             $('#player1').css('display', 'none')
+            p1[0] = 0
+            p1[1] = 0
+            p1[2] = 0
             p1[3] = 0
+            p1[4] = 0
+            p1[5] = 0
+            p1[6] = 0
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player1name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
+
         }
-        if (p2[0] <= 0){
+        if (p2[0] <= 0 && $('#p2name').val() != ''){
+            $('#p2name').val('')
             $('#player2').css('display', 'none')
+            p2[0] = 0
+            p2[1] = 0
+            p2[2] = 0
             p2[3] = 0
+            p2[4] = 0
+            p2[5] = 0
+            p2[6] = 0
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player2name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
         }
-        if (p3[0] <= 0){
+        if (p3[0] <= 0 && $('#p3name').val() != ''){
+            $('#p3name').val('')
             $('#player3').css('display', 'none')
+            p3[0] = 0
+            p3[1] = 0
+            p3[2] = 0
             p3[3] = 0
+            p3[4] = 0
+            p3[5] = 0
+            p3[6] = 0
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player3name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
         }
-        if (p4[0] <= 0){
+        if (p4[0] <= 0 && $('#p4name').val() != ''){
+            $('#p4name').val('')
             $('#player4').css('display', 'none')
+            p4[0] = 0
+            p4[1] = 0
+            p4[2] = 0
             p4[3] = 0
+            p4[4] = 0
+            p4[5] = 0
+            p4[6] = 0
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player4name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
         }
-        if (p1[0] <= 0){
+        if (p5[0] <= 0 && $('#p5name').val() != ''){
+            $('#p5name').val('')
             $('#player5').css('display', 'none')
+            p5[0] = 0
+            p5[1] = 0
+            p5[2] = 0
             p5[3] = 0
+            p5[4] = 0
+            p5[5] = 0
+            p5[6] = 0
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player5name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
         }
-        if (p6[0] <= 0){
+        if (p6[0] <= 0 && $('#p6name').val() != ''){
+            $('#p6name').val('')
             $('#player6').css('display', 'none')
+            p6[0] = 0
+            p6[1] = 0
+            p6[2] = 0
             p6[3] = 0
+            p6[4] = 0
+            p6[5] = 0
+            p6[6] = 0
+
+
+
+            $('#eliminations').append('<h1 class="elimination">' + $('#player6name').html() + '</h1>')
+
+            $('#eliminationview').css('display', 'flex')
         }
 
     }
@@ -135,6 +216,11 @@ $(document).ready(function(){
         if (primary == 1){
 
             $('#status1').html(Number($('#status1').html()) + total)
+
+            if (Number($('#status1').html()) > Number($('#status5').html())){
+                $('#status1').html(Number($('#status5').html()))
+            }
+
             $('#totalprimary').attr('src', 'F.png')
 
         }
@@ -142,6 +228,11 @@ $(document).ready(function(){
         if (primary == 2){
             
             $('#status2').html(Number($('#status2').html()) + total)
+
+            if (Number($('#status2').html()) > Number($('#status5').html())){
+                $('#status2').html(Number($('#status5').html()))
+            }
+
             $('#totalprimary').attr('src', 'E.png')
 
         }
@@ -149,6 +240,11 @@ $(document).ready(function(){
         if (primary == 3){
             
             $('#status3').html(Number($('#status3').html()) + total)
+
+            if (Number($('#status3').html()) > Number($('#status5').html())){
+                $('#status3').html(Number($('#status5').html()))
+            }
+
             $('#totalprimary').attr('src', 'A.png')
 
         }
@@ -156,6 +252,11 @@ $(document).ready(function(){
         if (primary == 4){
             
             $('#status4').html(Number($('#status4').html()) + total)
+
+            if (Number($('#status4').html()) > Number($('#status5').html())){
+                $('#status4').html(Number($('#status5').html()))
+            }
+
             $('#totalprimary').attr('src', 'W.png')
 
         }
@@ -163,6 +264,7 @@ $(document).ready(function(){
         if (primary == 5){
             
             $('#status5').html(Number($('#status5').html()) + total)
+
             $('#totalprimary').attr('src', 'S.png')
 
         }
@@ -170,6 +272,11 @@ $(document).ready(function(){
         if (primary == 6){
             
             $('#status6').html(Number($('#status6').html()) + total)
+
+            if (Number($('#status6').html()) > Number($('#status5').html())){
+                $('#status6').html(Number($('#status5').html()))
+            }
+
             $('#totalprimary').attr('src', 'T.png')
 
         }
@@ -343,7 +450,7 @@ $(document).ready(function(){
 
         }
         if (fire == 1 && rng1 <= $('#effect').html()){
-            total *= fireroll
+            total *= 2
             $('#roll1box').css('background-color', 'red')
         }
         if (earth == 1 && rng2 <= $('#effect').html()){
@@ -357,6 +464,10 @@ $(document).ready(function(){
             
             $('#roll4box').css('background-color', 'blue')
             $('#mainplayerlife').html(Number($('#mainplayerlife').html()) + total)
+
+            if (Number($('#mainplayerlife').html()) > (Number($('#status5').html()) + 100)){
+                $('#mainplayerlife').html(Number($('#status5').html()) + 100)
+            }
 
         }
 
@@ -859,6 +970,10 @@ $(document).ready(function(){
 
         $('#mainplayerlife').html(Number($('#mainplayerlife').html()) + Number($('#status4').html()))
 
+        if (Number($('#mainplayerlife').html()) > (Number($('#status5').html()) + 100)){
+            $('#mainplayerlife').html(Number($('#status5').html()) + 100)
+        }
+
         if($('#mainplayername').html() == $('#player1name').html()){
             p1[0] = Number($('#mainplayerlife').html())
             $('#player1life').html(p1[0])
@@ -1017,6 +1132,7 @@ $(document).ready(function(){
         water = 0
         space = 0
         time = 0
+        energy = 0
 
         fireroll = 0
         earthroll = 0
@@ -1041,6 +1157,7 @@ $(document).ready(function(){
 
         $('#combo').attr('src', '')
         $('#combobutton').fadeOut()
+        $('#comboview').fadeOut(1)
 
         a = 0
         b = 0
@@ -1065,6 +1182,7 @@ $(document).ready(function(){
     $('#mainscreen').click(function(){
         $('#mainscreen').fadeOut(500)
         $('#playerselect').css('display', 'flex')  
+        audio.play()
     })
 
     $('#startbutton').click(function(){
@@ -1079,26 +1197,32 @@ $(document).ready(function(){
         if ($('#p1name').val() == ''){
             $('#player1').css('display', 'none')
             p1[3] = 0
+            p1[0] = 0
         }
         if ($('#p2name').val() == ''){
             $('#player2').css('display', 'none')
             p2[3] = 0
+            p2[0] = 0
         }
         if ($('#p3name').val() == ''){
             $('#player3').css('display', 'none')
             p3[3] = 0
+            p3[0] = 0
         }
         if ($('#p4name').val() == ''){
             $('#player4').css('display', 'none')
             p4[3] = 0
+            p4[0] = 0
         }
         if ($('#p5name').val() == ''){
             $('#player5').css('display', 'none')
             p5[3] = 0
+            p5[0] = 0
         }
         if ($('#p6name').val() == ''){
             $('#player6').css('display', 'none')
             p6[3] = 0
+            p6[0] = 0
         }
 
         speedmath()
@@ -1109,6 +1233,9 @@ $(document).ready(function(){
         setTimeout(function(){
             $('#gameview').css('display', 'flex')
         }, 500)
+
+        audio.pause()
+        gamemusic.play()
         
     })
 
@@ -1129,6 +1256,146 @@ $(document).ready(function(){
         $('#playerview').fadeOut()
         $('#comboview').slideToggle()
         $('#comboview').css('display', 'flex')
+    })
+
+    $('#eliminationview').click(function(){
+
+        $('#eliminationview').fadeOut(500)
+
+        if (p1[0] > 0 && p2[0] <= 0 && p3[0] <= 0 && p4[0] <= 0 && p5[0] <= 0 && p6[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p1name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+        if (p2[0] > 0 && p1[0] <= 0 && p3[0] <= 0 && p4[0] <= 0 && p5[0] <= 0 && p6[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p2name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+        if (p3[0] > 0 && p2[0] <= 0 && p1[0] <= 0 && p4[0] <= 0 && p5[0] <= 0 && p6[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p3name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+        if (p4[0] > 0 && p2[0] <= 0 && p3[0] <= 0 && p1[0] <= 0 && p5[0] <= 0 && p6[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p4name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+        if (p5[0] > 0 && p2[0] <= 0 && p3[0] <= 0 && p4[0] <= 0 && p1[0] <= 0 && p6[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p5name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+        if (p6[0] > 0 && p2[0] <= 0 && p3[0] <= 0 && p4[0] <= 0 && p5[0] <= 0 && p1[0] <= 0){
+            $('#gameview').fadeOut(1)
+            setTimeout(function(){
+                $('#winner').html($('#p6name').val())
+                $('#winnerview').fadeIn(500)
+                $('#winnerview').css('display', 'flex')
+            }, 500)
+        }
+
+        setTimeout(function(){
+            $('.elimination').remove()
+        },500)
+
+    })
+
+    $('#resetbutton').click(function(){
+
+        p1 = [100, 0, 0, 5, 0, 10, 3]
+        p2 = [100, 0, 0, 5, 0, 10, 3]
+        p3 = [100, 0, 0, 5, 0, 10, 3]
+        p4 = [100, 0, 0, 5, 0, 10, 3]
+        p5 = [100, 0, 0, 5, 0, 10, 3]
+        p6 = [100, 0, 0, 5, 0, 10, 3]
+
+        $('#player1life').html(p1[0])
+        $('#p1s1').html(p1[1])
+        $('#p1s2').html(p1[2])
+        $('#p1s3').html(p1[3])
+        $('#p1s4').html(p1[4])
+        $('#p1s5').html(p1[5])
+        $('#p1s6').html(p1[6])
+
+        $('#player2life').html(p2[0])
+        $('#p2s1').html(p2[1])
+        $('#p2s2').html(p2[2])
+        $('#p2s3').html(p2[3])
+        $('#p2s4').html(p2[4])
+        $('#p2s5').html(p2[5])
+        $('#p2s6').html(p2[6])
+
+        $('#player3life').html(p3[0])
+        $('#p3s1').html(p3[1])
+        $('#p3s2').html(p3[2])
+        $('#p3s3').html(p3[3])
+        $('#p3s4').html(p3[4])
+        $('#p3s5').html(p3[5])
+        $('#p3s6').html(p3[6])
+
+        $('#player4life').html(p4[0])
+        $('#p4s1').html(p4[1])
+        $('#p4s2').html(p4[2])
+        $('#p4s3').html(p4[3])
+        $('#p4s4').html(p4[4])
+        $('#p4s5').html(p4[5])
+        $('#p4s6').html(p4[6])
+
+        $('#player5life').html(p5[0])
+        $('#p5s1').html(p5[1])
+        $('#p5s2').html(p5[2])
+        $('#p5s3').html(p5[3])
+        $('#p5s4').html(p5[4])
+        $('#p5s5').html(p5[5])
+        $('#p5s6').html(p5[6])
+
+        $('#player6life').html(p6[0])
+        $('#p6s1').html(p6[1])
+        $('#p6s2').html(p6[2])
+        $('#p6s3').html(p6[3])
+        $('#p6s4').html(p6[4])
+        $('#p6s5').html(p6[5])
+        $('#p6s6').html(p6[6])
+
+        $('#winnerview').fadeOut(500)
+        setTimeout(function(){
+            $('#playerselect').fadeIn(500)
+            $('#playerselect').css('display', 'flex')
+            gamemusic.load()
+            gamemusic.pause()
+            
+            
+            audio.load()
+            audio.play()
+
+            $('#player1').css('display', 'flex')
+            $('#player2').css('display', 'flex')
+            $('#player3').css('display', 'flex')
+            $('#player4').css('display', 'flex')
+            $('#player5').css('display', 'flex')
+            $('#player6').css('display', 'flex')
+
+            $('#mainplayername').html('')
+
+        }, 500)
+
     })
 
 
@@ -1281,7 +1548,6 @@ $(document).ready(function(){
         diceroll()
         effectroll()
 
-        total += Number($('#status5').html())
         $('#total').html(total)
 
         primarymath()

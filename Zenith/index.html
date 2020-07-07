@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="main.css" type="text/css">
   </head>
   <body>
-    
+
+    <audio id="audio">
+        <source src="menutheme.mp3">
+    </audio>
+    <audio id="gamemusic">
+        <source src="gamemusic.mp3">
+    </audio>
+
     <main class="" id="mainscreen">
 
         <h1 id="title">Z E N I T H</h1>
@@ -21,37 +28,37 @@
 
         <div class="player" id="p1">
         
-            <input type="text" class="playername" placeholder="player 1" id="p1name">
+            <input type="text" class="playername" placeholder="Player 1" id="p1name">
 
         </div>
 
         <div class="player" id="p2">
 
-            <input type="text" class="playername" placeholder="player 2" id="p2name">
+            <input type="text" class="playername" placeholder="Player 2" id="p2name">
 
         </div>
 
         <div class="player" id="p1">
         
-            <input type="text" class="playername" placeholder="player 3" id="p3name">
+            <input type="text" class="playername" placeholder="Player 3" id="p3name">
 
         </div>
 
         <div class="player" id="p2">
 
-            <input type="text" class="playername" placeholder="player 4" id="p4name">
+            <input type="text" class="playername" placeholder="Player 4" id="p4name">
 
         </div>
 
         <div class="player" id="p1">
         
-            <input type="text" class="playername" placeholder="player 5" id="p5name">
+            <input type="text" class="playername" placeholder="Player 5" id="p5name">
 
         </div>
 
         <div class="player" id="p2">
 
-            <input type="text" class="playername" placeholder="player 6" id="p6name">
+            <input type="text" class="playername" placeholder="Player 6" id="p6name">
 
         </div>
 
@@ -349,6 +356,18 @@
 
         </div>
 
+        <div id="eliminationview">
+
+            <div id="eliminations">
+                <!-- <h1 class="elimination"></h1> -->
+            </div>
+
+            <div id="elimbox">
+                <h1 id="ELIMINATED">ELIMINATED</h1>
+            </div>
+
+        </div>
+
         <div class="" id="elementview">
 
             <div id="elements">
@@ -445,6 +464,18 @@
             <img src="" id="totalprimary">
         </div>
 
+    </main>
+
+    <main id="winnerview">
+        
+        <div id="winnerbox">
+            <h2 id="winner"></h2>
+            <h1 id="WINS">W I N S</h1>
+        </div>
+        
+        <div id="resetbutton">
+            <h1 id="RESET">RESET</h1>
+        </div>
     </main>
 
 
