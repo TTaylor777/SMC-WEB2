@@ -1,14 +1,30 @@
 $(document).ready(function(){
 
     audio = document.getElementById('audio')
-    gamemusic = document.getElementById('gamemusic')
+    music1 = document.getElementById('music1')
+    music2 = document.getElementById('music2')
+    music3 = document.getElementById('music3')
+    music4 = document.getElementById('music4')
+    music5 = document.getElementById('music5')
+    music6 = document.getElementById('music6')
+    music7 = document.getElementById('music7')
 
-    audio.autoplay = true
-    audio.volume = 0.5
+    audio.volume = 0.35
     audio.loop = true
-    gamemusic.autoplay = true
-    gamemusic.volume = 0.1
-    gamemusic.loop = true
+    music1.volume = 0.05
+    music1.loop = true
+    music2.volume = 0.05
+    music2.loop = true
+    music3.volume = 0.05
+    music3.loop = true
+    music4.volume = 0.05
+    music4.loop = true
+    music5.volume = 0.05
+    music5.loop = true
+    music6.volume = 0.05
+    music6.loop = true
+    music7.volume = 0.05
+    music7.loop = true
     
 
     // Variables
@@ -59,6 +75,8 @@ $(document).ready(function(){
     var rng5 = 0
     var rng6 = 0
 
+    var musicrng = 0
+
     var aireffect = 0
     var timeeffect = 0
 
@@ -81,6 +99,49 @@ $(document).ready(function(){
     // Functions
 
 
+
+    function musicset(){
+
+        music1.load()
+        music1.pause()
+        music2.load()
+        music2.pause()
+        music3.load()
+        music3.pause()
+        music4.load()
+        music4.pause()
+        music5.load()
+        music5.pause()
+        music6.load()
+        music6.pause()
+        music7.load()
+        music7.pause()
+
+        musicrng = Math.round(Math.random() * 7 + 0.5)
+
+        if (musicrng == 1){
+            music1.play()
+        }
+        if (musicrng == 2){
+            music2.play()
+        }
+        if (musicrng == 3){
+            music3.play()
+        }
+        if (musicrng == 4){
+            music4.play()
+        }
+        if (musicrng == 5){
+            music5.play()
+        }
+        if (musicrng == 6){
+            music6.play()
+        }
+        if (musicrng == 7){
+            music7.play()
+        }
+
+    }
 
     function damage(){
 
@@ -1235,7 +1296,7 @@ $(document).ready(function(){
         }, 500)
 
         audio.pause()
-        gamemusic.play()
+        musicset()
         
     })
 
@@ -1378,10 +1439,15 @@ $(document).ready(function(){
         setTimeout(function(){
             $('#playerselect').fadeIn(500)
             $('#playerselect').css('display', 'flex')
-            gamemusic.load()
-            gamemusic.pause()
             
-            
+            music1.pause()
+            music2.pause()
+            music3.pause()
+            music4.pause()
+            music5.pause()
+            music6.pause()
+            music7.pause()
+
             audio.load()
             audio.play()
 
