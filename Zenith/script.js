@@ -54,12 +54,12 @@ $(document).ready(function(){
     var avg = 0
     var max = 0
 
-    var p1 = [100, 0, 0, 5, 0, 10, 3]
-    var p2 = [100, 0, 0, 5, 0, 10, 3]
-    var p3 = [100, 0, 0, 5, 0, 10, 3]
-    var p4 = [100, 0, 0, 5, 0, 10, 3]
-    var p5 = [100, 0, 0, 5, 0, 10, 3]
-    var p6 = [100, 0, 0, 5, 0, 10, 3]
+    var p1 = [100, 0, 0, 0, 0, 10, 3]
+    var p2 = [100, 0, 0, 0, 0, 10, 3]
+    var p3 = [100, 0, 0, 0, 0, 10, 3]
+    var p4 = [100, 0, 0, 0, 0, 10, 3]
+    var p5 = [100, 0, 0, 0, 0, 10, 3]
+    var p6 = [100, 0, 0, 0, 0, 10, 3]
 
     var a = 0
     var b = 0
@@ -93,7 +93,19 @@ $(document).ready(function(){
     var rolldisable = 0
 
     var statmax = 10
+    var turn = 1
+    var playertotal = 0
+    var i = 0
 
+    var bg1 = 'url("bg1.jpg")'
+    var bg2 = 'url("bg2.jpg")'
+    var bg3 = 'url("bg3.jpg")'
+    var firebg = 'url("bg4.jpg")'
+    var earthbg = 'url("bg5.jpg")'
+    var airbg = 'url("bg6.jpg")'
+    var waterbg = 'url("bg7.jpg")'
+    var spacebg = 'url("bg8.jpg")'
+    var timebg = 'url("bg9.jpg")'
 
 
     // Functions
@@ -461,7 +473,7 @@ $(document).ready(function(){
         
         if (air == 1 && rng3 <= $('#effect').html()){
             
-            $('#roll3box').css('background-color', 'limegreen')
+            $('#roll3box').css('background-image', airbg)
             aireffect = 1
 
         }
@@ -501,29 +513,29 @@ $(document).ready(function(){
             $('#roll5').html(spaceroll)
             $('#roll6').html(timeroll)
 
-            $('#roll5box').css('background-color', 'blueviolet')
+            $('#roll5box').css('background-image', spacebg)
 
         }
         if (time == 1 && rng6 <= $('#effect').html()){
             
-            $('#roll6box').css('background-color', 'magenta')
+            $('#roll6box').css('background-image', timebg)
             timeeffect = 1
 
         }
         if (fire == 1 && rng1 <= $('#effect').html()){
             total *= 2
-            $('#roll1box').css('background-color', 'red')
+            $('#roll1box').css('background-image', firebg)
         }
         if (earth == 1 && rng2 <= $('#effect').html()){
             
-            $('#roll2box').css('background-color', 'yellow')
+            $('#roll2box').css('background-image', earthbg)
 
             total += Number($('#status2').html())
 
         }
         if (water == 1 && rng4 <= $('#effect').html()){
             
-            $('#roll4box').css('background-color', 'blue')
+            $('#roll4box').css('background-image', waterbg)
             $('#mainplayerlife').html(Number($('#mainplayerlife').html()) + total)
 
             if (Number($('#mainplayerlife').html()) > (Number($('#status5').html()) + 100)){
@@ -548,33 +560,33 @@ $(document).ready(function(){
         $('#primary6').css('display', 'none')
 
         if (fire == 1){
-            $('.primary').css('background-color', 'white')
-            $('#primary1').css('background-color', 'red')
+            $('.primary').css('background-image', bg2)
+            $('#primary1').css('background-image', firebg)
             primary = 1
         } else {
             if (earth == 1){
-                $('.primary').css('background-color', 'white')
-                $('#primary2').css('background-color', 'yellow')
+                $('.primary').css('background-image', bg2)
+                $('#primary2').css('background-image', earthbg)
                 primary = 2
             } else {
                 if (air == 1){
-                    $('.primary').css('background-color', 'white')
-                    $('#primary3').css('background-color', 'limegreen')
+                    $('.primary').css('background-image', bg2)
+                    $('#primary3').css('background-image', airbg)
                     primary = 3
                 } else {
                     if (water == 1){
-                        $('.primary').css('background-color', 'white')
-                        $('#primary4').css('background-color', 'blue')
+                        $('.primary').css('background-image', bg2)
+                        $('#primary4').css('background-image', waterbg)
                         primary = 4
                     } else {
                         if (space == 1){
-                            $('.primary').css('background-color', 'white')
-                            $('#primary5').css('background-color', 'blueviolet')
+                            $('.primary').css('background-image', bg2)
+                            $('#primary5').css('background-image', spacebg)
                             primary = 5
                         } else {
                             if (time == 1){
-                                $('.primary').css('background-color', 'white')
-                                $('#primary6').css('background-color', 'magenta')
+                                $('.primary').css('background-image', bg2)
+                                $('#primary6').css('background-image', timebg)
                                 primary = 6
                             }
                         }
@@ -898,6 +910,7 @@ $(document).ready(function(){
         }
         if (combo != 0){
             $('#combobutton').fadeIn(200)
+            $('#combobutton').css('display', 'flex')
         }
 
     }
@@ -950,21 +963,18 @@ $(document).ready(function(){
 
     }
 
-    function speedmath(){
+    function playerturn(){
+        
+        i = 1
 
-        if (aireffect != 1){
+        while (i == 1){
 
-        speedtotal = p1[3] + p2[3] + p3[3] + p4[3] + p5[3] + p6[3]
-        speed1 = p1[3] / speedtotal
-        speed2 = p2[3] / speedtotal + speed1
-        speed3 = p3[3] / speedtotal + speed1 + speed2
-        speed4 = p4[3] / speedtotal + speed1 + speed2 + speed3
-        speed5 = p5[3] / speedtotal + speed1 + speed2 + speed3 + speed4
-        speed6 = p6[3] / speedtotal + speed1 + speed2 + speed3 + speed4 + speed5
+        turn += 1
+        if (turn >= 7){
+            turn = 1
+        }
 
-        rng = Math.random()
-
-        if (rng <= speed1){
+        if (turn == 1 && $('#p1name').val() != ''){
             $('#mainplayername').html($('#player1name').html())
             $('#mainplayerlife').html(p1[0])
             $('#status1').html(p1[1])
@@ -973,8 +983,9 @@ $(document).ready(function(){
             $('#status4').html(p1[4])
             $('#status5').html(p1[5])
             $('#status6').html(p1[6])
+            i = 0
         }
-        if (rng > speed1 && rng <= speed2){
+        if (turn == 2 && $('#p2name').val() != ''){
             $('#mainplayername').html($('#player2name').html())
             $('#mainplayerlife').html(p2[0])
             $('#status1').html(p2[1])
@@ -983,8 +994,9 @@ $(document).ready(function(){
             $('#status4').html(p2[4])
             $('#status5').html(p2[5])
             $('#status6').html(p2[6])
+            i = 0
         }
-        if (rng > speed2 && rng <= speed3){
+        if (turn == 3 && $('#p3name').val() != ''){
             $('#mainplayername').html($('#player3name').html())
             $('#mainplayerlife').html(p3[0])
             $('#status1').html(p3[1])
@@ -993,8 +1005,9 @@ $(document).ready(function(){
             $('#status4').html(p3[4])
             $('#status5').html(p3[5])
             $('#status6').html(p3[6])
+            i = 0
         }
-        if (rng > speed3 && rng <= speed4){
+        if (turn == 4 && $('#p4name').val() != ''){
             $('#mainplayername').html($('#player4name').html())
             $('#mainplayerlife').html(p4[0])
             $('#status1').html(p4[1])
@@ -1003,8 +1016,9 @@ $(document).ready(function(){
             $('#status4').html(p4[4])
             $('#status5').html(p4[5])
             $('#status6').html(p4[6])
+            i = 0
         }
-        if (rng > speed4 && rng <= speed5){
+        if (turn == 5 && $('#p5name').val() != ''){
             $('#mainplayername').html($('#player5name').html())
             $('#mainplayerlife').html(p5[0])
             $('#status1').html(p5[1])
@@ -1013,8 +1027,9 @@ $(document).ready(function(){
             $('#status4').html(p5[4])
             $('#status5').html(p5[5])
             $('#status6').html(p5[6])
+            i = 0
         }
-        if (rng > speed5 && rng <= speed6){
+        if (turn == 6 && $('#p6name').val() != ''){
             $('#mainplayername').html($('#player6name').html())
             $('#mainplayerlife').html(p6[0])
             $('#status1').html(p6[1])
@@ -1023,7 +1038,34 @@ $(document).ready(function(){
             $('#status4').html(p6[4])
             $('#status5').html(p6[5])
             $('#status6').html(p6[6])
+            i = 0
         }
+
+        
+
+        }
+
+    }
+
+    function speedmath(){
+
+        if (Math.random() * 100 <= Number($('#status3').html())){
+            aireffect = 1
+        }
+
+        if (aireffect != 1){
+
+        // speedtotal = p1[3] + p2[3] + p3[3] + p4[3] + p5[3] + p6[3]
+        // speed1 = p1[3] / speedtotal
+        // speed2 = p2[3] / speedtotal + speed1
+        // speed3 = p3[3] / speedtotal + speed1 + speed2
+        // speed4 = p4[3] / speedtotal + speed1 + speed2 + speed3
+        // speed5 = p5[3] / speedtotal + speed1 + speed2 + speed3 + speed4
+        // speed6 = p6[3] / speedtotal + speed1 + speed2 + speed3 + speed4 + speed5
+
+        // rng = Math.random()
+
+        playerturn()
 
         } else {
             aireffect = 0
@@ -1202,19 +1244,19 @@ $(document).ready(function(){
         spaceroll = 0
         timeroll = 0
 
-        $('#firebox').css('background-color', 'white')
-        $('#earthbox').css('background-color', 'white')
-        $('#airbox').css('background-color', 'white')
-        $('#waterbox').css('background-color', 'white')
-        $('#spacebox').css('background-color', 'white')
-        $('#timebox').css('background-color', 'white')
+        $('#firebox').css('background-image', bg1)
+        $('#earthbox').css('background-image', bg1)
+        $('#airbox').css('background-image', bg1)
+        $('#waterbox').css('background-image', bg1)
+        $('#spacebox').css('background-image', bg1)
+        $('#timebox').css('background-image', bg1)
 
-        $('#roll1box').css('background-color', 'white')
-        $('#roll2box').css('background-color', 'white')
-        $('#roll3box').css('background-color', 'white')
-        $('#roll4box').css('background-color', 'white')
-        $('#roll5box').css('background-color', 'white')
-        $('#roll6box').css('background-color', 'white')
+        $('#roll1box').css('background-image', bg1)
+        $('#roll2box').css('background-image', bg1)
+        $('#roll3box').css('background-image', bg1)
+        $('#roll4box').css('background-image', bg1)
+        $('#roll5box').css('background-image', bg1)
+        $('#roll6box').css('background-image', bg1)
 
         $('#combo').attr('src', '')
         $('#combobutton').fadeOut()
@@ -1285,6 +1327,28 @@ $(document).ready(function(){
             p6[3] = 0
             p6[0] = 0
         }
+
+
+        if ($('#p1name').val() != ''){
+            playertotal += 1
+        }
+        if ($('#p2name').val() != ''){
+            playertotal += 1
+        }
+        if ($('#p3name').val() != ''){
+            playertotal += 1
+        }
+        if ($('#p4name').val() != ''){
+            playertotal += 1
+        }
+        if ($('#p5name').val() != ''){
+            playertotal += 1
+        }
+        if ($('#p6name').val() != ''){
+            playertotal += 1
+        }
+
+        turn = Math.round(Math.random() * playertotal + 0.5)
 
         speedmath()
 
@@ -1380,6 +1444,8 @@ $(document).ready(function(){
 
     $('#resetbutton').click(function(){
 
+        playertotal = 0
+
         p1 = [100, 0, 0, 5, 0, 10, 3]
         p2 = [100, 0, 0, 5, 0, 10, 3]
         p3 = [100, 0, 0, 5, 0, 10, 3]
@@ -1468,11 +1534,11 @@ $(document).ready(function(){
     $('#fire').click(function(){
         
         if (fire == 0){
-            $('#firebox').css('background-color', 'red')
+            $('#firebox').css('background-image', firebg)
             combo += 100000
             fire = 1
         } else {
-            $('#firebox').css('background-color', 'white')
+            $('#firebox').css('background-image', bg1)
             combo -= 100000
             fire = 0
         }
@@ -1482,11 +1548,11 @@ $(document).ready(function(){
     $('#earth').click(function(){
         
         if (earth == 0){
-            $('#earthbox').css('background-color', 'yellow')
+            $('#earthbox').css('background-image', earthbg)
             combo += 10000
             earth = 1
         } else {
-            $('#earthbox').css('background-color', 'white')
+            $('#earthbox').css('background-image', bg1)
             combo -= 10000
             earth = 0
         }
@@ -1496,11 +1562,11 @@ $(document).ready(function(){
     $('#air').click(function(){
         
         if (air == 0){
-            $('#airbox').css('background-color', 'limegreen')
+            $('#airbox').css('background-image', airbg)
             combo += 1000
             air = 1
         } else {
-            $('#airbox').css('background-color', 'white')
+            $('#airbox').css('background-image', bg1)
             combo -= 1000
             air = 0
         }
@@ -1510,11 +1576,11 @@ $(document).ready(function(){
     $('#water').click(function(){
         
         if (water == 0){
-            $('#waterbox').css('background-color', 'blue')
+            $('#waterbox').css('background-image', waterbg)
             combo += 100
             water = 1
         } else {
-            $('#waterbox').css('background-color', 'white')
+            $('#waterbox').css('background-image', bg1)
             combo -= 100
             water = 0
         }
@@ -1524,11 +1590,11 @@ $(document).ready(function(){
     $('#space').click(function(){
         
         if (space == 0){
-            $('#spacebox').css('background-color', 'blueviolet')
+            $('#spacebox').css('background-image', spacebg)
             combo += 10
             space = 1
         } else {
-            $('#spacebox').css('background-color', 'white')
+            $('#spacebox').css('background-image', bg1)
             combo -= 10
             space = 0
         }
@@ -1538,11 +1604,11 @@ $(document).ready(function(){
     $('#time').click(function(){
         
         if (time == 0){
-            $('#timebox').css('background-color', 'magenta')
+            $('#timebox').css('background-image', timebg)
             combo += 1
             time = 1
         } else {
-            $('#timebox').css('background-color', 'white')
+            $('#timebox').css('background-image', bg1)
             combo -= 1
             time = 0
         }
@@ -1561,48 +1627,48 @@ $(document).ready(function(){
 
     $('#primary1').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary1').css('background-color', 'red')
+        $('.primary').css('background-image', bg1)
+        $('#primary1').css('background-image', firebg)
         primary = 1
         
     })
 
     $('#primary2').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary2').css('background-color', 'yellow')
+        $('.primary').css('background-image', bg1)
+        $('#primary2').css('background-image', earthbg)
         primary = 2
         
     })
 
     $('#primary3').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary3').css('background-color', 'limegreen')
+        $('.primary').css('background-image', bg1)
+        $('#primary3').css('background-image', airbg)
         primary = 3
         
     })
 
     $('#primary4').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary4').css('background-color', 'blue')
+        $('.primary').css('background-image', bg1)
+        $('#primary4').css('background-image', waterbg)
         primary = 4
         
     })
 
     $('#primary5').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary5').css('background-color', 'blueviolet')
+        $('.primary').css('background-image', bg1)
+        $('#primary5').css('background-image', spacebg)
         primary = 5
         
     })
 
     $('#primary6').click(function(){
         
-        $('.primary').css('background-color', 'white')
-        $('#primary6').css('background-color', 'magenta')
+        $('.primary').css('background-image', bg1)
+        $('#primary6').css('background-image', timebg)
         primary = 6
         
     })
