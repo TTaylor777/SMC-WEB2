@@ -426,6 +426,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url('bg2.jpg');
 }
 
 #eliminations {
@@ -436,6 +437,7 @@ h2 {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    background-image: url('bg2.jpg');
 }
 
 .elimination {
@@ -501,7 +503,7 @@ h2 {
     height: auto;
 }
 
-#combobox, .elementbox, #startbutton, .viewplayer, #playerview, .nameandlife, #mainplayer, .primary, .rollbox, #range, #effectbox, #postroll, #winnerview {
+#combobox, .elementbox, #startbutton, .viewplayer, #playerview, .nameandlife, #mainplayer, .primary, .rollbox, #range, #effectbox, #postroll, #winnerview, #elimbox, #eliminations {
     background-position: center;
     background-size: cover;
 }

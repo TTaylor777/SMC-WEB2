@@ -1055,16 +1055,6 @@ $(document).ready(function(){
 
         if (aireffect != 1){
 
-        // speedtotal = p1[3] + p2[3] + p3[3] + p4[3] + p5[3] + p6[3]
-        // speed1 = p1[3] / speedtotal
-        // speed2 = p2[3] / speedtotal + speed1
-        // speed3 = p3[3] / speedtotal + speed1 + speed2
-        // speed4 = p4[3] / speedtotal + speed1 + speed2 + speed3
-        // speed5 = p5[3] / speedtotal + speed1 + speed2 + speed3 + speed4
-        // speed6 = p6[3] / speedtotal + speed1 + speed2 + speed3 + speed4 + speed5
-
-        // rng = Math.random()
-
         playerturn()
 
         } else {
