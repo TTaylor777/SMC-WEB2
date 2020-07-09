@@ -74,6 +74,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     color: white;
+    line-height: 40px;
 }
 
 .viewplayername {
@@ -81,6 +82,7 @@ h2 {
     font-size: 7vw;
     max-width: 70%;
     overflow: hidden;
+    line-height: 20px;
 }
 
 .playerlife {
@@ -101,6 +103,7 @@ h2 {
 
 .playerstatusnumber {
     font-size: 6vw;
+    line-height: 20px;
 }
 
 #startbutton {

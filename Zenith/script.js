@@ -538,10 +538,6 @@ $(document).ready(function(){
             $('#roll4box').css('background-image', waterbg)
             $('#mainplayerlife').html(Number($('#mainplayerlife').html()) + total)
 
-            if (Number($('#mainplayerlife').html()) > (Number($('#status5').html()) + 100)){
-                $('#mainplayerlife').html(Number($('#status5').html()) + 100)
-            }
-
         }
 
         $('#total').html(total)
@@ -559,84 +555,92 @@ $(document).ready(function(){
         $('#primary5').css('display', 'none')
         $('#primary6').css('display', 'none')
 
-        if (fire == 1){
-            $('.primary').css('background-image', bg2)
-            $('#primary1').css('background-image', firebg)
-            primary = 1
-        } else {
-            if (earth == 1){
-                $('.primary').css('background-image', bg2)
-                $('#primary2').css('background-image', earthbg)
-                primary = 2
-            } else {
-                if (air == 1){
-                    $('.primary').css('background-image', bg2)
-                    $('#primary3').css('background-image', airbg)
-                    primary = 3
-                } else {
-                    if (water == 1){
-                        $('.primary').css('background-image', bg2)
-                        $('#primary4').css('background-image', waterbg)
-                        primary = 4
-                    } else {
-                        if (space == 1){
-                            $('.primary').css('background-image', bg2)
-                            $('#primary5').css('background-image', spacebg)
-                            primary = 5
-                        } else {
-                            if (time == 1){
-                                $('.primary').css('background-image', bg2)
-                                $('#primary6').css('background-image', timebg)
-                                primary = 6
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         if(fire == 1){
             dicetotal += 1
             $('#primary1').css('display', 'flex')
+            
         }
         if(earth == 1){
             dicetotal += 1
             $('#primary2').css('display', 'flex')
+            
         }
         if(air == 1){
             dicetotal += 1
             $('#primary3').css('display', 'flex')
+            
         }
         if(water == 1){
             dicetotal += 1
             $('#primary4').css('display', 'flex')
+            
         }
         if(space == 1){
             dicetotal += 1
             $('#primary5').css('display', 'flex')
+            
         }
         if(time == 1){
             dicetotal += 1
             $('#primary6').css('display', 'flex')
+            
         }
+
+        if (dicetotal == 1 && fire == 1){
+                primary = 1
+                $('.primary').css('background-image', bg1)
+                $('#primary1').css('background-image', firebg)
+                $('#combobox').css('background-image', firebg)
+            }
+        if (dicetotal == 1 && earth == 1){
+                primary = 2
+                $('.primary').css('background-image', bg1)
+                $('#primary2').css('background-image', earthbg)
+                $('#combobox').css('background-image', earthbg)
+            }
+        if (dicetotal == 1 && air == 1){
+                primary = 3
+                $('.primary').css('background-image', bg1)
+                $('#primary3').css('background-image', airbg)
+                $('#combobox').css('background-image', airbg)
+            }
+        if (dicetotal == 1 && water == 1){
+                primary = 4
+                $('.primary').css('background-image', bg1)
+                $('#primary4').css('background-image', waterbg)
+                $('#combobox').css('background-image', waterbg)
+            }
+        if (dicetotal == 1 && space == 1){
+                primary = 5
+                $('.primary').css('background-image', bg1)
+                $('#primary5').css('background-image', spacebg)
+                $('#combobox').css('background-image', spacebg)
+            }
+        if (dicetotal == 1 && time == 1){
+                primary = 6
+                $('.primary').css('background-image', bg1)
+                $('#primary6').css('background-image', timebg)
+                $('#combobox').css('background-image', timebg)
+            }
+
 
         if (dicetotal == 1){
             $('#effect').html(100)
         }
         if (dicetotal == 2){
-            $('#effect').html(70)
-        }
-        if (dicetotal == 3){
             $('#effect').html(50)
         }
+        if (dicetotal == 3){
+            $('#effect').html(33)
+        }
         if (dicetotal == 4){
-            $('#effect').html(30)
+            $('#effect').html(25)
         }
         if (dicetotal == 5){
             $('#effect').html(20)
         }
         if (dicetotal == 6){
-            $('#effect').html(10)
+            $('#effect').html(15)
         }
         if (dicetotal == 0){
             $('#effect').html(0)
@@ -907,6 +911,7 @@ $(document).ready(function(){
         if (combo == 0){
             $('#combo').attr('src', '')
             $('#combobutton').fadeOut(200)
+            $('#combobox').css('background-image', bg1)
         }
         if (combo != 0){
             $('#combobutton').fadeIn(200)
@@ -1261,6 +1266,8 @@ $(document).ready(function(){
 
         combo = 0
 
+        $('#combobox').css('background-image', bg1)
+
         speedmath()
         energymath()
 
@@ -1279,6 +1286,13 @@ $(document).ready(function(){
     })
 
     $('#startbutton').click(function(){
+
+        p1 = [100, 0, 0, 0, 0, 10, 3]
+        p2 = [100, 0, 0, 0, 0, 10, 3]
+        p3 = [100, 0, 0, 0, 0, 10, 3]
+        p4 = [100, 0, 0, 0, 0, 10, 3]
+        p5 = [100, 0, 0, 0, 0, 10, 3]
+        p6 = [100, 0, 0, 0, 0, 10, 3]
 
         $('#player1name').html($('#p1name').val())
         $('#player2name').html($('#p2name').val())
@@ -1360,12 +1374,14 @@ $(document).ready(function(){
         $('#statusview').slideToggle()
         $('#statusview').css('display', 'flex')
     })
+
     $('#playerviewbutton').click(function(){
         $('#statusview').fadeOut()
         $('#playerview').slideToggle()
         $('#comboview').fadeOut()
         $('#playerview').css('display', 'flex')
     })
+
     $('#combobutton').click(function(){
         $('#statusview').fadeOut()
         $('#playerview').fadeOut()
@@ -1436,12 +1452,12 @@ $(document).ready(function(){
 
         playertotal = 0
 
-        p1 = [100, 0, 0, 5, 0, 10, 3]
-        p2 = [100, 0, 0, 5, 0, 10, 3]
-        p3 = [100, 0, 0, 5, 0, 10, 3]
-        p4 = [100, 0, 0, 5, 0, 10, 3]
-        p5 = [100, 0, 0, 5, 0, 10, 3]
-        p6 = [100, 0, 0, 5, 0, 10, 3]
+        p1 = [100, 0, 0, 0, 0, 10, 3]
+        p2 = [100, 0, 0, 0, 0, 10, 3]
+        p3 = [100, 0, 0, 0, 0, 10, 3]
+        p4 = [100, 0, 0, 0, 0, 10, 3]
+        p5 = [100, 0, 0, 0, 0, 10, 3]
+        p6 = [100, 0, 0, 0, 0, 10, 3]
 
         $('#player1life').html(p1[0])
         $('#p1s1').html(p1[1])
@@ -1519,7 +1535,6 @@ $(document).ready(function(){
         }, 500)
 
     })
-
 
     $('#fire').click(function(){
         
@@ -1601,6 +1616,7 @@ $(document).ready(function(){
             $('#timebox').css('background-image', bg1)
             combo -= 1
             time = 0
+            
         }
         
     })
@@ -1619,6 +1635,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary1').css('background-image', firebg)
+        $('#combobox').css('background-image', firebg)
         primary = 1
         
     })
@@ -1627,6 +1644,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary2').css('background-image', earthbg)
+        $('#combobox').css('background-image', earthbg)
         primary = 2
         
     })
@@ -1635,6 +1653,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary3').css('background-image', airbg)
+        $('#combobox').css('background-image', airbg)
         primary = 3
         
     })
@@ -1643,6 +1662,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary4').css('background-image', waterbg)
+        $('#combobox').css('background-image', waterbg)
         primary = 4
         
     })
@@ -1651,6 +1671,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary5').css('background-image', spacebg)
+        $('#combobox').css('background-image', spacebg)
         primary = 5
         
     })
@@ -1659,6 +1680,7 @@ $(document).ready(function(){
         
         $('.primary').css('background-image', bg1)
         $('#primary6').css('background-image', timebg)
+        $('#combobox').css('background-image', timebg)
         primary = 6
         
     })
@@ -1673,6 +1695,10 @@ $(document).ready(function(){
         $('#total').html(total)
 
         primarymath()
+
+        if (Number($('#mainplayerlife').html()) > (Number($('#status5').html()) + 100)){
+            $('#mainplayerlife').html(Number($('#status5').html()) + 100)
+        }
 
         if (timeeffect != 1){
 
