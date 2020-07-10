@@ -360,22 +360,22 @@ $(document).ready(function(){
         energy = 0
 
         if (fire == 1){
-            energy += 2
+            energy += 3
         }
         if (earth == 1){
-            energy += 2
+            energy += 3
         }
         if (air == 1){
-            energy += 2
+            energy += 3
         }
         if (water == 1){
-            energy += 2
+            energy += 3
         }
         if (space == 1){
-            energy += 2
+            energy += 3
         }
         if (time == 1){
-            energy += 2
+            energy += 3
         }
 
         if (Number($('#status6').html()) < 2){
@@ -410,7 +410,7 @@ $(document).ready(function(){
             rolldisable = 0
         }
 
-        if (energy == 0 && Number($('#status6').html()) < 2){
+        if (energy == 0 && Number($('#status6').html()) < 3){
             $('#firebox').css('opacity', '30%')
             $('#earthbox').css('opacity', '30%')
             $('#airbox').css('opacity', '30%')
@@ -1780,7 +1780,7 @@ $(document).ready(function(){
                                             $('#postroll').css('display', 'flex')
                                         }, 500)
                                         
-                                    }, 1000)
+                                    }, 700)
                                     
                                 }, f);
                             }, e);
