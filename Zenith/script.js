@@ -284,6 +284,52 @@ $(document).ready(function(){
 
     }
 
+    function primaryreset(){
+        if (dicetotal != 1){
+            if (fire == 1){
+                primary = 1
+                $('.primary').css('background-image', bg1)
+                $('#primary1').css('background-image', firebg)
+                $('#combobox').css('background-image', firebg)
+            } else {
+                if (earth == 1){
+                    primary = 2
+                    $('.primary').css('background-image', bg1)
+                    $('#primary2').css('background-image', earthbg)
+                    $('#combobox').css('background-image', earthbg)
+                } else {
+                    if (air == 1){
+                        primary = 3
+                        $('.primary').css('background-image', bg1)
+                        $('#primary3').css('background-image', airbg)
+                        $('#combobox').css('background-image', airbg)
+                    } else {
+                        if (water == 1){
+                            primary = 4
+                            $('.primary').css('background-image', bg1)
+                            $('#primary4').css('background-image', waterbg)
+                            $('#combobox').css('background-image', waterbg)
+                        } else {
+                            if (space == 1){
+                                primary = 5
+                                $('.primary').css('background-image', bg1)
+                                $('#primary5').css('background-image', spacebg)
+                                $('#combobox').css('background-image', spacebg)
+                            } else {
+                                if (time == 1){
+                                    primary = 6
+                                    $('.primary').css('background-image', bg1)
+                                    $('#primary6').css('background-image', timebg)
+                                    $('#combobox').css('background-image', timebg)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     function primarymath(){
 
         if (primary == 1){
@@ -648,7 +694,26 @@ $(document).ready(function(){
                 $('#primary6').css('background-image', timebg)
                 $('#combobox').css('background-image', timebg)
             }
-
+        
+        if (primary == 1 && fire != 1){
+            primaryreset()
+        }
+        if (primary == 2 && earth != 1){
+            primaryreset()
+        }
+        if (primary == 3 && air != 1){
+            primaryreset()
+        }
+        if (primary == 4 && water != 1){
+            primaryreset()
+        }
+        if (primary == 5 && space != 1){
+            primaryreset()
+        }
+        if (primary == 6 && time != 1){
+            primaryreset()
+        }
+        
 
         if (dicetotal == 1){
             $('#effect').html(100)
