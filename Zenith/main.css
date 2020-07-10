@@ -35,12 +35,28 @@ main {
     border: black 3px solid;
 }
 
-/* .teambox {
-    width: 20%;
-    height: 100%;
-    border: black 5px solid;
-    background-color: rgb(173, 173, 173);
-} */
+.imgload {
+    display: none;
+}
+
+#img1 {
+    background-image: url('bg4.jpg');
+}
+#img1 {
+    background-image: url('bg5.jpg');
+}
+#img1 {
+    background-image: url('bg6.jpg');
+}
+#img1 {
+    background-image: url('bg7.jpg');
+}
+#img1 {
+    background-image: url('bg8.jpg');
+}
+#img1 {
+    background-image: url('bg9.jpg');
+}
 
 h1 {
     font-family: 'Montserrat', sans-serif;
@@ -74,7 +90,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     color: white;
-    line-height: 40px;
+    line-height: 50px;
     text-align: center;
 }
 
@@ -140,17 +156,48 @@ h2 {
 }
 
 .element {
-    height: 60%;
+    width: 60%;
     margin: auto;
+    z-index: 6;
 }
 
 .elementbox {
-    width: 33.33%;
-    height: 50%;
+    width: 32.33%;
+    height: 49%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('bg1.jpg');
+    position: relative;
+}
+
+.border {
+    position: absolute;
+    width: 50%;
+    height: auto;
+}
+
+.topright {
+    right: 0px;
+    top: 0px;
+}
+
+.topleft {
+    left: 0px;
+    top: 0px;
+    transform: scaleX(-1);
+}
+
+.bottomright {
+    right: 0px;
+    bottom: 0px;
+    transform: scaleY(-1);
+}
+
+.bottomleft {
+    left: 0px;
+    bottom: 0px;
+    transform: scale(-1, -1)
 }
 
 #combobox {
@@ -160,7 +207,6 @@ h2 {
     justify-content: center;
     align-items: center;
     background-image: url('bg1.jpg');
-    border-top: 4px solid black;
 }
 
 #combo {
@@ -369,14 +415,14 @@ h2 {
     width: 100%;
     height: 100%;
     display: none;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('bg2.jpg');
+    background-image: url('bg1.jpg');
 }
 
 #total {
-    font-size: 20vw;
+    font-size: 30vw;
 }
 
 #totalstatus {
@@ -420,29 +466,30 @@ h2 {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-image: url('bg1.jpg');
     z-index: 11;
 }
 
 #elimbox {
     width: 100%;
-    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-image: url('bg2.jpg');
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
 }
 
 #eliminations {
     width: 100%;
-    height: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
     background-image: url('bg2.jpg');
+    border-top: 3px black solid;
 }
 
 .elimination {
@@ -452,6 +499,7 @@ h2 {
 
 #ELIMINATED {
     font-size: 12vw;
+    font-weight: 900;
 }
 
 #winnerview {
@@ -461,7 +509,7 @@ h2 {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-image: url('bg2.jpg');
+    background-image: url('bg1.jpg');
 }
 
 #winnerbox {
@@ -508,7 +556,7 @@ h2 {
     height: auto;
 }
 
-#combobox, .elementbox, #startbutton, .viewplayer, #playerview, .nameandlife, #mainplayer, .primary, .rollbox, #range, #effectbox, #postroll, #winnerview, #elimbox, #eliminations {
+#combobox, .elementbox, #startbutton, .viewplayer, #playerview, .nameandlife, #mainplayer, .primary, .rollbox, #range, #effectbox, #postroll, #winnerview, #elimbox, #eliminations, #eliminationview {
     background-position: center;
     background-size: cover;
 }
@@ -628,7 +676,6 @@ h2 {
         width: 33.33%;
         height: 100%;
         border: none;
-        border-left: 4px black solid;
     }
 
     #combo {
@@ -675,10 +722,9 @@ h2 {
     .playerstatusnumber {
         font-size: 4vw;
     }
+    #total {
+        font-size: 20vw;
 
-    #postroll {
-        flex-direction: row;
-    }
 }
 
 @media(min-width: 1000px) {
@@ -798,7 +844,6 @@ h2 {
         position: absolute;
         bottom: 0px;
         right: 0px;
-        border-top: none;
     }
 
     #mainplayer {

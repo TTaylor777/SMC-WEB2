@@ -378,7 +378,7 @@ $(document).ready(function(){
             energy += 3
         }
 
-        if (Number($('#status6').html()) < 2){
+        if (Number($('#status6').html()) < 3){
             $('#firebox').css('opacity', '30%')
             $('#earthbox').css('opacity', '30%')
             $('#airbox').css('opacity', '30%')
@@ -387,14 +387,27 @@ $(document).ready(function(){
             $('#timebox').css('opacity', '100%')
         }
 
-        if (energy > Number($('#status6').html())){
-            $('#firebox').css('opacity', '30%')
-            $('#earthbox').css('opacity', '30%')
-            $('#airbox').css('opacity', '30%')
-            $('#waterbox').css('opacity', '30%')
-            $('#spacebox').css('opacity', '30%')
-            $('#timebox').css('opacity', '30%')
-            rolldisable = 1
+        if (energy + 3 > Number($('#status6').html())){
+
+            if (fire != 1){
+                $('#firebox').css('opacity', '30%')
+            }
+            if (earth != 1){
+                $('#earthbox').css('opacity', '30%')
+            }
+            if (air != 1){
+                $('#airbox').css('opacity', '30%')
+            }
+            if (water != 1){
+                $('#waterbox').css('opacity', '30%')
+            }
+            if (space != 1){
+                $('#spacebox').css('opacity', '30%')
+            }
+            if (time != 1){
+                $('#timebox').css('opacity', '30%')
+            }
+            
         } else {
             $('#firebox').css('opacity', '100%')
             $('#earthbox').css('opacity', '100%')
@@ -402,12 +415,23 @@ $(document).ready(function(){
             $('#waterbox').css('opacity', '100%')
             $('#spacebox').css('opacity', '100%')
             $('#timebox').css('opacity', '100%')
+        }
+        
+        if (energy > Number($('#status6').html())){
+
+            rolldisable = 1
+
+        } else {
             rolldisable = 0
         }
 
         if (time == 1 && fire == 0 && earth == 0 && air == 0 && water == 0 && space == 0){
             $('#timebox').css('opacity', '100%')
             rolldisable = 0
+        }
+
+        if (Number($('#status6').html()) < 3){
+            $('#timebox').css('opacity', '100%')
         }
 
         if (energy == 0 && Number($('#status6').html()) < 3){
@@ -417,6 +441,8 @@ $(document).ready(function(){
             $('#waterbox').css('opacity', '30%')
             $('#spacebox').css('opacity', '30%')
         }
+
+        console.log(rolldisable)
     
     }
 
@@ -1537,87 +1563,94 @@ $(document).ready(function(){
     })
 
     $('#fire').click(function(){
-        
-        if (fire == 0){
-            $('#firebox').css('background-image', firebg)
-            combo += 100000
-            fire = 1
-        } else {
+
+        if(fire == 1) {
             $('#firebox').css('background-image', bg1)
             combo -= 100000
             fire = 0
-        }
+        } else {
+        if (fire == 0 && energy + 3 <= Number($('#status6').html())){
+            $('#firebox').css('background-image', firebg)
+            combo += 100000
+            fire = 1
+        }}
+        
         
     })
 
     $('#earth').click(function(){
         
-        if (earth == 0){
-            $('#earthbox').css('background-image', earthbg)
-            combo += 10000
-            earth = 1
-        } else {
+        if(earth == 1) {
             $('#earthbox').css('background-image', bg1)
             combo -= 10000
             earth = 0
-        }
+        } else {
+        if (earth == 0 && energy + 3 <= Number($('#status6').html())){
+            $('#earthbox').css('background-image', earthbg)
+            combo += 10000
+            earth = 1
+        }}
+        
         
     })
 
     $('#air').click(function(){
         
-        if (air == 0){
-            $('#airbox').css('background-image', airbg)
-            combo += 1000
-            air = 1
-        } else {
+        if(air == 1) {
             $('#airbox').css('background-image', bg1)
             combo -= 1000
             air = 0
-        }
+        } else {
+        if (air == 0 && energy + 3 <= Number($('#status6').html())){
+            $('#airbox').css('background-image', airbg)
+            combo += 1000
+            air = 1
+        }}
         
     })
 
     $('#water').click(function(){
         
-        if (water == 0){
-            $('#waterbox').css('background-image', waterbg)
-            combo += 100
-            water = 1
-        } else {
+        if(water == 1) {
             $('#waterbox').css('background-image', bg1)
             combo -= 100
             water = 0
-        }
+        } else {
+        if (water == 0 && energy + 3 <= Number($('#status6').html())){
+            $('#waterbox').css('background-image', waterbg)
+            combo += 100
+            water = 1
+        }}
         
     })
 
     $('#space').click(function(){
         
-        if (space == 0){
-            $('#spacebox').css('background-image', spacebg)
-            combo += 10
-            space = 1
-        } else {
+        if(space == 1) {
             $('#spacebox').css('background-image', bg1)
             combo -= 10
             space = 0
-        }
+        } else {
+        if (space == 0 && energy + 3 <= Number($('#status6').html())){
+            $('#spacebox').css('background-image', spacebg)
+            combo += 10
+            space = 1
+        }}
         
     })
 
     $('#time').click(function(){
         
-        if (time == 0){
-            $('#timebox').css('background-image', timebg)
-            combo += 1
-            time = 1
-        } else {
+        if(time == 1) {
             $('#timebox').css('background-image', bg1)
             combo -= 1
             time = 0
-            
-        }
+        } else {
+        if (time == 0 && energy + 3 <= Number($('#status6').html()) || time == 0 && energy < 3){
+            $('#timebox').css('background-image', timebg)
+            combo += 1
+            time = 1
+        }}
         
     })
 
@@ -1685,7 +1718,7 @@ $(document).ready(function(){
         
     })
 
-    $('#combo').click(function(){
+    $('#combobox').click(function(){
 
         if (rolldisable == 0 || combo == 1){
         
