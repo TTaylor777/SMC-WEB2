@@ -42,20 +42,29 @@ main {
 #img1 {
     background-image: url('bg4.jpg');
 }
-#img1 {
+#img2 {
     background-image: url('bg5.jpg');
 }
-#img1 {
+#img3 {
     background-image: url('bg6.jpg');
 }
-#img1 {
+#img4 {
     background-image: url('bg7.jpg');
 }
-#img1 {
+#img5 {
     background-image: url('bg8.jpg');
 }
-#img1 {
+#img6 {
     background-image: url('bg9.jpg');
+}
+#img7 {
+    background-image: url('bg1.jpg');
+}
+#img8 {
+    background-image: url('bg2.jpg');
+}
+#img9 {
+    background-image: url('bg3.jpg');
 }
 
 h1 {
