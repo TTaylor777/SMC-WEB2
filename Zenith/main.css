@@ -738,11 +738,15 @@ h2 {
     }
     #total {
         font-size: 20vw;
-
+    }
 }
 
 @media(min-width: 1000px) {
 
+    .player {
+        width: 50%;
+    }
+    
     #totalprimary {
         width: 200px;
         height: 200px;
@@ -878,5 +882,3 @@ h2 {
     }
 
 }
-
-
