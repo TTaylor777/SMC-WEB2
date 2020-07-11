@@ -831,7 +831,7 @@ h2 {
 
     .viewplayername {
         font-size: 40px;
-        line-height: 50px;
+        line-height: 60px;
     }
 
     #startbuttontext {
@@ -839,7 +839,7 @@ h2 {
     }
     
     #mainplayername {
-        font-size: 72px;
+        font-size: 50px;
         line-height: 90px;
     }
 
