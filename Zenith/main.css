@@ -95,7 +95,6 @@ h2 {
     font-family: 'Crimson Text', serif;
     font-weight: 400;
     font-size: 10vw;
-    width: 100%;
     text-align: center;
     overflow: hidden;
     color: white;
@@ -575,10 +574,6 @@ h2 {
 
 
 @media(max-height: 500px) {
-    
-    #mainplayerlife {
-        width: 65%;
-    }
 
     .nameandlife {
         height: 50%;
