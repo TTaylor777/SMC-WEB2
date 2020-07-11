@@ -106,10 +106,11 @@ h2 {
 .viewplayername {
     font-family: 'Crimson Text', serif;
     font-size: 7vw;
-    max-width: 70%;
+    max-width: 60%;
     overflow: hidden;
-    line-height: 25px;
+    line-height: 60px;
     text-align: center;
+    height: 100%;
 }
 
 .playerlife {
@@ -368,6 +369,7 @@ h2 {
     flex-direction: row;
     background-image: url('bg2.jpg');
     border: 2px black solid;
+    overflow: hidden;
 }
 
 .viewplayerstatus {
@@ -574,15 +576,23 @@ h2 {
 
 @media(max-height: 500px) {
     
+    #mainplayerlife {
+        width: 65%;
+    }
+
+    .nameandlife {
+        height: 50%;
+    }
+
     #totalprimary {
         width: auto;
         height: 30%;
     }
 
     #mainplayername {
+        height: 100%;
         font-size: 7vw;
-        width: 50%;
-        line-height: 100px;
+        line-height: 110px;
     }
 
     .player {

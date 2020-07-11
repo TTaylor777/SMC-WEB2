@@ -25,7 +25,21 @@ $(document).ready(function(){
     music6.loop = true
     music7.volume = 0.05
     music7.loop = true
-    
+
+    music1.load()
+    music1.pause()
+    music2.load()
+    music2.pause()
+    music3.load()
+    music3.pause()
+    music4.load()
+    music4.pause()
+    music5.load()
+    music5.pause()
+    music6.load()
+    music6.pause()
+    music7.load()
+    music7.pause()
 
     // Variables
 
@@ -113,43 +127,51 @@ $(document).ready(function(){
 
 
     function musicset(){
-
-        music1.load()
+        
+        
         music1.pause()
-        music2.load()
+        
         music2.pause()
-        music3.load()
+        
         music3.pause()
-        music4.load()
+        
         music4.pause()
-        music5.load()
+        
         music5.pause()
-        music6.load()
+        
         music6.pause()
-        music7.load()
+        
         music7.pause()
+
 
         musicrng = Math.round(Math.random() * 7 + 0.5)
 
         if (musicrng == 1){
+            music1.load()
             music1.play()
         }
         if (musicrng == 2){
+            music2.load()
             music2.play()
         }
         if (musicrng == 3){
+            music3.load()
             music3.play()
         }
         if (musicrng == 4){
+            music4.load()
             music4.play()
         }
         if (musicrng == 5){
+            music5.load()
             music5.play()
         }
         if (musicrng == 6){
+            music6.load()
             music6.play()
         }
         if (musicrng == 7){
+            music7.load()
             music7.play()
         }
 
