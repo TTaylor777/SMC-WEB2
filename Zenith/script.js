@@ -106,14 +106,7 @@ $(document).ready(function(){
     var aireffect = 0
     var timeeffect = 0
 
-    var speedtotal = 0
-    var speed1 = 0
-    var speed2 = 0
-    var speed3 = 0
-    var speed4 = 0
-    var speed5 = 0
-    var speed6 = 0
-    var rng = Math.random()
+    var turncount = 0
 
     var energy = 0
     var rolldisable = 0
@@ -1183,12 +1176,16 @@ $(document).ready(function(){
             aireffect = 1
         }
 
-        if (aireffect != 1){
+        if (aireffect != 1 || turncount == 2){
+
+            aireffect = 0
+            turncount = 0
 
         playerturn()
 
         } else {
             aireffect = 0
+            turncount += 1
         }
 
         $('#mainplayerlife').html(Number($('#mainplayerlife').html()) + Number($('#status4').html()))
