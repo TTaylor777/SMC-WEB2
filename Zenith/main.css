@@ -35,38 +35,6 @@ main {
     border: black 3px solid;
 }
 
-.imgload {
-    display: none;
-}
-
-#img1 {
-    background-image: url('bg4.jpg');
-}
-#img2 {
-    background-image: url('bg5.jpg');
-}
-#img3 {
-    background-image: url('bg6.jpg');
-}
-#img4 {
-    background-image: url('bg7.jpg');
-}
-#img5 {
-    background-image: url('bg8.jpg');
-}
-#img6 {
-    background-image: url('bg9.jpg');
-}
-#img7 {
-    background-image: url('bg1.jpg');
-}
-#img8 {
-    background-image: url('bg2.jpg');
-}
-#img9 {
-    background-image: url('bg3.jpg');
-}
-
 h1 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0px;
@@ -82,7 +50,9 @@ h2 {
 
 #title {
     font-size: 10vw;
-    color: white;
+    background: linear-gradient( to right, red , yellow, lime, blue, blueviolet, magenta);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #startbuttontext {
@@ -125,7 +95,8 @@ h2 {
 }
 
 .statusnumber {
-    font-size: 10vw;
+    font-size: 15vw;
+    line-height: 60px;
 }
 
 .playerstatusnumber {
@@ -334,9 +305,9 @@ h2 {
     width: 50%;
     height: 33.33333%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     margin: auto;
     background-image: url('bg2.jpg');
     background-position: center;
@@ -533,7 +504,7 @@ h2 {
 
 #winner {
     font-size: 15vw;
-
+    text-align: center;
 }
 
 #WINS {
@@ -574,6 +545,10 @@ h2 {
 
 
 @media(max-height: 500px) {
+
+    .statusnumber {
+        font-size: 10vw;
+    }
 
     .nameandlife {
         height: 50%;
@@ -716,7 +691,7 @@ h2 {
     .status {
         width: 33.33333%;
         height: 50%;
-        flex-direction: row;
+        flex-direction: column;
         background-image: url('bg2.jpg');
         background-position: center;
     }

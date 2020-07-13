@@ -26,16 +26,6 @@ $(document).ready(function(){
     music7.volume = 0.05
     music7.loop = true
 
-    new Image('bg1.jpg')
-    new Image('bg2.jpg')
-    new Image('bg3.jpg')
-    new Image('bg4.jpg')
-    new Image('bg5.jpg')
-    new Image('bg6.jpg')
-    new Image('bg7.jpg')
-    new Image('bg8.jpg')
-    new Image('bg9.jpg')
-
     music1.load()
     music1.pause()
     music2.load()
@@ -1509,6 +1499,18 @@ $(document).ready(function(){
         $('#playerview').fadeOut()
         $('#comboview').slideToggle()
         $('#comboview').css('display', 'flex')
+    })
+
+    $('#comboview').click(function(){
+        $('#comboview').slideToggle()
+    })
+
+    $('#playerview').click(function(){
+        $('#playerview').slideToggle()
+    })
+
+    $('#statusview').click(function(){
+        $('#statusview').slideToggle()
     })
 
     $('#eliminationview').click(function(){
