@@ -101,7 +101,7 @@ h2 {
 
 .playerstatusnumber {
     font-size: 6vw;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 #startbutton {
@@ -545,6 +545,11 @@ h2 {
 
 
 @media(max-height: 500px) {
+
+    .element {
+        width: auto;
+        height: 70%;
+    }
 
     .statusnumber {
         font-size: 10vw;
