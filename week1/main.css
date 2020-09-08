@@ -1,0 +1,158 @@
+/* 
+
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+
+*/
+
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('bg.jpg');
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+}
+
+#portrait {
+    width: 40%;
+    float: left;
+}
+
+.nametitle {
+    display: inline-block;
+    width: 50%;
+    padding-left: 10px;
+}
+
+.biotext {
+    line-height: 30px;
+    text-align: justify;
+    padding: 0px 20px;
+}
+
+.bio {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.gallery {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    height: 500px;
+}
+
+.galleryimage {
+    width: 33.33%;
+    height: 33.33%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+#g1 {
+    background-image: url('1.png');
+}
+#g2 {
+    background-image: url('2.jpg');
+}
+#g3 {
+    background-image: url('3.jpg');
+}
+#g4 {
+    background-image: url('4.jpg');
+}
+#g5 {
+    background-image: url('5.png');
+}
+#g6 {
+    background-image: url('6.jpg');
+}
+#g7 {
+    background-image: url('7.png');
+}
+#g8 {
+    background-image: url('8.jpg');
+}
+#g9 {
+    background-image: url('9.png');
+}
+
+#contactbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    margin: auto;
+}
+
+.buttontext {
+    
+    margin: 0px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.493);
+}
+
+#last, #first, #text {
+    width: 50%;
+}
+
+#text {
+    height: 200px;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#sub {
+    font-family: 'Montserrat', sans-serif;
+    width: 30%;
+    height: 50px;
+    background-color: white;
+    border: none;
+}
+
+.border {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+@media (min-width: 540px){
+    .nametitle {
+        text-align: center;
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 1000px){
+    .galleryimage {
+        height: 300px;
+    }
+
+    #contactbutton {
+        width: 100%;
+        height: 100px;
+    }
+
+    .gallery {
+        height: auto;
+    }
+}
