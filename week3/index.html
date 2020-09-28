@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Week3 Homework</title>
+
+    <style>
+
+        .navbar-brand {
+            width: 50px;
+        }
+
+        .navbar {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background-color: white;
+            z-index: 100;
+        }
+
+        body{
+            position: relative;
+            padding-bottom: 70px;
+        }
+
+        .jumbotron {
+            background-image: url('coffeeBG.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .white {
+            background-color: rgba(255, 255, 255, 0.904);
+            color: rgb(0, 0, 0);
+            
+        }
+
+        .display-4 {
+            padding: 10px;
+        }
+
+        .lead {
+            font-weight: 400;
+            padding: 10px;
+        }
+
+        picture > img {
+            width: 100%;
+        } 
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <img src="coffeeicon.png" alt="coffee logo" class="navbar-brand" href="#">
+
+        <h1>Big Coffee</h1>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1 class="display-4 white">Sweet Relief...</h1>
+        <p class="lead white">Coffee is the only thing keeping the world going, let us help that cause!</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <h1 class="display-4">Cup latte arabica</h1>
+                <p class="lead">Mug, crema, id french press acerbic kopi-luwak java crema. Saucer steamed iced spoon to go black robusta. Viennese percolator sweet rich instant dark breve. Flavour, cup, café au lait, single shot fair trade java mocha single origin doppio.</p>
+            </div>
+            <div class="col-12 col-md-5" id="pic1">
+                <picture>
+                    <source media="(min-width:650px)" srcset="coffee1.png">
+                    <img src="coffee1small.jpg" alt="coffee picture">
+                </picture>
+            </div>
+
+            <div class="row bg-dark">
+                <div class="col-12 col-md-7 order-md-last">
+                    <h1 class="display-4 text-light">Cup latte arabica</h1>
+                    <p class="lead text-light">Mug, crema, id french press acerbic kopi-luwak java crema. Saucer steamed iced spoon to go black robusta. Viennese percolator sweet rich instant dark breve. Flavour, cup, café au lait, single shot fair trade java mocha single origin doppio.</p>
+                </div>
+                <div class="col-12 col-md-5 order-md-first" id="pic1">
+                    <picture>
+                        <source media="(min-width:650px)" srcset="cofee2.png">
+                        <img src="coffee2small.jpg" alt="coffee picture">
+                    </picture>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <h1 class="display-4">Cup latte arabica</h1>
+                    <p class="lead">Mug, crema, id french press acerbic kopi-luwak java crema. Saucer steamed iced spoon to go black robusta. Viennese percolator sweet rich instant dark breve. Flavour, cup, café au lait, single shot fair trade java mocha single origin doppio.</p>
+                </div>
+                <div class="col-12 col-md-5" id="pic1">
+                    <picture>
+                        <source media="(min-width:650px)" srcset="coffee3.png">
+                        <img src="coffee3small.jpg" alt="coffee picture">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h1 class="bg-dark text-light">Menu</h1>
+
+        <div class="row">
+            <div class="col-6">
+                <h3>Coffee</h3>
+            </div>
+            <div class="col-6">
+                <h3>$2.00</h3>
+            </div>
+        </div>
+        <div class="row bg-dark">
+            <div class="col-6">
+                <h3 class="text-light">Espresso</h3>
+            </div>
+            <div class="col-6">
+                <h3 class="text-light">$3.00</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Latte</h3>
+            </div>
+            <div class="col-6">
+                <h3>$4.00</h3>
+            </div>
+        </div>
+        <div class="row bg-dark">
+            <div class="col-6">
+                <h3 class="text-light">Cappuccino</h3>
+            </div>
+            <div class="col-6">
+                <h3 class="text-light">$5.00</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Iced Coffee</h3>
+            </div>
+            <div class="col-6">
+                <h3>$3.00</h3>
+            </div>
+        </div>
+        <div class="row bg-dark">
+            <div class="col-6">
+                <h3 class="text-light">Blended Coffee</h3>
+            </div>
+            <div class="col-6">
+                <h3 class="text-light">$6.00</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Secret Coffee</h3>
+            </div>
+            <div class="col-6">
+                <h3>$10.00</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
