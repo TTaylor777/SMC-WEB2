@@ -18,6 +18,35 @@
             border: none;
         }
 
+        nav {
+          background-image: url('navbg.png');
+          background-position: center;
+          background-size: contain;
+        }
+
+        .navbar-light .navbar-toggler {
+          background-color: white;
+        }
+
+         .navbar-light .navbar-nav .nav-link {
+          color: rgb(0, 0, 0);
+        }
+
+        .active {
+          border-bottom: 2px black solid;
+        }
+
+        .navbar-brand {
+          font-family: 'Playball', cursive;
+          font-size: 32px;
+        }
+
+        .nav-link {
+          font-family: 'Raleway', sans-serif;
+          font-size: 28px;
+          font-weight: bolder;
+        } 
+
         .feat {
           width: 100%;
         }
@@ -32,11 +61,22 @@
 
         h1 {
           font-family: 'Playball', cursive;
-
         }
 
         p {
           font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+          background-image: url('bgimg.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        .col-md-7 {
+          background-image: url('featbg.png');
+          background-position: center;
+          background-size: cover;
         }
 
     </style>
@@ -81,22 +121,22 @@
           <div class="carousel-item active">
             <img src="img1.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h5>Natural Ingredients</h5>
+              <p>Beautiy products made from nature itself</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="img2.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h5>Purifying Hygene</h5>
+              <p>A variety of products that provide a pure hygenic experience</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="img3.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <h5>Simple Solution</h5>
+              <p>A product that you must have</p>
             </div>
           </div>
         </div>
@@ -121,11 +161,11 @@
           <div class="col-12 col-md-5">                               
                   <img src="pic1.png" alt="stack of shampoo bars" class="feat">              
           </div>
-
-          <div class="row bg-dark">
+      </div>
+          <div class="row">
               <div class="col-12 col-md-7 order-md-last">
-                  <h1 class="display-4 text-light">Natural Ingredients</h1>
-                  <p class="lead text-light">Ultrices in iaculis nunc sed augue lacus viverra. Pharetra massa massa ultricies mi. Massa sed elementum tempus egestas sed.</p>
+                  <h1 class="display-4">Natural Ingredients</h1>
+                  <p class="lead">Ultrices in iaculis nunc sed augue lacus viverra. Pharetra massa massa ultricies mi. Massa sed elementum tempus egestas sed.</p>
               </div>
               <div class="col-12 col-md-5 order-md-first">                                      
                       <img src="pic2.png" alt="juniper plant" class="feat">                  
@@ -141,7 +181,7 @@
                       <img src="pic3.png" alt="beautiful hair" class="feat">                  
               </div>
           </div>
-      </div>
+      
   </div>
 
 
