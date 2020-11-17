@@ -1,0 +1,116 @@
+body {
+    margin: 0px;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('bg1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.top, .bot, .mid {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 72px;
+}
+
+h2 {
+    font-size: 50px;
+    animation: winner 1s forwards;
+    animation-delay: 7s;
+    transform: translateY(1000px)
+}
+
+.slotbox {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border: 10px double black;
+    background-color: white;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+}
+
+.reel {
+    width: 100px;
+    transform: translateY(0px);
+    
+}
+
+.reel1 {
+    animation: spina 3s forwards;
+}
+
+.reel2 {
+    animation: spinb 4s forwards;
+}
+
+.reel3 {
+    animation: spinc 5s forwards;
+}
+
+.reel4 {
+    animation: spind 6s forwards;
+}
+.reel5 {
+    animation: spine 7s forwards;
+}
+
+.a {
+    background-image: url('a.png');
+}
+
+.b {
+    background-image: url('b.png');
+}
+
+.c {
+    background-image: url('c.png');
+}
+
+
+@keyframes spina {
+    100% {transform: translateY(-1000px);}
+  }
+
+  @keyframes spinb {
+    100% {transform: translateY(-1000px);}
+  }
+
+  @keyframes spinc {
+    100% {transform: translateY(-1000px);}
+  }
+
+  @keyframes spind {
+    100% {transform: translateY(-1000px);}
+  }
+
+  @keyframes spine {
+    100% {transform: translateY(-1000px);}
+  }
+
+  @keyframes winner {
+    100% {transform: translateY(0px);}
+  }
