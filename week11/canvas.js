@@ -6,12 +6,12 @@ let cPosX = canvas.width/2;
 let cPosY = canvas.height/2;
 let cVelX = 3.4;
 let cVelY = 4.2;
-let cRad = 30;
+let cRad = 3;
 let clicked = false;
 let counter = 0
 
 function draw(){
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    // context.clearRect(0, 0, canvas.width, canvas.height);
 
     drawCircle();
     moveCircle();
