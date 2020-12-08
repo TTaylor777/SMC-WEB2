@@ -38,13 +38,13 @@ $(document).ready(function(){
 
         $('.cartadd').mouseover(function(){
 
-            $(this).css('color', 'rgb(114, 73, 124)')
+            $(this).css('background-color', 'black')
     
         })
 
         $('.cartadd').mouseout(function(){
 
-            $(this).css('color', 'black')
+            $(this).css('background-color', 'rgb(114, 73, 124)')
     
         })
 
