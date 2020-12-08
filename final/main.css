@@ -1,0 +1,308 @@
+body {
+    margin: 0px;
+    background-image: url('bg.jpg');
+    background-position: top;
+    background-repeat: repeat;
+    position: relative;
+}
+
+/*
+font-family: 'Forum', cursive;
+font-family: 'Lato', sans-serif;
+*/
+
+h1 {
+    font-family: 'Forum', cursive;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.mainheader {
+    margin: 20px 0px;
+}
+
+.underline {
+    border-bottom: 2px black solid;
+}
+
+.products {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagenum {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    margin: 0px 20px;
+    display: inline-block;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.on {
+    color: rgb(114, 73, 124);
+}
+
+.pagenumbers {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgb(233, 233, 233);
+    border-bottom: 3px rgb(114, 73, 124) solid;
+}
+
+.nav-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-family: 'Forum', cursive;
+    font-size: 32px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url('rockicon.png');
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.footer {
+    width: 100%;
+    background-color: rgb(233, 233, 233);
+    border-top: 3px rgb(114, 73, 124) solid;
+    margin-top: 20px;
+}
+
+.fottertext {
+    text-align: center;
+    font-size: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social > img {
+    width: 50px;
+}
+
+.bottom {
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+    height: 300px;
+}
+
+.findus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formbox {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px black solid;
+}
+
+.btn-primary {
+    background-color: rgb(114, 73, 124);
+}
+
+.cartwindow {  
+
+    display: none;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.507);
+
+}
+
+.cartbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(233, 233, 233);
+    border: 3px rgb(114, 73, 124) solid;
+    padding: 20px;
+}
+
+.cartitem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px black solid;
+}
+
+.totalbox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cartimg {
+    width: 30px;
+}
+
+.checkoutform {
+    display: none;
+}
+
+.productimg {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.carousel {
+    max-width: 900px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+.productinfo {
+    padding: 10px;
+}
+
+.productname {
+    margin-right: 20px;
+}
+
+.productprice {
+    float: right;
+}
+
+.cartadd {
+    border-top: 2px black solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+.productprice, .productname {
+    display: inline-block;
+}
+
+.productprice, .productname, .cartadd {
+    line-height: 50px;
+}
+
+.embed-responsive {
+    width: 100%;
+    max-width: 700px;
+}
+
+.date {
+    margin: 20px 0px;
+}
+
+video {
+    margin-bottom: 20px;
+}
+
+.rocktitle {
+    margin-top: 20px;
+}
+
+#a {
+    background-image: url('rock1.jpg');
+}
+
+#b {
+    background-image: url('rock6.jpg');
+}
+
+#c {
+    background-image: url('rock5.jpg');
+}
+
+#d {
+    background-image: url('rock4.jpg');
+}
+
+#e {
+    background-image: url('rock2.jpg');
+}
+
+#f {
+    background-image: url('rock3.jpg');
+}
+
+#g {
+    background-image: url('rock7.jpg');
+}
+
+#h {
+    background-image: url('rock8.jpg');
+}
+
+#i {
+    background-image: url('rock9.jpg');
+}
+
+#j {
+    background-image: url('rock10.jpg');
+}
+
+#k {
+    background-image: url('rock11.jpg');
+}
+
+#l {
+    background-image: url('rock12.jpg');
+}
+
+#m {
+    background-image: url('rock13.jpg');
+}
+
+#n {
+    background-image: url('rock14.jpg');
+}
+
+#o {
+    background-image: url('rock15.jpg');
+}
+
+#p {
+    background-image: url('rock16.jpg');
+}
+
+#q {
+    background-image: url('rock17.jpg');
+}
+
+#r {
+    background-image: url('rock18.jpg');
+}
