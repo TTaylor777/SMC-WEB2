@@ -328,7 +328,6 @@ div > .mainimg {
     max-width: 900px;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 20px;
 }
 
 .productinfo {
