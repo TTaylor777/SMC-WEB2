@@ -43,6 +43,15 @@ div > .carousel-caption {
 
 .mainheader {
     margin: 20px 0px;
+    font-size: 40px;
+}
+
+.feat {
+    font-size: 40px;
+}
+
+.newadd {
+    font-size: 40px;
 }
 
 .underline {
@@ -234,6 +243,22 @@ div > .formbox {
     background-size: cover;
     
 }
+
+@media (max-width: 768px){
+    .mainimg {
+        height: 400px;
+    }
+    
+    div > .sideimg {
+        height: 100px;
+    }
+
+    .itembox {
+        margin-top: 0px;
+        border-top: 0px;
+    }
+
+    }
 
 .itemp {
     margin-bottom: 3rem;
