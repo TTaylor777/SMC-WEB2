@@ -18,15 +18,12 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Geo Market</a>
+          <a class="navbar-brand" href="index.html">Geo Market</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link active" href="products.html">Products</a>
               </li>
@@ -38,6 +35,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link"><img src="cart.png" alt="cart" id="cartimg"></a>
+                <h2 id="cartcount">0</h2>
               </li>
             </ul>
           </div>
@@ -53,8 +51,10 @@
                               <h1 class="totaltext">Total</h1>
                               <h1 class="total">0</h1>
                           </div>
+                        <div class="col-12 buttonbox">
+                          <button class="btn btn-primary check buttonbox">Checkout</button>
+                        </div>
                         
-                        <button class="btn btn-primary check">Checkout</button>
 
                         <div class="col-12 checkoutform">
                             <form class="row g-3 needs-validation" novalidate>
@@ -117,7 +117,7 @@
                                       Please provide a valid exp date.
                                     </div>
                                   </div>
-                                <div class="col-12">
+                                <div class="col-12 buttonbox">
                                   <button class="btn btn-primary" type="submit">Checkout</button>
                                 </div>
                               </form>
@@ -128,6 +128,50 @@
               </div>
           </div>
           
+      </div>
+
+      <div class="itemwindow">
+        <div class="container itembox">
+          <div class="row">
+            
+              <div class="col-12 col-lg-6 mainimg">
+              
+              </div>
+
+              <div class="col-12 col-lg-2">
+
+                <div class="container sidebox">
+                  <div class="row">
+                    <div class="col-4 col-lg-12">
+                
+                  <div class="sideimg imga"></div>
+                  
+                </div>
+                <div class="col-4 col-lg-12">
+                  
+                  <div class="sideimg imgb"></div>
+                  
+                </div>
+                <div class="col-4 col-lg-12">
+                  
+                  <div class="sideimg imgc"></div>
+    
+                </div>
+                  </div>
+                </div>
+
+                
+
+              </div>
+              
+            
+            <div class="col-12 col-lg-4">
+              <h1 class="mainheader itemname">Bismuth</h1>
+              <p class="itemp"></p>
+              <h3 class="cartadd pageadd" id="rock1">Add to Cart</h3>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="container">
@@ -175,7 +219,7 @@
 
                 <div class="productinfo">
 
-                    <h3 class="productname">Celenite</h3>
+                    <h3 class="productname">Selenite</h3>
                     <h3 class="productprice">$35</h3>
                     <h3 class="cartadd" id="rock3">Add to Cart</h3>
 

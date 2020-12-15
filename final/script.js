@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
         var forms = document.querySelectorAll('.needs-validation')
-      
+        let x = 0
+
         Array.prototype.slice.call(forms)
           .forEach(function (form) {
             form.addEventListener('submit', function (event) {
@@ -21,6 +22,20 @@ $(document).ready(function(){
     
         })
 
+        $('.navbar-toggler-icon').click(function(){
+
+            if (x == 0){
+                $('.navbar-toggler-icon').css('transform', 'rotate(30deg)')
+                x = 1
+            } else {
+                $('.navbar-toggler-icon').css('transform', 'rotate(0deg)')
+                x = 0
+            }
+
+            
+    
+        })
+
         $('.check').click(function(){
 
             $('.check').remove()
@@ -30,10 +45,12 @@ $(document).ready(function(){
 
         $('.cartadd').click(function(){
 
+            $('#cartcount').fadeIn()
+            $('#cartcount').html( Number($('#cartcount').html()) + 1 )
             $(this).stop()
-            $(this).animate({opacity: 0}, 300, 'swing')
-            $(this).animate({opacity: 100}, 300, 'swing')
-    
+            $(this).animate({opacity: 0}, 200)
+            $(this).animate({opacity: 100}, 200)
+
         })
 
         $('.cartadd').mouseover(function(){
@@ -59,6 +76,54 @@ $(document).ready(function(){
             $(this).css('background-color', 'rgba(0,0,0,0)')
     
         })
+    
+        $('.productimg').click(function(){
+
+            $('.itemwindow').slideToggle()
+        
+        })
+
+        $('.itemwindow').click(function(){
+
+            $('.itemwindow').slideToggle()
+        
+        })
+
+    $('#a').click(function(){
+
+        $('.mainimg').css('background-image', 'url("rock1.jpg")')
+        $('.imga').css('background-image', 'url("rock01.jpg")')
+        $('.imgb').css('background-image', 'url("rock02.jpg")')
+        $('.imgc').css('background-image', 'url("rock03.jpg")')
+        $('.itemname').html('Bismuth - $50')
+        $('.itemp').html('Bismuth is a chemical element with the symbol Bi and atomic number 83. It is a pentavalent post-transition metal and one of the pnictogens with chemical properties resembling its lighter group 15 siblings arsenic and antimony. Elemental bismuth may occur naturally.')
+        $('.pageadd').attr('id', 'rock1')
+
+    })
+
+    $('#b').click(function(){
+
+        $('.mainimg').css('background-image', 'url("rock6.jpg")')
+        $('.imga').css('background-image', 'url("rock04.jpg")')
+        $('.imgb').css('background-image', 'url("rock05.jpg")')
+        $('.imgc').css('background-image', 'url("rock06.jpg")')
+        $('.itemname').html('Silicon - $30')
+        $('.itemp').html('Silicon is a chemical element with the symbol Si and atomic number 14. It is a hard, brittle crystalline solid with a blue-grey metallic lustre, and is a tetravalent metalloid and semiconductor. It is a member of group 14 in the periodic table.')
+        $('.pageadd').attr('id', 'rock2')
+
+    })
+
+    $('#c').click(function(){
+
+        $('.mainimg').css('background-image', 'url("rock5.jpg")')
+        $('.imga').css('background-image', 'url("rock07.jpg")')
+        $('.imgb').css('background-image', 'url("rock08.jpg")')
+        $('.imgc').css('background-image', 'url("rock09.jpg")')
+        $('.itemname').html('Selenite - $35')
+        $('.itemp').html('All varieties of gypsum, including selenite and alabaster, are composed of calcium sulfate dihydrate (meaning that it has two molecules of water), with the chemical formula CaSO4·2H2O.')
+        $('.pageadd').attr('id', 'rock3')
+
+    })
 
     $('#rock1').click(function(){
 
@@ -78,7 +143,7 @@ $(document).ready(function(){
 
     $('#rock3').click(function(){
 
-        $('.cartbox').prepend('<div class="cartitem"><h1 class="cartitemname">Celenite</h1><h1 class="cartitemprice">35</h1></div>')
+        $('.cartbox').prepend('<div class="cartitem"><h1 class="cartitemname">Selenite</h1><h1 class="cartitemprice">35</h1></div>')
         $('.total').html(Number($('.total').html()) + 35)
     })
 

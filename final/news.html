@@ -18,15 +18,12 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Geo Market</a>
+          <a class="navbar-brand" href="index.html">Geo Market</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="products.html">Products</a>
               </li>
@@ -38,6 +35,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link"><img src="cart.png" alt="cart" id="cartimg"></a>
+                <h2 id="cartcount">0</h2>
               </li>
             </ul>
           </div>
@@ -46,11 +44,38 @@
 
       <div class="container">
           <div class="row">
-              <div class="col-12 ">
+              <div class="col-12 col-md-6">
                   <h1 class="mainheader">Subscribe to our Newsletter</h1>
                   <p>Our newsletter offers special discounts and promotions you can't miss out on</p>
-                  <p><a href="contact.html">Click here to subscribe</a></p>
               </div>
+
+              <div class="col-12 col-md-6">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-12 col-lg-6">
+                      <label for="validationCustom01" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="validationCustom01" placeholder="First" required>
+                      <div class="valid-feedback">
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                      <label for="validationCustom02" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="validationCustom02" placeholder="Last" required>
+                      <div class="valid-feedback">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="validationCustom05" class="form-label">E-Mail</label>
+                      <input type="text" class="form-control" id="validationCustom05" placeholder="Email@email.com" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid e-mail.
+                      </div>
+                    </div>
+                    <div class="col-12 buttonbox">
+                      <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                  </form>
+            </div>
+
               <div class="col-12 ">
                 <h1 class="date">12/01/20</h1>
                 <p>Published a video showcasing our products</p>
@@ -68,7 +93,7 @@
             <div class="col-12 col-md-7 col-lg-9 ">
                 <h1 class="rocktitle">Emerald</h1>
                 <p>We now offer emerald in out store, go to the products page to check it out</p>
-                <p><a href="products.html">Go to Products</a></p>
+                <p><a href="productsc.html" class="goto">Go to Products</a></p>
             </div>
             <div class="col-12">
                 <h1 class="date">11/05/20</h1>
@@ -80,7 +105,7 @@
             <div class="col-12 col-md-7 col-lg-9 ">
                 <h1 class="rocktitle">Ruby</h1>
                 <p>We now offer ruby in out store, go to the products page to check it out</p>
-                <p><a href="products.html">Go to Products</a></p>
+                <p><a href="productsc.html" class="goto">Go to Products</a></p>
             </div>
             <div class="col-12">
                 <h1 class="date">10/20/20</h1>
@@ -92,7 +117,7 @@
             <div class="col-12 col-md-7 col-lg-9">
                 <h1 class="rocktitle">Amethyst</h1>
                 <p>We now offer amethyst in out store, go to the products page to check it out</p>
-                <p><a href="products.html">Go to Products</a></p>
+                <p><a href="productsc.html" class="goto">Go to Products</a></p>
             </div>
           </div>
       </div>

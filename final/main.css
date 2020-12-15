@@ -11,13 +11,34 @@ font-family: 'Forum', cursive;
 font-family: 'Lato', sans-serif;
 */
 
-h1 {
+h1, h5 {
     font-family: 'Forum', cursive;
+}
+
+h5 {
+    font-size: 32px;
 }
 
 p {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
+}
+
+
+
+.cp {
+    font-size: 20px;
+}
+
+div > .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.521);
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+
+.carousel-indicators {
+    bottom: -7px;
 }
 
 .mainheader {
@@ -41,7 +62,7 @@ p {
 .pagenum {
     font-family: 'Lato', sans-serif;
     font-size: 32px;
-    margin: 0px 20px;
+    margin: -10px 15px;
     display: inline-block;
 }
 
@@ -51,7 +72,10 @@ a {
 }
 
 .on {
-    color: rgb(114, 73, 124);
+    background-color: rgb(114, 73, 124);
+    color: white;
+    padding: 0px 5px;
+    border-radius: 5px 5px;
 }
 
 .pagenumbers {
@@ -71,7 +95,7 @@ nav {
 
 .navbar-brand {
     font-family: 'Forum', cursive;
-    font-size: 32px;
+    font-size: 40px;
 }
 
 .nav-item {
@@ -97,7 +121,13 @@ nav {
     flex-direction: row;
     width: 100%;
     justify-content: flex-end;
-}}
+}
+
+.mainp {
+    columns: 2;
+}
+
+}
 
 .footer {
     width: 100%;
@@ -121,8 +151,8 @@ nav {
     width: 50px;
 }
 
-.bottom {
-    padding: 20px;
+div > .bottom {
+    padding: 10px;
 }
 
 .center {
@@ -140,8 +170,7 @@ nav {
     align-items: center;
 }
 
-.formbox {
-    margin-bottom: 20px;
+div > .formbox {
     padding-bottom: 20px;
     border-bottom: 2px black solid;
 }
@@ -166,7 +195,8 @@ nav {
     align-items: flex-end;
     background-color: rgb(233, 233, 233);
     border: 3px rgb(114, 73, 124) solid;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
+    z-index: 10;
 }
 
 .cartitem {
@@ -183,12 +213,82 @@ nav {
     justify-content: space-between;
 }
 
+.itemwindow {
+    display: none;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+
+.itembox {
+    background-color: rgb(233, 233, 233);
+    border: 3px rgb(114, 73, 124) solid;
+    margin-top: 20px;
+}
+
+.mainimg {
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.itemp {
+    margin-bottom: 3rem;
+}
+
+div > .mainimg {
+    margin: 0px;
+}
+
+.sideimg {
+    width: 100%;
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+}
+
+.sidebox {
+    padding: 0px;
+}
+
+.col-lg-12 {
+    margin: 10px 0px;
+}
+
 #cartimg {
     width: 30px;
+    
+}
+
+.nav-item:last-child{
+    position: relative;
+}
+
+#cartcount {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    font-size: 15px;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: rgb(114, 73, 124);
+    display: none;
 }
 
 .checkoutform {
     display: none;
+}
+
+.goto {
+    background-color: rgb(114, 73, 124);
+    padding: 7px;
+    color: white;
+    border-radius: 10px 10px;
 }
 
 .productimg {
@@ -222,6 +322,7 @@ nav {
     cursor: pointer;
     background-color: rgb(114, 73, 124);
     color: white;
+    border-radius: 10px;
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
@@ -256,10 +357,15 @@ nav {
 
 .col-12 {
     margin: 15px 0px;
+    padding: 0px 20px;
 }
 
 .rocktitle {
     margin-top: 20px;
+}
+
+.buttonbox {
+    padding-left: 9px;
 }
 
 #a {
